@@ -44,7 +44,7 @@ namespace project_ling.View
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Assinante ass = new Assinante();
+            Form_Assinante ass = new Form_Assinante();
             ass.Show();
             this.Hide();
         }

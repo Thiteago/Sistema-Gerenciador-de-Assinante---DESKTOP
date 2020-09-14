@@ -62,11 +62,11 @@
     <Compile Include="Control\UsuarioController.cs" />
     <Compile Include="Model\AssinanteDAO.cs" />
     <Compile Include="Model\UsuarioDAO.cs" />
-    <Compile Include="View\Assinante.cs">
+    <Compile Include="View\Form_Assinante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Assinante.Designer.cs">
-      <DependentUpon>Assinante.cs</DependentUpon>
+    <Compile Include="View\Form_Assinante.Designer.cs">
+      <DependentUpon>Form_Assinante.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Form_CadAssinante.cs">
       <SubType>Form</SubType>
@@ -103,8 +103,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Assinante.resx">
-      <DependentUpon>Assinante.cs</DependentUpon>
+    <EmbeddedResource Include="View\Form_Assinante.resx">
+      <DependentUpon>Form_Assinante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_CadAssinante.resx">
       <DependentUpon>Form_CadAssinante.cs</DependentUpon>

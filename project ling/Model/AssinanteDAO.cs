@@ -15,6 +15,7 @@ namespace project_ling.Model
         public String tem;
         public String mensagem = "";
 
+
         public string pesquisa(string categoria, string busca)
         {
             //comandos sql para verificar se há cadastro no banco
@@ -22,17 +23,19 @@ namespace project_ling.Model
             {
                 cmd.CommandText = "select * from Assinante where Nome = @Nome";
                 cmd.Parameters.AddWithValue("@Nome", busca);
+          
             }
             try
             {
                 cmd.Connection = conexao.conectar();
                 dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                if (dr.Read())
                 {
+                    string cpf = dr["CPF"].ToString();
                     tem = busca;
                 }
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
                 this.mensagem = "Erro com Banco de Dados!";
             }

@@ -41,7 +41,7 @@ namespace project_ling.View
                 controle.acessar(email.Text, senha.Text);
                 if (controle.tem)
                 {
-                    MessageBox.Show("Logado com sucesso");
+                    
                     Form_Principal fp = new Form_Principal();
                     fp.Show();
                     this.Hide();
