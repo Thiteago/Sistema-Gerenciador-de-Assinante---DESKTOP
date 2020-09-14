@@ -1,0 +1,15 @@
+C:\Users\ThIaG\source\repos\project ling\project ling\bin\Debug\project ling.exe.config
+C:\Users\ThIaG\source\repos\project ling\project ling\bin\Debug\project ling.exe
+C:\Users\ThIaG\source\repos\project ling\project ling\bin\Debug\project ling.pdb
+C:\Users\ThIaG\source\repos\project ling\project ling\obj\Debug\project ling.csprojAssemblyReference.cache
+C:\Users\ThIaG\source\repos\project ling\project ling\obj\Debug\project_ling.Properties.Resources.resources
+C:\Users\ThIaG\source\repos\project ling\project ling\obj\Debug\project_ling.Form1.resources
+C:\Users\ThIaG\source\repos\project ling\project ling\obj\Debug\project ling.csproj.GenerateResource.cache
+C:\Users\ThIaG\source\repos\project ling\project ling\obj\Debug\project ling.exe
+C:\Users\ThIaG\source\repos\project ling\project ling\obj\Debug\project ling.pdb
+C:\Users\ThIaG\Documents\project ling\project ling\obj\Debug\project_ling.Properties.Resources.resources
+C:\Users\ThIaG\Documents\project ling\project ling\obj\Debug\project_ling.View.Form_CadAssinante.resources
+C:\Users\ThIaG\Documents\project ling\project ling\obj\Debug\project_ling.Form_Cadastro.resources
+C:\Users\ThIaG\Documents\project ling\project ling\obj\Debug\project_ling.View.Form_Login.resources
+C:\Users\ThIaG\Documents\project ling\project ling\obj\Debug\project_ling.View.Form_Principal.resources
+C:\Users\ThIaG\Documents\project ling\project ling\obj\Debug\project ling.csproj.GenerateResource.cache
