@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Assinante));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.categoria = new System.Windows.Forms.ComboBox();
             this.boxBusca = new System.Windows.Forms.TextBox();
             this.btBuscar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -71,19 +71,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // categoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.categoria.FormattingEnabled = true;
+            this.categoria.Items.AddRange(new object[] {
             "Nome",
             "CPF/CNPJ",
             "Endereço",
             "Fantasia",
             "Telefone"});
-            this.comboBox1.Location = new System.Drawing.Point(174, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.categoria.Location = new System.Drawing.Point(174, 12);
+            this.categoria.Name = "categoria";
+            this.categoria.Size = new System.Drawing.Size(121, 21);
+            this.categoria.TabIndex = 0;
             // 
             // boxBusca
             // 
@@ -426,8 +426,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.boxBusca);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.categoria);
             this.Name = "Form_Assinante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Assinante";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -442,7 +443,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox categoria;
         private System.Windows.Forms.TextBox boxBusca;
         private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -132,6 +132,7 @@
             this.Controls.Add(this.btAssinante);
             this.Controls.Add(this.button1);
             this.Name = "Form_Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Principal";
             this.Load += new System.EventHandler(this.Form_Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

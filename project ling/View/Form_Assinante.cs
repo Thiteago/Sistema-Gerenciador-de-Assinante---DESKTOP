@@ -1,4 +1,5 @@
-﻿using project_ling.Model;
+﻿using project_ling.Control;
+using project_ling.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,8 +37,22 @@ namespace project_ling.View
 
         private void btBuscar_Click(object sender, EventArgs e)
         {
+            Assinante assinante = new Assinante();
             AssinanteDAO buscar = new AssinanteDAO();
-            buscar.pesquisa("Nome", "Thiago David do Prado Dias");
+            assinante = buscar.pesquisa(categoria.Text, boxBusca.Text);
+
+            boxNascimento.Text = assinante.Datanascimento;
+            boxCPF.Text = assinante.Cpf;
+            boxProfissao.Text = assinante.Profissao;
+            boxEstadoCivil.Text = assinante.Estado;
+            boxSexo.Text = assinante.Sexo;
+            boxEmail.Text = assinante.Email;
+            nomeEndereco.Text = assinante.Rua;
+            tipoRua.Text = assinante.TipoRua;
+            numeroEndereco.Text = assinante.NumeroRua.ToString();
+            bairroEndereco.Text = assinante.Bairro;
+            boxComplemento.Text = assinante.Complemento;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

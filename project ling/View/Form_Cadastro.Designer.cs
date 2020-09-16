@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTel = new System.Windows.Forms.TextBox();
             this.txtRua = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.btCadastrar = new System.Windows.Forms.Button();
             this.dtaEscolha = new System.Windows.Forms.DateTimePicker();
             this.listaEstado = new System.Windows.Forms.ComboBox();
+            this.txtTel = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -75,13 +75,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 20);
             this.txtEmail.TabIndex = 3;
-            // 
-            // txtTel
-            // 
-            this.txtTel.Location = new System.Drawing.Point(138, 168);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(200, 20);
-            this.txtTel.TabIndex = 4;
             // 
             // txtRua
             // 
@@ -236,12 +229,21 @@
             this.listaEstado.Size = new System.Drawing.Size(199, 21);
             this.listaEstado.TabIndex = 26;
             // 
+            // txtTel
+            // 
+            this.txtTel.Location = new System.Drawing.Point(139, 166);
+            this.txtTel.Mask = "(##)#########";
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(199, 20);
+            this.txtTel.TabIndex = 27;
+            // 
             // Form_Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(691, 344);
+            this.Controls.Add(this.txtTel);
             this.Controls.Add(this.listaEstado);
             this.Controls.Add(this.dtaEscolha);
             this.Controls.Add(this.btCadastrar);
@@ -259,11 +261,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtRua);
-            this.Controls.Add(this.txtTel);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Name = "Form_Cadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -276,7 +278,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.TextBox txtRua;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label label2;
@@ -294,6 +295,7 @@
         private System.Windows.Forms.Button btCadastrar;
         private System.Windows.Forms.DateTimePicker dtaEscolha;
         private System.Windows.Forms.ComboBox listaEstado;
+        private System.Windows.Forms.MaskedTextBox txtTel;
     }
 }
 

@@ -13,12 +13,12 @@ namespace project_ling
         SqlCommand cmd = new SqlCommand();
         public String msg = "";
         public CadastroAssinante(string nome, string cpf, string rua, string bairro, string cidade, string estado, string telefone,
-            string email, string datanascimento)
+            string email, string datanascimento,string profissao,string EstadoCivil, string sexo,string numero, string tipoRua, string complemento)
         {
             //Comando SQL - Insert, update, delete
-            cmd.CommandText = "insert into Assinante (Nome, CPF, Bairro, Cidade, Estado, Telefone, Email, Rua, datanascimento)" +
+            cmd.CommandText = "insert into Assinante (Nome, CPF, Bairro, Cidade, Estado, Telefone, Email, Rua, datanascimento, Profissao, EstadoCivil, Sexo, NumeroRua, TipoRua, Complemento)" +
                               "values(@nome, @cpf, @bairro, " +
-                              "@cidade, @estado, @telefone, @email, @rua, @datanascimento)";
+                              "@cidade, @estado, @telefone, @email, @rua, @datanascimento, @profissao, @EstadoCivil, @sexo, @numero, @tipoRua, @complemento)";
             //Parametros
             cmd.Parameters.AddWithValue("@nome", nome);
             cmd.Parameters.AddWithValue("@cpf", cpf);
@@ -29,6 +29,14 @@ namespace project_ling
             cmd.Parameters.AddWithValue("@telefone", telefone);
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@datanascimento", datanascimento);
+            cmd.Parameters.AddWithValue("@profissao", profissao);
+            cmd.Parameters.AddWithValue("@EstadoCivil", EstadoCivil);
+            cmd.Parameters.AddWithValue("@sexo", sexo);
+            cmd.Parameters.AddWithValue("@numero", numero);
+            cmd.Parameters.AddWithValue("@tipoRua", tipoRua);
+            cmd.Parameters.AddWithValue("@complemento", complemento);
+            
+
             //Conectar Banco
             try
             {

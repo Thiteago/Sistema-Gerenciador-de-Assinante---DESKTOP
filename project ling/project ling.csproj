@@ -56,6 +56,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDLP2DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Model\Assinante.cs" />
     <Compile Include="Control\CadastroAssinante.cs" />
     <Compile Include="Control\Cadastro.cs" />
     <Compile Include="Control\Conexao.cs" />

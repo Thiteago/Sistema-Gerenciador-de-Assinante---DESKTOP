@@ -28,6 +28,12 @@ namespace project_ling.View
             estado.Text = "";
             telefone.Text = "";
             email.Text = "";
+            txtProfissao.Text = "";
+            boxEstadoCivil.Text = "";
+            boxSexo.Text = "";
+            boxTipo.Text = "";
+            txtNumero.Text = "";
+            txtComplemento.Text = "";
        
         }
 
@@ -35,9 +41,14 @@ namespace project_ling.View
         {
             string datanasc = dtanasc.Value.ToString();
             CadastroAssinante cad = new CadastroAssinante(nomeCompleto.Text, cpf.Text,rua.Text,bairro.Text,cidade.Text,estado.Text,
-                                                          telefone.Text,email.Text,datanasc);
+                                                          telefone.Text,email.Text,datanasc,txtProfissao.Text, boxEstadoCivil.Text, boxSexo.Text,txtNumero.Text,boxTipo.Text,txtComplemento.Text);
             MessageBox.Show(cad.msg);
             this.Close();
+        }
+
+        private void Form_CadAssinante_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
