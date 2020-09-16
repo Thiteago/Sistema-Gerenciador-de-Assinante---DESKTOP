@@ -26,7 +26,6 @@ namespace project_ling.Model
                 cmd.CommandText = @"SELECT * FROM Assinante As C WHERE C.Nome LIKE @Nome";
                 cmd.Parameters.AddWithValue("@Nome", busca + "%");
             }
-       
             
             try
             {
