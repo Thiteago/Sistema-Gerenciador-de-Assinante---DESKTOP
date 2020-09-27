@@ -57,8 +57,8 @@
             this.numeroEndereco = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.bairroEndereco = new System.Windows.Forms.Label();
+            this.bairroEndereco = new System.Windows.Forms.TextBox();
+            this.labelBairro = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.boxComplemento = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -332,23 +332,23 @@
             this.label9.TabIndex = 28;
             this.label9.Text = "Número";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(247, 368);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 29;
-            // 
             // bairroEndereco
             // 
-            this.bairroEndereco.AutoSize = true;
-            this.bairroEndereco.BackColor = System.Drawing.Color.DimGray;
-            this.bairroEndereco.ForeColor = System.Drawing.Color.White;
-            this.bairroEndereco.Location = new System.Drawing.Point(207, 368);
+            this.bairroEndereco.Location = new System.Drawing.Point(247, 368);
             this.bairroEndereco.Name = "bairroEndereco";
-            this.bairroEndereco.Size = new System.Drawing.Size(34, 13);
-            this.bairroEndereco.TabIndex = 30;
-            this.bairroEndereco.Text = "Bairro";
+            this.bairroEndereco.Size = new System.Drawing.Size(174, 20);
+            this.bairroEndereco.TabIndex = 29;
+            // 
+            // labelBairro
+            // 
+            this.labelBairro.AutoSize = true;
+            this.labelBairro.BackColor = System.Drawing.Color.DimGray;
+            this.labelBairro.ForeColor = System.Drawing.Color.White;
+            this.labelBairro.Location = new System.Drawing.Point(207, 368);
+            this.labelBairro.Name = "labelBairro";
+            this.labelBairro.Size = new System.Drawing.Size(34, 13);
+            this.labelBairro.TabIndex = 30;
+            this.labelBairro.Text = "Bairro";
             // 
             // label10
             // 
@@ -380,11 +380,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(174, 38);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(571, 186);
             this.dataGridView1.TabIndex = 34;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Form_Assinante
@@ -392,13 +396,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(897, 450);
+            this.ClientSize = new System.Drawing.Size(939, 484);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.boxComplemento);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.labelBairro);
             this.Controls.Add(this.bairroEndereco);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.numeroEndereco);
@@ -471,8 +475,8 @@
         private System.Windows.Forms.TextBox numeroEndereco;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label bairroEndereco;
+        private System.Windows.Forms.TextBox bairroEndereco;
+        private System.Windows.Forms.Label labelBairro;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox boxComplemento;
         private System.Windows.Forms.Button button1;

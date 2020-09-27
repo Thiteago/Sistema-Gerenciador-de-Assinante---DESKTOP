@@ -16,12 +16,12 @@ namespace project_ling.Model
         public String tem;
         public String mensagem = "";
         Assinante cliente = new Assinante();
+        
 
-
-        public Assinante pesquisa(string categoria, string busca)
+        public IEnumerable<Assinante> pesquisa(string categoria, string busca)
         {
-            
-            if(categoria == "Nome")
+            List<Assinante> assinantes = new List<Assinante>();
+            if (categoria == "Nome")
             {
                 cmd.CommandText = @"SELECT * FROM Assinante As C WHERE C.Nome LIKE @Nome";
                 cmd.Parameters.AddWithValue("@Nome", busca + "%");
@@ -32,34 +32,42 @@ namespace project_ling.Model
                 cmd.Connection = conexao.conectar();
                 dr = cmd.ExecuteReader();
 
+                  if (dr.HasRows)
+                    {
+                     
 
-                if (dr.Read())
-                {
-                   
-                    cliente = new Assinante();
-                    cliente.Id = int.Parse(dr["ID"].ToString());
-                    cliente.Nome = dr["Nome"].ToString();
-                    cliente.Cpf = dr["CPF"].ToString();
-                    cliente.Rua = dr["Rua"].ToString();
-                    cliente.Bairro = dr["Bairro"].ToString();
-                    cliente.Cidade = dr["Cidade"].ToString();
-                    cliente.Estado = dr["Estado"].ToString();
-                    cliente.Telefone = dr["Telefone"].ToString();
-                    cliente.Email = dr["Email"].ToString();
-                    cliente.Datanascimento = dr["datanascimento"].ToString();
-                    cliente.Profissao = dr["Profissao"].ToString();
-                    cliente.Estado = dr["EstadoCivil"].ToString();
-                    cliente.Sexo = dr["Sexo"].ToString();
-                    cliente.NumeroRua = int.Parse(dr["NumeroRua"].ToString());
-                    cliente.TipoRua = dr["TipoRua"].ToString();
-                    cliente.Complemento = dr["Complemento"].ToString();
-                  }
+                    while (dr.Read())
+                        {
+                            cliente = new Assinante();
+                            cliente.Id = int.Parse(dr["ID"].ToString());
+                            cliente.Nome = dr["Nome"].ToString();
+                            cliente.Cpf = dr["CPF"].ToString();
+                            cliente.Rua = dr["Rua"].ToString();
+                            cliente.Bairro = dr["Bairro"].ToString();
+                            cliente.Cidade = dr["Cidade"].ToString();
+                            cliente.Estado = dr["Estado"].ToString();
+                            cliente.Telefone = dr["Telefone"].ToString();
+                            cliente.Email = dr["Email"].ToString();
+                            cliente.Datanascimento = DateTime.Parse(dr["datanascimento"].ToString());
+                            cliente.Profissao = dr["Profissao"].ToString();
+                            cliente.EstadoCivil = dr["EstadoCivil"].ToString();
+                            cliente.Sexo = dr["Sexo"].ToString();
+                            cliente.NumeroRua = int.Parse(dr["NumeroRua"].ToString());
+                            cliente.TipoRua = dr["TipoRua"].ToString();
+                            cliente.Complemento = dr["Complemento"].ToString();
+                            assinantes.Add(cliente);
+                            
+
+                    }
+                        dr.Close();
+                }
+                
             }
             catch (SqlException e)
             {
                 this.mensagem = "Erro com Banco de Dados!";
             }
-            return cliente;
+            return assinantes ;
         }
     }
 }

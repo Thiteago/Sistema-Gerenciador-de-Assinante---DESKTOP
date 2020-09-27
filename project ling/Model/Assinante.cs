@@ -17,7 +17,7 @@ namespace project_ling.Control
         private string estado;
         private string telefone;
         private string email;
-        private string datanascimento;
+        private DateTime datanascimento;
         private string profissao;
         private string estadoCivil;
         private string sexo;
@@ -34,9 +34,9 @@ namespace project_ling.Control
         public string Estado { get => estado; set => estado = value; }
         public string Telefone { get => telefone; set => telefone = value; }
         public string Email { get => email; set => email = value; }
-        public string Datanascimento { get => datanascimento; set => datanascimento = value; }
+        public DateTime Datanascimento { get => datanascimento; set => datanascimento = value; }
         public string Profissao { get => profissao; set => profissao = value; }
-        public string EstadoCivil1 { get => estadoCivil; set => estadoCivil = value; }
+        public string EstadoCivil { get => estadoCivil; set => estadoCivil = value; }
         public string Sexo { get => sexo; set => sexo = value; }
         public string TipoRua { get => tipoRua; set => tipoRua = value; }
         public int NumeroRua { get => numeroRua; set => numeroRua = value; }

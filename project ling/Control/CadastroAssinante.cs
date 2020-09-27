@@ -13,7 +13,7 @@ namespace project_ling
         SqlCommand cmd = new SqlCommand();
         public String msg = "";
         public CadastroAssinante(string nome, string cpf, string rua, string bairro, string cidade, string estado, string telefone,
-            string email, string datanascimento,string profissao,string EstadoCivil, string sexo,string numero, string tipoRua, string complemento)
+            string email, DateTime datanascimento,string profissao,string EstadoCivil, string sexo,string numero, string tipoRua, string complemento)
         {
             //Comando SQL - Insert, update, delete
             cmd.CommandText = "insert into Assinante (Nome, CPF, Bairro, Cidade, Estado, Telefone, Email, Rua, datanascimento, Profissao, EstadoCivil, Sexo, NumeroRua, TipoRua, Complemento)" +
