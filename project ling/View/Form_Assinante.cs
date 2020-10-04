@@ -74,7 +74,6 @@ namespace project_ling.View
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Console.WriteLine(dataGridView1.CurrentCell.RowIndex);
             Assinante assinante = Assinantes[dataGridView1.CurrentCell.RowIndex];
 
             boxNascimento.Text = assinante.Datanascimento.ToString("d");
@@ -89,6 +88,11 @@ namespace project_ling.View
             bairroEndereco.Text = assinante.Bairro;
             boxComplemento.Text = assinante.Complemento;
 
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

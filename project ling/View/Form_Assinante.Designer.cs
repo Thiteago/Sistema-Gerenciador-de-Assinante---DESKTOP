@@ -38,7 +38,7 @@
             this.btOrdens = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.deleteBotao = new System.Windows.Forms.PictureBox();
             this.boxNascimento = new System.Windows.Forms.TextBox();
             this.boxCPF = new System.Windows.Forms.TextBox();
             this.boxProfissao = new System.Windows.Forms.TextBox();
@@ -67,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteBotao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,9 +76,8 @@
             this.categoria.FormattingEnabled = true;
             this.categoria.Items.AddRange(new object[] {
             "Nome",
-            "CPF/CNPJ",
+            "CPF",
             "Endereço",
-            "Fantasia",
             "Telefone"});
             this.categoria.Location = new System.Drawing.Point(174, 12);
             this.categoria.Name = "categoria";
@@ -122,18 +121,18 @@
             // 
             // btContratos
             // 
-            this.btContratos.Location = new System.Drawing.Point(93, 38);
+            this.btContratos.Location = new System.Drawing.Point(12, 38);
             this.btContratos.Name = "btContratos";
-            this.btContratos.Size = new System.Drawing.Size(75, 92);
+            this.btContratos.Size = new System.Drawing.Size(156, 92);
             this.btContratos.TabIndex = 6;
             this.btContratos.Text = "Contratos";
             this.btContratos.UseVisualStyleBackColor = true;
             // 
             // btOrdens
             // 
-            this.btOrdens.Location = new System.Drawing.Point(93, 132);
+            this.btOrdens.Location = new System.Drawing.Point(12, 132);
             this.btOrdens.Name = "btOrdens";
-            this.btOrdens.Size = new System.Drawing.Size(75, 92);
+            this.btOrdens.Size = new System.Drawing.Size(156, 92);
             this.btOrdens.TabIndex = 7;
             this.btOrdens.Text = "Ordens de Serviço";
             this.btOrdens.UseVisualStyleBackColor = true;
@@ -158,16 +157,17 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 9;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
-            // pictureBox6
+            // deleteBotao
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(840, 206);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(35, 18);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 10;
-            this.pictureBox6.TabStop = false;
+            this.deleteBotao.Image = ((System.Drawing.Image)(resources.GetObject("deleteBotao.Image")));
+            this.deleteBotao.Location = new System.Drawing.Point(840, 206);
+            this.deleteBotao.Name = "deleteBotao";
+            this.deleteBotao.Size = new System.Drawing.Size(35, 18);
+            this.deleteBotao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.deleteBotao.TabIndex = 10;
+            this.deleteBotao.TabStop = false;
             // 
             // boxNascimento
             // 
@@ -382,6 +382,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(174, 38);
             this.dataGridView1.Name = "dataGridView1";
@@ -421,7 +422,7 @@
             this.Controls.Add(this.boxProfissao);
             this.Controls.Add(this.boxCPF);
             this.Controls.Add(this.boxNascimento);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.deleteBotao);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.btOrdens);
@@ -438,7 +439,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteBotao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -456,7 +457,7 @@
         private System.Windows.Forms.Button btOrdens;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox deleteBotao;
         private System.Windows.Forms.TextBox boxNascimento;
         private System.Windows.Forms.TextBox boxCPF;
         private System.Windows.Forms.TextBox boxProfissao;

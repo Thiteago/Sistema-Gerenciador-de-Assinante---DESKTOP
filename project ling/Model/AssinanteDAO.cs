@@ -13,7 +13,6 @@ namespace project_ling.Model
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
-        public String tem;
         public String mensagem = "";
         Assinante cliente = new Assinante();
         
@@ -26,7 +25,21 @@ namespace project_ling.Model
                 cmd.CommandText = @"SELECT * FROM Assinante As C WHERE C.Nome LIKE @Nome";
                 cmd.Parameters.AddWithValue("@Nome", busca + "%");
             }
-            
+            else if(categoria == "CPF")
+            {
+                cmd.CommandText = @"SELECT * FROM Assinante As C WHERE C.CPF LIKE @Cpf";
+                cmd.Parameters.AddWithValue("@Cpf", busca + "%");
+            }
+            else if(categoria == "Endereço")
+            {
+                cmd.CommandText = @"SELECT * FROM Assinante As C WHERE C.Rua LIKE @Rua";
+                cmd.Parameters.AddWithValue("@Rua", busca + "%");
+            }
+            else if(categoria == "Telefone")
+            {
+                cmd.CommandText = @"SELECT * FROM Assinante As C WHERE C.Telefone LIKE @Tel";
+                cmd.Parameters.AddWithValue("@Tel", busca + "%");
+            }
             try
             {
                 cmd.Connection = conexao.conectar();

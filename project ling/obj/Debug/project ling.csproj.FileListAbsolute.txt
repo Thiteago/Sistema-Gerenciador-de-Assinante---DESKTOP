@@ -26,3 +26,4 @@ C:\Users\ThIaG\source\repos\LP2\project ling\bin\Debug\project ling.exe
 C:\Users\ThIaG\source\repos\LP2\project ling\bin\Debug\project ling.pdb
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project ling.exe
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project ling.pdb
+C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project ling.csproj.CoreCompileInputs.cache
