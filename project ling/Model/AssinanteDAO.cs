@@ -15,7 +15,56 @@ namespace project_ling.Model
         SqlDataReader dr;
         public String mensagem = "";
         Assinante cliente = new Assinante();
-        
+
+
+        public void AlterarDados(string nome, DateTime Datanascimento, string cpf, string Profissao, string EstadoCivil, string Sexo, string Email, string Rua, string Tipo, string numero, string Bairro, string Complemento, string Cidade, string Estado, string Telefone, string ID)
+        {
+
+
+            
+
+            cmd.CommandText = @"UPDATE Assinante 
+                                SET Nome = @Nome,
+                                CPF = @cpf,
+                                Bairro = @bairro,
+                                Cidade = @cidade,
+                                Estado = @estado,
+                                Telefone = @telefone,
+                                Email = @email,
+                                Rua = @rua,
+                                datanascimento = @datanascimento,
+                                Profissao = @profissao,
+                                EstadoCivil = @estadocivil,
+                                Sexo = @sexo,
+                                TipoRua = @tipoRua,
+                                NumeroRua = @numeroRua,
+                                Complemento = @complemento
+
+                                WHERE ID = @id ";
+
+            cmd.Parameters.AddWithValue("@Nome", nome);
+            cmd.Parameters.AddWithValue("@id", ID);
+            cmd.Parameters.AddWithValue("@cpf", cpf);
+            cmd.Parameters.AddWithValue("@bairro", Bairro);
+            cmd.Parameters.AddWithValue("@cidade", Cidade);
+            cmd.Parameters.AddWithValue("@estado", Estado);
+            cmd.Parameters.AddWithValue("@telefone", Telefone);
+            cmd.Parameters.AddWithValue("@email", Email);
+            cmd.Parameters.AddWithValue("@rua", Rua);
+            cmd.Parameters.AddWithValue("@datanascimento", Datanascimento);
+            cmd.Parameters.AddWithValue("@profissao", Profissao);
+            cmd.Parameters.AddWithValue("@estadocivil", EstadoCivil);
+            cmd.Parameters.AddWithValue("@sexo", Sexo);
+            cmd.Parameters.AddWithValue("@tipoRua", Tipo);
+            cmd.Parameters.AddWithValue("@numeroRua", numero);
+            cmd.Parameters.AddWithValue("@complemento", Complemento);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+            cmd.Connection = conexao.desconectar();
+
+        } 
+
 
         public IEnumerable<Assinante> pesquisa(string categoria, string busca)
         {

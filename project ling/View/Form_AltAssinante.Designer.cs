@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.boxComplemento = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.boxTipo = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.numeroBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.boxSexo = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -40,35 +40,38 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtProfissao = new System.Windows.Forms.TextBox();
-            this.dtanasc = new System.Windows.Forms.DateTimePicker();
+            this.Boxdtanasc = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.TextBox();
+            this.BoxEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btLimpar = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.telefone = new System.Windows.Forms.MaskedTextBox();
+            this.BoxTelefone = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cpf = new System.Windows.Forms.MaskedTextBox();
+            this.cpfBox = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.estado = new System.Windows.Forms.TextBox();
-            this.cidade = new System.Windows.Forms.TextBox();
-            this.bairro = new System.Windows.Forms.TextBox();
-            this.rua = new System.Windows.Forms.TextBox();
+            this.BoxEstado = new System.Windows.Forms.TextBox();
+            this.BoxCidade = new System.Windows.Forms.TextBox();
+            this.BoxBairro = new System.Windows.Forms.TextBox();
+            this.ruaBox = new System.Windows.Forms.TextBox();
             this.nomeCompleto = new System.Windows.Forms.TextBox();
+            this.btExit = new System.Windows.Forms.Button();
+            this.boxID = new System.Windows.Forms.TextBox();
+            this.lbID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // txtComplemento
+            // boxComplemento
             // 
-            this.txtComplemento.Location = new System.Drawing.Point(258, 260);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(257, 20);
-            this.txtComplemento.TabIndex = 67;
+            this.boxComplemento.Location = new System.Drawing.Point(258, 260);
+            this.boxComplemento.Name = "boxComplemento";
+            this.boxComplemento.Size = new System.Drawing.Size(257, 20);
+            this.boxComplemento.TabIndex = 67;
             // 
             // label16
             // 
@@ -104,12 +107,12 @@
             this.label15.TabIndex = 64;
             this.label15.Text = "Tipo";
             // 
-            // txtNumero
+            // numeroBox
             // 
-            this.txtNumero.Location = new System.Drawing.Point(589, 183);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(100, 20);
-            this.txtNumero.TabIndex = 63;
+            this.numeroBox.Location = new System.Drawing.Point(589, 183);
+            this.numeroBox.Name = "numeroBox";
+            this.numeroBox.Size = new System.Drawing.Size(100, 20);
+            this.numeroBox.TabIndex = 63;
             // 
             // label14
             // 
@@ -180,14 +183,14 @@
             this.txtProfissao.Size = new System.Drawing.Size(296, 20);
             this.txtProfissao.TabIndex = 56;
             // 
-            // dtanasc
+            // Boxdtanasc
             // 
-            this.dtanasc.Location = new System.Drawing.Point(258, 286);
-            this.dtanasc.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
-            this.dtanasc.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
-            this.dtanasc.Name = "dtanasc";
-            this.dtanasc.Size = new System.Drawing.Size(556, 20);
-            this.dtanasc.TabIndex = 55;
+            this.Boxdtanasc.Location = new System.Drawing.Point(258, 286);
+            this.Boxdtanasc.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+            this.Boxdtanasc.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
+            this.Boxdtanasc.Name = "Boxdtanasc";
+            this.Boxdtanasc.Size = new System.Drawing.Size(556, 20);
+            this.Boxdtanasc.TabIndex = 55;
             // 
             // label10
             // 
@@ -200,12 +203,12 @@
             this.label10.TabIndex = 54;
             this.label10.Text = "Data de Nascimento";
             // 
-            // email
+            // BoxEmail
             // 
-            this.email.Location = new System.Drawing.Point(589, 261);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(225, 20);
-            this.email.TabIndex = 53;
+            this.BoxEmail.Location = new System.Drawing.Point(589, 261);
+            this.BoxEmail.Name = "BoxEmail";
+            this.BoxEmail.Size = new System.Drawing.Size(225, 20);
+            this.BoxEmail.TabIndex = 53;
             // 
             // label9
             // 
@@ -236,6 +239,7 @@
             this.btAlterar.TabIndex = 50;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // label8
             // 
@@ -248,13 +252,13 @@
             this.label8.TabIndex = 49;
             this.label8.Text = "Alterar Dados";
             // 
-            // telefone
+            // BoxTelefone
             // 
-            this.telefone.Location = new System.Drawing.Point(563, 234);
-            this.telefone.Mask = "(##)#########";
-            this.telefone.Name = "telefone";
-            this.telefone.Size = new System.Drawing.Size(78, 20);
-            this.telefone.TabIndex = 48;
+            this.BoxTelefone.Location = new System.Drawing.Point(563, 234);
+            this.BoxTelefone.Mask = "(##)#########";
+            this.BoxTelefone.Name = "BoxTelefone";
+            this.BoxTelefone.Size = new System.Drawing.Size(78, 20);
+            this.BoxTelefone.TabIndex = 48;
             // 
             // label7
             // 
@@ -311,13 +315,13 @@
             this.label3.TabIndex = 43;
             this.label3.Text = "Bairro";
             // 
-            // cpf
+            // cpfBox
             // 
-            this.cpf.Location = new System.Drawing.Point(607, 156);
-            this.cpf.Mask = "###.###.###-##";
-            this.cpf.Name = "cpf";
-            this.cpf.Size = new System.Drawing.Size(82, 20);
-            this.cpf.TabIndex = 42;
+            this.cpfBox.Location = new System.Drawing.Point(607, 156);
+            this.cpfBox.Mask = "###.###.###-##";
+            this.cpfBox.Name = "cpfBox";
+            this.cpfBox.Size = new System.Drawing.Size(82, 20);
+            this.cpfBox.TabIndex = 42;
             // 
             // label2
             // 
@@ -341,33 +345,33 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "Nome Completo";
             // 
-            // estado
+            // BoxEstado
             // 
-            this.estado.Location = new System.Drawing.Point(258, 234);
-            this.estado.Name = "estado";
-            this.estado.Size = new System.Drawing.Size(223, 20);
-            this.estado.TabIndex = 39;
+            this.BoxEstado.Location = new System.Drawing.Point(258, 234);
+            this.BoxEstado.Name = "BoxEstado";
+            this.BoxEstado.Size = new System.Drawing.Size(223, 20);
+            this.BoxEstado.TabIndex = 39;
             // 
-            // cidade
+            // BoxCidade
             // 
-            this.cidade.Location = new System.Drawing.Point(430, 207);
-            this.cidade.Name = "cidade";
-            this.cidade.Size = new System.Drawing.Size(167, 20);
-            this.cidade.TabIndex = 38;
+            this.BoxCidade.Location = new System.Drawing.Point(430, 207);
+            this.BoxCidade.Name = "BoxCidade";
+            this.BoxCidade.Size = new System.Drawing.Size(167, 20);
+            this.BoxCidade.TabIndex = 38;
             // 
-            // bairro
+            // BoxBairro
             // 
-            this.bairro.Location = new System.Drawing.Point(258, 208);
-            this.bairro.Name = "bairro";
-            this.bairro.Size = new System.Drawing.Size(100, 20);
-            this.bairro.TabIndex = 37;
+            this.BoxBairro.Location = new System.Drawing.Point(258, 208);
+            this.BoxBairro.Name = "BoxBairro";
+            this.BoxBairro.Size = new System.Drawing.Size(100, 20);
+            this.BoxBairro.TabIndex = 37;
             // 
-            // rua
+            // ruaBox
             // 
-            this.rua.Location = new System.Drawing.Point(258, 181);
-            this.rua.Name = "rua";
-            this.rua.Size = new System.Drawing.Size(257, 20);
-            this.rua.TabIndex = 36;
+            this.ruaBox.Location = new System.Drawing.Point(258, 181);
+            this.ruaBox.Name = "ruaBox";
+            this.ruaBox.Size = new System.Drawing.Size(257, 20);
+            this.ruaBox.TabIndex = 36;
             // 
             // nomeCompleto
             // 
@@ -376,17 +380,49 @@
             this.nomeCompleto.Size = new System.Drawing.Size(299, 20);
             this.nomeCompleto.TabIndex = 35;
             // 
+            // btExit
+            // 
+            this.btExit.Location = new System.Drawing.Point(885, 12);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(75, 23);
+            this.btExit.TabIndex = 68;
+            this.btExit.Text = "Sair";
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
+            // boxID
+            // 
+            this.boxID.Location = new System.Drawing.Point(12, 12);
+            this.boxID.Name = "boxID";
+            this.boxID.ReadOnly = true;
+            this.boxID.Size = new System.Drawing.Size(94, 20);
+            this.boxID.TabIndex = 69;
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.ForeColor = System.Drawing.Color.White;
+            this.lbID.Location = new System.Drawing.Point(112, 13);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(23, 16);
+            this.lbID.TabIndex = 70;
+            this.lbID.Text = "ID";
+            // 
             // Form_AltAssinante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(983, 436);
-            this.Controls.Add(this.txtComplemento);
+            this.Controls.Add(this.lbID);
+            this.Controls.Add(this.boxID);
+            this.Controls.Add(this.btExit);
+            this.Controls.Add(this.boxComplemento);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.boxTipo);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.numeroBox);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.boxSexo);
             this.Controls.Add(this.label13);
@@ -394,26 +430,26 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtProfissao);
-            this.Controls.Add(this.dtanasc);
+            this.Controls.Add(this.Boxdtanasc);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.email);
+            this.Controls.Add(this.BoxEmail);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btLimpar);
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.telefone);
+            this.Controls.Add(this.BoxTelefone);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cpf);
+            this.Controls.Add(this.cpfBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.estado);
-            this.Controls.Add(this.cidade);
-            this.Controls.Add(this.bairro);
-            this.Controls.Add(this.rua);
+            this.Controls.Add(this.BoxEstado);
+            this.Controls.Add(this.BoxCidade);
+            this.Controls.Add(this.BoxBairro);
+            this.Controls.Add(this.ruaBox);
             this.Controls.Add(this.nomeCompleto);
             this.Name = "Form_AltAssinante";
             this.Text = "Form_AltAssinante";
@@ -424,11 +460,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtComplemento;
+        private System.Windows.Forms.TextBox boxComplemento;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox boxTipo;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.TextBox numeroBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox boxSexo;
         private System.Windows.Forms.Label label13;
@@ -436,26 +472,29 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtProfissao;
-        private System.Windows.Forms.DateTimePicker dtanasc;
+        private System.Windows.Forms.DateTimePicker Boxdtanasc;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox BoxEmail;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btLimpar;
         private System.Windows.Forms.Button btAlterar;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox telefone;
+        private System.Windows.Forms.MaskedTextBox BoxTelefone;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox cpf;
+        private System.Windows.Forms.MaskedTextBox cpfBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox estado;
-        private System.Windows.Forms.TextBox cidade;
-        private System.Windows.Forms.TextBox bairro;
-        private System.Windows.Forms.TextBox rua;
+        private System.Windows.Forms.TextBox BoxEstado;
+        private System.Windows.Forms.TextBox BoxCidade;
+        private System.Windows.Forms.TextBox BoxBairro;
+        private System.Windows.Forms.TextBox ruaBox;
         private System.Windows.Forms.TextBox nomeCompleto;
+        private System.Windows.Forms.Button btExit;
+        private System.Windows.Forms.TextBox boxID;
+        private System.Windows.Forms.Label lbID;
     }
 }

@@ -65,6 +65,7 @@
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(236, 20);
             this.email.TabIndex = 2;
+            this.email.Text = "thiago";
             this.email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // senha
@@ -74,6 +75,7 @@
             this.senha.PasswordChar = '*';
             this.senha.Size = new System.Drawing.Size(234, 20);
             this.senha.TabIndex = 3;
+            this.senha.Text = "123";
             this.senha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.senha.UseSystemPasswordChar = true;
             // 

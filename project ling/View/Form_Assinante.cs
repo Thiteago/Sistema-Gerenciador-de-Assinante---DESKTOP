@@ -22,7 +22,6 @@ namespace project_ling.View
             //dataGridView1.ColumnCount = 2;
             //dataGridView1.Columns[0].Name = "Id";
             //dataGridView1.Columns[1].Name = "Nome";
-            
 
 
         }
@@ -92,7 +91,11 @@ namespace project_ling.View
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            
+            Assinante assinante = Assinantes[dataGridView1.CurrentCell.RowIndex];
+
+            Form_AltAssinante Mostra = new Form_AltAssinante();
+            Mostra.Show();
+            Mostra.MostrarDados(assinante.Datanascimento, assinante.Cpf, assinante.Profissao, assinante.EstadoCivil, assinante.Sexo, assinante.Email, assinante.Rua, assinante.TipoRua, assinante.NumeroRua.ToString(), assinante.Bairro, assinante.Complemento, assinante.Nome, assinante.Cidade, assinante.Estado, assinante.Telefone,assinante.Id);
         }
     }
 }

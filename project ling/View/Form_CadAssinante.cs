@@ -39,7 +39,7 @@ namespace project_ling.View
 
         private void btCadastrar_Click(object sender, EventArgs e)
         {
-            //string datanasc = dtanasc.Value.ToString();
+
             CadastroAssinante cad = new CadastroAssinante(nomeCompleto.Text, cpf.Text,rua.Text,bairro.Text,cidade.Text,estado.Text,
                                                           telefone.Text,email.Text, dtanasc.Value, txtProfissao.Text, boxEstadoCivil.Text, boxSexo.Text,txtNumero.Text,boxTipo.Text,txtComplemento.Text);
             MessageBox.Show(cad.msg);
