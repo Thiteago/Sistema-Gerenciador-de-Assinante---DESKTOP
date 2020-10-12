@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using project_ling.Control;
+using System.Windows.Forms;
 
 namespace project_ling.Model
 {
@@ -16,7 +17,14 @@ namespace project_ling.Model
         public String mensagem = "";
         Assinante cliente = new Assinante();
 
+        public void DeletarAssinante(string ID)
+        {
+            cmd.CommandText = @"DELETE FROM Assinante WHERE Id = @id";
+            cmd.Parameters.AddWithValue("@id", ID);
 
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+        }
         public void AlterarDados(string nome, DateTime Datanascimento, string cpf, string Profissao, string EstadoCivil, string Sexo, string Email, string Rua, string Tipo, string numero, string Bairro, string Complemento, string Cidade, string Estado, string Telefone, string ID)
         {
 
@@ -61,7 +69,7 @@ namespace project_ling.Model
 
             cmd.Connection = conexao.conectar();
             dr = cmd.ExecuteReader();
-            cmd.Connection = conexao.desconectar();
+
 
         } 
 

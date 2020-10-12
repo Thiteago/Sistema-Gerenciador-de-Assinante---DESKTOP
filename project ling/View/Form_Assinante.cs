@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace project_ling.View
             //dataGridView1.ColumnCount = 2;
             //dataGridView1.Columns[0].Name = "Id";
             //dataGridView1.Columns[1].Name = "Nome";
+
 
 
         }
@@ -50,7 +52,9 @@ namespace project_ling.View
             Assinante assinante = new Assinante();
             AssinanteDAO buscar = new AssinanteDAO();
             Assinantes = buscar.pesquisa(categoria.Text, boxBusca.Text).ToList();
-            dataGridView1.DataSource = Assinantes;
+            BindingSource bs = new BindingSource();
+            bs.DataSource = Assinantes;
+            dataGridView1.DataSource = bs;
             dataGridView1.Columns["Bairro"].Visible = false;
             dataGridView1.Columns["Cidade"].Visible = false;
             dataGridView1.Columns["Estado"].Visible = false;
@@ -86,6 +90,8 @@ namespace project_ling.View
             numeroEndereco.Text = assinante.NumeroRua.ToString();
             bairroEndereco.Text = assinante.Bairro;
             boxComplemento.Text = assinante.Complemento;
+            boxEstado.Text = assinante.Estado;
+            boxCidade.Text = assinante.Cidade;
 
         }
 
@@ -96,6 +102,26 @@ namespace project_ling.View
             Form_AltAssinante Mostra = new Form_AltAssinante();
             Mostra.Show();
             Mostra.MostrarDados(assinante.Datanascimento, assinante.Cpf, assinante.Profissao, assinante.EstadoCivil, assinante.Sexo, assinante.Email, assinante.Rua, assinante.TipoRua, assinante.NumeroRua.ToString(), assinante.Bairro, assinante.Complemento, assinante.Nome, assinante.Cidade, assinante.Estado, assinante.Telefone,assinante.Id);
+        }
+
+        private void deleteBotao_Click(object sender, EventArgs e)
+        {
+            Assinante assinante = Assinantes[dataGridView1.CurrentCell.RowIndex];
+            AssinanteDAO assinantedel = new AssinanteDAO();
+            DialogResult resposta = MessageBox.Show("Voce realmente deseja deletar o assinante?", "Confirme", MessageBoxButtons.YesNoCancel);
+            if(resposta == DialogResult.Yes)
+            {
+                assinantedel.DeletarAssinante(assinante.Id.ToString());
+            }
+
+            
+
+            dataGridView1.Refresh();
+        }
+
+        private void boxCidade_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

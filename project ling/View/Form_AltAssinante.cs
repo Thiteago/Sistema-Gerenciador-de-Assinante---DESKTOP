@@ -63,6 +63,8 @@ namespace project_ling.View
 
         private void btAlterar_Click(object sender, EventArgs e)
         {
+            Form_Assinante obj = (Form_Assinante)Application.OpenForms["Form_Assinante"];
+
             AssinanteDAO assinante = new AssinanteDAO();
             assinante.AlterarDados(nomeCompleto.Text, Boxdtanasc.Value, cpfBox.Text, txtProfissao.Text, boxEstadoCivil.Text, boxSexo.Text, BoxEmail.Text, ruaBox.Text, boxTipo.Text, numeroBox.Text, BoxBairro.Text, boxComplemento.Text, BoxCidade.Text, BoxEstado.Text, BoxTelefone.Text,boxID.Text);
             
