@@ -28,3 +28,5 @@ C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project ling.exe
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project ling.pdb
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project ling.csproj.CoreCompileInputs.cache
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_AltAssinante.resources
+C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_AdicionarOS.resources
+C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_OS.resources

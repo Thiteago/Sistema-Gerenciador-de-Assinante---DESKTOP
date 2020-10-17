@@ -123,5 +123,19 @@ namespace project_ling.View
         {
 
         }
+
+        private void btOrdens_Click(object sender, EventArgs e)
+        {
+            Form_OS open = new Form_OS();
+            Assinante assinante = Assinantes[dataGridView1.CurrentCell.RowIndex];
+            open.MostrarDados(assinante.Id, assinante.Nome, assinante.TipoRua, assinante.Rua, assinante.NumeroRua, assinante.Complemento);
+
+            open.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

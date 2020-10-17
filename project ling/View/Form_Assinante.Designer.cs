@@ -105,34 +105,36 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox1.Location = new System.Drawing.Point(174, 233);
+            this.pictureBox1.Location = new System.Drawing.Point(174, 259);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(922, 140);
+            this.pictureBox1.Size = new System.Drawing.Size(813, 201);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btContratos
             // 
-            this.btContratos.Location = new System.Drawing.Point(104, 38);
+            this.btContratos.Location = new System.Drawing.Point(192, 227);
             this.btContratos.Name = "btContratos";
-            this.btContratos.Size = new System.Drawing.Size(64, 157);
+            this.btContratos.Size = new System.Drawing.Size(64, 26);
             this.btContratos.TabIndex = 6;
             this.btContratos.Text = "Contratos";
             this.btContratos.UseVisualStyleBackColor = true;
             // 
             // btOrdens
             // 
-            this.btOrdens.Location = new System.Drawing.Point(1119, 39);
+            this.btOrdens.Location = new System.Drawing.Point(267, 227);
             this.btOrdens.Name = "btOrdens";
-            this.btOrdens.Size = new System.Drawing.Size(56, 156);
+            this.btOrdens.Size = new System.Drawing.Size(56, 26);
             this.btOrdens.TabIndex = 7;
-            this.btOrdens.Text = "Ordens de Serviço";
+            this.btOrdens.Text = "O.S";
             this.btOrdens.UseVisualStyleBackColor = true;
+            this.btOrdens.Click += new System.EventHandler(this.btOrdens_Click);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(174, 201);
+            this.pictureBox4.Location = new System.Drawing.Point(885, 227);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(28, 26);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -143,9 +145,9 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(208, 201);
+            this.pictureBox5.Location = new System.Drawing.Point(923, 227);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(32, 26);
+            this.pictureBox5.Size = new System.Drawing.Size(28, 26);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 9;
             this.pictureBox5.TabStop = false;
@@ -154,9 +156,9 @@
             // deleteBotao
             // 
             this.deleteBotao.Image = ((System.Drawing.Image)(resources.GetObject("deleteBotao.Image")));
-            this.deleteBotao.Location = new System.Drawing.Point(246, 201);
+            this.deleteBotao.Location = new System.Drawing.Point(960, 227);
             this.deleteBotao.Name = "deleteBotao";
-            this.deleteBotao.Size = new System.Drawing.Size(26, 26);
+            this.deleteBotao.Size = new System.Drawing.Size(28, 26);
             this.deleteBotao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.deleteBotao.TabIndex = 10;
             this.deleteBotao.TabStop = false;
@@ -164,7 +166,7 @@
             // 
             // boxNascimento
             // 
-            this.boxNascimento.Location = new System.Drawing.Point(267, 283);
+            this.boxNascimento.Location = new System.Drawing.Point(268, 319);
             this.boxNascimento.Name = "boxNascimento";
             this.boxNascimento.Size = new System.Drawing.Size(99, 20);
             this.boxNascimento.TabIndex = 11;
@@ -172,37 +174,37 @@
             // 
             // boxCPF
             // 
-            this.boxCPF.Location = new System.Drawing.Point(266, 255);
+            this.boxCPF.Location = new System.Drawing.Point(267, 291);
             this.boxCPF.Name = "boxCPF";
             this.boxCPF.Size = new System.Drawing.Size(124, 20);
             this.boxCPF.TabIndex = 12;
             // 
             // boxProfissao
             // 
-            this.boxProfissao.Location = new System.Drawing.Point(457, 255);
+            this.boxProfissao.Location = new System.Drawing.Point(458, 291);
             this.boxProfissao.Name = "boxProfissao";
             this.boxProfissao.Size = new System.Drawing.Size(230, 20);
             this.boxProfissao.TabIndex = 13;
             // 
             // boxEstadoCivil
             // 
-            this.boxEstadoCivil.Location = new System.Drawing.Point(266, 308);
+            this.boxEstadoCivil.Location = new System.Drawing.Point(267, 344);
             this.boxEstadoCivil.Name = "boxEstadoCivil";
             this.boxEstadoCivil.Size = new System.Drawing.Size(100, 20);
             this.boxEstadoCivil.TabIndex = 14;
             // 
             // boxSexo
             // 
-            this.boxSexo.Location = new System.Drawing.Point(266, 334);
+            this.boxSexo.Location = new System.Drawing.Point(267, 370);
             this.boxSexo.Name = "boxSexo";
             this.boxSexo.Size = new System.Drawing.Size(100, 20);
             this.boxSexo.TabIndex = 15;
             // 
             // boxEmail
             // 
-            this.boxEmail.Location = new System.Drawing.Point(439, 283);
+            this.boxEmail.Location = new System.Drawing.Point(440, 319);
             this.boxEmail.Name = "boxEmail";
-            this.boxEmail.Size = new System.Drawing.Size(295, 20);
+            this.boxEmail.Size = new System.Drawing.Size(511, 20);
             this.boxEmail.TabIndex = 16;
             // 
             // label1
@@ -210,7 +212,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DimGray;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(197, 283);
+            this.label1.Location = new System.Drawing.Point(198, 319);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 17;
@@ -221,7 +223,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.DimGray;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(201, 255);
+            this.label2.Location = new System.Drawing.Point(202, 291);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 18;
@@ -232,7 +234,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.DimGray;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(401, 258);
+            this.label3.Location = new System.Drawing.Point(402, 294);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 19;
@@ -243,7 +245,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.DimGray;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(193, 311);
+            this.label4.Location = new System.Drawing.Point(194, 347);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 20;
@@ -254,7 +256,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.DimGray;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(229, 337);
+            this.label5.Location = new System.Drawing.Point(230, 373);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 21;
@@ -265,7 +267,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.DimGray;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(401, 283);
+            this.label6.Location = new System.Drawing.Point(402, 319);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 22;
@@ -273,21 +275,21 @@
             // 
             // tipoRua
             // 
-            this.tipoRua.Location = new System.Drawing.Point(439, 308);
+            this.tipoRua.Location = new System.Drawing.Point(440, 344);
             this.tipoRua.Name = "tipoRua";
             this.tipoRua.Size = new System.Drawing.Size(99, 20);
             this.tipoRua.TabIndex = 24;
             // 
             // nomeEndereco
             // 
-            this.nomeEndereco.Location = new System.Drawing.Point(544, 308);
+            this.nomeEndereco.Location = new System.Drawing.Point(545, 344);
             this.nomeEndereco.Name = "nomeEndereco";
             this.nomeEndereco.Size = new System.Drawing.Size(406, 20);
             this.nomeEndereco.TabIndex = 25;
             // 
             // numeroEndereco
             // 
-            this.numeroEndereco.Location = new System.Drawing.Point(1006, 308);
+            this.numeroEndereco.Location = new System.Drawing.Point(440, 396);
             this.numeroEndereco.Name = "numeroEndereco";
             this.numeroEndereco.Size = new System.Drawing.Size(76, 20);
             this.numeroEndereco.TabIndex = 26;
@@ -297,7 +299,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.DimGray;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(380, 311);
+            this.label8.Location = new System.Drawing.Point(381, 347);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 13);
             this.label8.TabIndex = 27;
@@ -308,7 +310,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.DimGray;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(956, 311);
+            this.label9.Location = new System.Drawing.Point(390, 399);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
             this.label9.TabIndex = 28;
@@ -316,7 +318,7 @@
             // 
             // bairroEndereco
             // 
-            this.bairroEndereco.Location = new System.Drawing.Point(439, 334);
+            this.bairroEndereco.Location = new System.Drawing.Point(440, 370);
             this.bairroEndereco.Name = "bairroEndereco";
             this.bairroEndereco.Size = new System.Drawing.Size(174, 20);
             this.bairroEndereco.TabIndex = 29;
@@ -326,7 +328,7 @@
             this.labelBairro.AutoSize = true;
             this.labelBairro.BackColor = System.Drawing.Color.DimGray;
             this.labelBairro.ForeColor = System.Drawing.Color.White;
-            this.labelBairro.Location = new System.Drawing.Point(399, 337);
+            this.labelBairro.Location = new System.Drawing.Point(400, 373);
             this.labelBairro.Name = "labelBairro";
             this.labelBairro.Size = new System.Drawing.Size(34, 13);
             this.labelBairro.TabIndex = 30;
@@ -337,7 +339,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.DimGray;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(629, 337);
+            this.label10.Location = new System.Drawing.Point(522, 399);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 13);
             this.label10.TabIndex = 31;
@@ -345,9 +347,9 @@
             // 
             // boxComplemento
             // 
-            this.boxComplemento.Location = new System.Drawing.Point(706, 334);
+            this.boxComplemento.Location = new System.Drawing.Point(599, 396);
             this.boxComplemento.Name = "boxComplemento";
-            this.boxComplemento.Size = new System.Drawing.Size(376, 20);
+            this.boxComplemento.Size = new System.Drawing.Size(352, 20);
             this.boxComplemento.TabIndex = 32;
             // 
             // button1
@@ -369,7 +371,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(174, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(939, 157);
+            this.dataGridView1.Size = new System.Drawing.Size(813, 183);
             this.dataGridView1.TabIndex = 34;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -379,7 +381,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.DimGray;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(703, 258);
+            this.label7.Location = new System.Drawing.Point(704, 294);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 35;
@@ -387,9 +389,9 @@
             // 
             // boxCidade
             // 
-            this.boxCidade.Location = new System.Drawing.Point(749, 255);
+            this.boxCidade.Location = new System.Drawing.Point(750, 291);
             this.boxCidade.Name = "boxCidade";
-            this.boxCidade.Size = new System.Drawing.Size(333, 20);
+            this.boxCidade.Size = new System.Drawing.Size(201, 20);
             this.boxCidade.TabIndex = 36;
             this.boxCidade.TextChanged += new System.EventHandler(this.boxCidade_TextChanged);
             // 
@@ -398,7 +400,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.DimGray;
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(740, 286);
+            this.label11.Location = new System.Drawing.Point(620, 373);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 13);
             this.label11.TabIndex = 37;
@@ -406,9 +408,9 @@
             // 
             // boxEstado
             // 
-            this.boxEstado.Location = new System.Drawing.Point(780, 283);
+            this.boxEstado.Location = new System.Drawing.Point(666, 370);
             this.boxEstado.Name = "boxEstado";
-            this.boxEstado.Size = new System.Drawing.Size(302, 20);
+            this.boxEstado.Size = new System.Drawing.Size(285, 20);
             this.boxEstado.TabIndex = 38;
             // 
             // Form_Assinante
