@@ -318,6 +318,7 @@
             this.btAlterarOS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btAlterarOS.TabIndex = 28;
             this.btAlterarOS.TabStop = false;
+            this.btAlterarOS.Click += new System.EventHandler(this.btAlterarOS_Click);
             // 
             // btDeletarOS
             // 
@@ -328,6 +329,7 @@
             this.btDeletarOS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btDeletarOS.TabIndex = 29;
             this.btDeletarOS.TabStop = false;
+            this.btDeletarOS.Click += new System.EventHandler(this.btDeletarOS_Click);
             // 
             // Form_OS
             // 

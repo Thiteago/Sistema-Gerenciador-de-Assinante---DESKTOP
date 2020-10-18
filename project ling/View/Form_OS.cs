@@ -49,13 +49,15 @@ namespace project_ling.View
 
         private void Form_OS_Load(object sender, EventArgs e)
         {
-            OrdemDAO source = new OrdemDAO();
+            
             int id = int.Parse(boxCod_Cliente.Text);
-
-            dataGridView2.DataSource = source.MostrarOS(id);
+            OrdemDAO source = new OrdemDAO();
+            Ordem = source.MostrarOS(id).ToList();
+            dataGridView2.DataSource = Ordem;
             dataGridView2.Columns["IdCliente"].Visible = false;
             dataGridView2.Columns["Servico"].Visible = false;
             dataGridView2.Columns["Observacao"].Visible = false;
+            dataGridView2.Columns["Valor"].Visible = false;
 
 
 
@@ -72,11 +74,41 @@ namespace project_ling.View
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
+
             OrdemdeServico ordem = Ordem[dataGridView2.CurrentCell.RowIndex];
 
-            boxServico.Text = ordem.Servico;
-            boxValor.Text = ordem.Valor.ToString();
-            boxObservacoes.Text = ordem.Observacao;
+           boxServico.Text = ordem.Servico;
+           boxValor.Text = ordem.Valor.ToString();
+           boxObservacoes.Text = ordem.Observacao;
+           boxValor.Text = ordem.Valor;
+
+        }
+
+        private void btAlterarOS_Click(object sender, EventArgs e)
+        {
+            OrdemdeServico ordem = Ordem[dataGridView2.CurrentCell.RowIndex];
+
+            Form_AltOS alt = new Form_AltOS();
+            alt.Show();
+            alt.MostrarDados(ordem.IdCliente,boxNome.Text, ordem.Servico,ordem.Observacao,ordem.Valor, ordem.DataAbertura, ordem.NumeroOS);
+        }
+
+        private void btDeletarOS_Click(object sender, EventArgs e)
+        {
+            OrdemdeServico ordem = Ordem[dataGridView2.CurrentCell.RowIndex];
+            OrdemDAO del = new OrdemDAO();
+
+            DialogResult resposta = MessageBox.Show("Voce realmente deseja deletar esta O.S?", "Confirme", MessageBoxButtons.YesNoCancel);
+            if (resposta == DialogResult.Yes)
+            {
+                del.DeletarOS(ordem.NumeroOS);
+            }
+
+
+            
+
+
 
         }
     }

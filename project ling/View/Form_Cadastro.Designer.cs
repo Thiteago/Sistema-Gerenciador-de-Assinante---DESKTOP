@@ -49,6 +49,8 @@
             this.dtaEscolha = new System.Windows.Forms.DateTimePicker();
             this.listaEstado = new System.Windows.Forms.ComboBox();
             this.txtTel = new System.Windows.Forms.MaskedTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.boxCargo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -237,12 +239,30 @@
             this.txtTel.Size = new System.Drawing.Size(199, 20);
             this.txtTel.TabIndex = 27;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(92, 285);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 13);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Cargo";
+            // 
+            // boxCargo
+            // 
+            this.boxCargo.Location = new System.Drawing.Point(139, 282);
+            this.boxCargo.Name = "boxCargo";
+            this.boxCargo.Size = new System.Drawing.Size(200, 20);
+            this.boxCargo.TabIndex = 29;
+            // 
             // Form_Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(691, 344);
+            this.Controls.Add(this.boxCargo);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.listaEstado);
             this.Controls.Add(this.dtaEscolha);
@@ -296,6 +316,8 @@
         private System.Windows.Forms.DateTimePicker dtaEscolha;
         private System.Windows.Forms.ComboBox listaEstado;
         private System.Windows.Forms.MaskedTextBox txtTel;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox boxCargo;
     }
 }
 

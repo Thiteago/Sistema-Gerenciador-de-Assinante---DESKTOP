@@ -30,3 +30,5 @@ C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project ling.csproj.CoreC
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_AltAssinante.resources
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_AdicionarOS.resources
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_OS.resources
+C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_AltOS.resources
+C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_Usuarios.resources

@@ -64,6 +64,7 @@
     <Compile Include="Model\AssinanteDAO.cs" />
     <Compile Include="Model\OrdemDAO.cs" />
     <Compile Include="Model\OrdemdeServico.cs" />
+    <Compile Include="Model\Usuario.cs" />
     <Compile Include="Model\UsuarioDAO.cs" />
     <Compile Include="View\Form_AdicionarOS.cs">
       <SubType>Form</SubType>
@@ -76,6 +77,12 @@
     </Compile>
     <Compile Include="View\Form_AltAssinante.Designer.cs">
       <DependentUpon>Form_AltAssinante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_AltOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_AltOS.Designer.cs">
+      <DependentUpon>Form_AltOS.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Form_Assinante.cs">
       <SubType>Form</SubType>
@@ -115,6 +122,12 @@
     <Compile Include="View\Form_Principal.Designer.cs">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Form_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_Usuarios.Designer.cs">
+      <DependentUpon>Form_Usuarios.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -129,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_AltAssinante.resx">
       <DependentUpon>Form_AltAssinante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_AltOS.resx">
+      <DependentUpon>Form_AltOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_Assinante.resx">
       <DependentUpon>Form_Assinante.cs</DependentUpon>
@@ -147,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_Usuarios.resx">
+      <DependentUpon>Form_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BDLP2DataSet.xsc">
       <DependentUpon>BDLP2DataSet.xsd</DependentUpon>

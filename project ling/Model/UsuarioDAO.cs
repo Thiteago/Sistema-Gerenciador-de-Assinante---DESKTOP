@@ -12,9 +12,54 @@ namespace project_ling.Model
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
+        Usuario aux = new Usuario();
 
         public bool tem = false;
         public String mensagem = "";
+
+        public IEnumerable<Usuario> MostrarUsuarios()
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+
+            cmd.CommandText = "SELECT * FROM Usuario";
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+
+
+                    while (dr.Read())
+                    {
+                        aux = new Usuario();
+                        aux.Nome = dr["nomeCompleto"].ToString();
+                        aux.Nascimento = DateTime.Parse(dr["dataNascimento"].ToString());
+                        aux.Email = dr["email"].ToString();
+                        aux.Telefone = dr["Telefone"].ToString();
+                        aux.Rua = dr["rua"].ToString();
+                        aux.Cidade = dr["cidade"].ToString();
+                        aux.Estado = dr["estado"].ToString();
+                        aux.UsuarioAcesso = dr["usuarioAcesso"].ToString();
+                        aux.SenhaAcesso = dr["senhaAcesso"].ToString();
+                        aux.Cargo1 = dr["Cargo"].ToString();
+
+                        usuarios.Add(aux);
+
+
+                    }
+                    dr.Close();
+                }
+            }
+            catch (SqlException e)
+            {
+                this.mensagem = "Erro com Banco de Dados!";
+            }
+            return usuarios;
+        }
+
 
         public bool verificarLogin(string usuario, string senha)
         {

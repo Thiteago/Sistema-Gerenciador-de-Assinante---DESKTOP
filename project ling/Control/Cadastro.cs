@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using project_ling.Model;
 
 namespace project_ling
 {
@@ -11,15 +12,20 @@ namespace project_ling
     {
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
-        public String msg = "";
+        Usuario usuario = new Usuario();
+        Usuario aux = new Usuario();
+        public String mensagem = "";
+
+
+
         public Cadastro(string nome, string dataNascimento, string email, string telefone, 
-                        string rua, string cidade, string estado, string nomeAcesso, string senha)
+                        string rua, string cidade, string estado, string nomeAcesso, string senha, string cargo)
         {
             //Comando SQL - Insert, update, delete
             cmd.CommandText = "insert into Usuario (nomeCompleto, dataNascimento, email, " +
-                              "telefone, rua, cidade, estado, usuarioAcesso, senhaAcesso) " +
+                              "telefone, rua, cidade, estado, usuarioAcesso, senhaAcesso, Cargo) " +
                               "values( @nomeCompleto, @dataNascimento, @email, " +
-                              "@telefone, @rua, @cidade, @estado, @usuarioAcesso, @senhaAcesso)";
+                              "@telefone, @rua, @cidade, @estado, @usuarioAcesso, @senhaAcesso, @cargo)";
             //Parametros
             cmd.Parameters.AddWithValue("@nomeCompleto", nome);
             cmd.Parameters.AddWithValue("@dataNascimento", dataNascimento);
@@ -30,6 +36,7 @@ namespace project_ling
             cmd.Parameters.AddWithValue("@estado", estado);
             cmd.Parameters.AddWithValue("@usuarioAcesso", nomeAcesso);
             cmd.Parameters.AddWithValue("@senhaAcesso", senha);
+            cmd.Parameters.AddWithValue("@cargo", cargo);
             //Conectar Banco
             try
             {
@@ -40,12 +47,12 @@ namespace project_ling
                 //desconectar
                 conexao.desconectar();
                 //mostrar mensagem
-                this.msg = "Cadastrado com Sucesso!";
+                this.mensagem = "Cadastrado com Sucesso!";
             }
 
             catch (SqlException ex)
             {
-                this.msg = ex.ToString();
+                this.mensagem = ex.ToString();
             }
 
 

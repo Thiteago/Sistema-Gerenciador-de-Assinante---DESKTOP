@@ -48,6 +48,7 @@ namespace project_ling.View
             int cod = int.Parse(boxCod_Cliente.Text);
             DateTime data = DateTime.Parse(boxData.Text);
             float valor = float.Parse(boxValor.Text);
+
             gravar.AdicionarOS(cod, comboServico.Text, boxObservacao.Text, data, valor);
             Close();
         }

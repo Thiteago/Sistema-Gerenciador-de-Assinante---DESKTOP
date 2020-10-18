@@ -63,5 +63,11 @@ namespace project_ling.View
         {
 
         }
+
+        private void btUsuarios_Click(object sender, EventArgs e)
+        {
+            Form_Usuarios open = new Form_Usuarios();
+            open.Show();
+        }
     }
 }

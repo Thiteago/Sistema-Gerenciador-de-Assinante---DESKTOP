@@ -157,6 +157,7 @@
             // 
             this.boxData.Location = new System.Drawing.Point(665, 407);
             this.boxData.Name = "boxData";
+            this.boxData.ReadOnly = true;
             this.boxData.Size = new System.Drawing.Size(100, 20);
             this.boxData.TabIndex = 10;
             this.boxData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

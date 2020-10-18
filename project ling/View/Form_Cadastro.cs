@@ -59,8 +59,8 @@ namespace project_ling
                 string datanasc = dtaEscolha.Value.ToString();
                 Cadastro cad = new Cadastro(txtNome.Text, datanasc, txtEmail.Text, txtTel.Text,
                                             txtRua.Text, txtCidade.Text, listaEstado.Text, txtUsuario.Text,
-                                            txtSenha.Text);
-                MessageBox.Show(cad.msg);
+                                            txtSenha.Text, boxCargo.Text);
+                MessageBox.Show(cad.mensagem);
                 this.Close();
             }
 
