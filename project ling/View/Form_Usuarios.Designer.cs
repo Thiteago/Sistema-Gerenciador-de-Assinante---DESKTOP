@@ -30,9 +30,9 @@
         {
             this.btSair = new System.Windows.Forms.Button();
             this.listViewUsuarios = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
             this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Cargo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btSair
@@ -62,6 +62,16 @@
             this.listViewUsuarios.View = System.Windows.Forms.View.Details;
             this.listViewUsuarios.SelectedIndexChanged += new System.EventHandler(this.listViewUsuarios_SelectedIndexChanged);
             // 
+            // Nome
+            // 
+            this.Nome.Text = "Nome";
+            this.Nome.Width = 150;
+            // 
+            // Cargo
+            // 
+            this.Cargo.Text = "Cargo";
+            this.Cargo.Width = 150;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -72,16 +82,6 @@
             this.label1.Size = new System.Drawing.Size(169, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Lista de Usuarios";
-            // 
-            // Nome
-            // 
-            this.Nome.Text = "Nome";
-            this.Nome.Width = 150;
-            // 
-            // Cargo
-            // 
-            this.Cargo.Text = "Cargo";
-            this.Cargo.Width = 150;
             // 
             // Form_Usuarios
             // 

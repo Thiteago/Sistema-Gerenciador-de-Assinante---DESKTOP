@@ -18,7 +18,7 @@ namespace project_ling.Model
         private string estado;
         private string usuarioAcesso;
         private string senhaAcesso;
-        private string Cargo;
+        private string cargo;
 
         public string Nome { get => nome; set => nome = value; }
         public DateTime Nascimento { get => nascimento; set => nascimento = value; }
@@ -29,6 +29,6 @@ namespace project_ling.Model
         public string Estado { get => estado; set => estado = value; }
         public string UsuarioAcesso { get => usuarioAcesso; set => usuarioAcesso = value; }
         public string SenhaAcesso { get => senhaAcesso; set => senhaAcesso = value; }
-        public string Cargo1 { get => Cargo; set => Cargo = value; }
+        public string Cargo { get => cargo; set => cargo = value; }
     }
 }

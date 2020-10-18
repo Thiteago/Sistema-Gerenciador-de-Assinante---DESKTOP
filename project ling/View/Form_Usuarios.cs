@@ -31,12 +31,14 @@ namespace project_ling.View
             UsuarioDAO usuario = new UsuarioDAO();
             usuarios = usuario.MostrarUsuarios().ToList();
 
-
+            
            foreach(var item in usuarios)
             {
-                listViewUsuarios.Items.Add(new ListViewItem(new string[] { item.Nome}));
-               
-               
+                ListViewItem lv1 = new ListViewItem(item.Nome);
+                lv1.SubItems.Add(item.Cargo);
+
+                listViewUsuarios.Items.Add(lv1);
+                    
             }
 
           

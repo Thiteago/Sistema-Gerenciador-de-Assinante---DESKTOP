@@ -44,7 +44,7 @@ namespace project_ling.Model
                         aux.Estado = dr["estado"].ToString();
                         aux.UsuarioAcesso = dr["usuarioAcesso"].ToString();
                         aux.SenhaAcesso = dr["senhaAcesso"].ToString();
-                        aux.Cargo1 = dr["Cargo"].ToString();
+                        aux.Cargo = dr["Cargo"].ToString();
 
                         usuarios.Add(aux);
 
