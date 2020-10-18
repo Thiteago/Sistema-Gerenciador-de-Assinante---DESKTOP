@@ -19,13 +19,13 @@ namespace project_ling
 
 
         public Cadastro(string nome, string dataNascimento, string email, string telefone, 
-                        string rua, string cidade, string estado, string nomeAcesso, string senha, string cargo)
+                        string rua, string cidade, string estado, string nomeAcesso, string senha, string cargo, string sexo)
         {
             //Comando SQL - Insert, update, delete
             cmd.CommandText = "insert into Usuario (nomeCompleto, dataNascimento, email, " +
-                              "telefone, rua, cidade, estado, usuarioAcesso, senhaAcesso, Cargo) " +
+                              "telefone, rua, cidade, estado, usuarioAcesso, senhaAcesso, Cargo,Sexo) " +
                               "values( @nomeCompleto, @dataNascimento, @email, " +
-                              "@telefone, @rua, @cidade, @estado, @usuarioAcesso, @senhaAcesso, @cargo)";
+                              "@telefone, @rua, @cidade, @estado, @usuarioAcesso, @senhaAcesso, @cargo, @sexo)";
             //Parametros
             cmd.Parameters.AddWithValue("@nomeCompleto", nome);
             cmd.Parameters.AddWithValue("@dataNascimento", dataNascimento);
@@ -37,6 +37,7 @@ namespace project_ling
             cmd.Parameters.AddWithValue("@usuarioAcesso", nomeAcesso);
             cmd.Parameters.AddWithValue("@senhaAcesso", senha);
             cmd.Parameters.AddWithValue("@cargo", cargo);
+            cmd.Parameters.AddWithValue("@sexo", sexo);
             //Conectar Banco
             try
             {

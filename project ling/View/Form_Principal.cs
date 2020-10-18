@@ -69,5 +69,28 @@ namespace project_ling.View
             Form_Usuarios open = new Form_Usuarios();
             open.Show();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void adicionarNovoAssinanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_CadAssinante open = new Form_CadAssinante();
+
+            open.Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Usuarios open = new Form_Usuarios();
+            open.Show();
+        }
     }
 }

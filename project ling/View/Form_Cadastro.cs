@@ -54,12 +54,20 @@ namespace project_ling
             {
                 MessageBox.Show("O Campo Senha deve ser preenchido!");
             }
-            else
+            else if(radioButton1.Checked == true)
             {
                 string datanasc = dtaEscolha.Value.ToString();
                 Cadastro cad = new Cadastro(txtNome.Text, datanasc, txtEmail.Text, txtTel.Text,
                                             txtRua.Text, txtCidade.Text, listaEstado.Text, txtUsuario.Text,
-                                            txtSenha.Text, boxCargo.Text);
+                                            txtSenha.Text, boxCargo.Text, radioButton1.Text);
+                MessageBox.Show(cad.mensagem);
+                this.Close();
+            }else if(radioButton2.Checked == true)
+            {
+                string datanasc = dtaEscolha.Value.ToString();
+                Cadastro cad = new Cadastro(txtNome.Text, datanasc, txtEmail.Text, txtTel.Text,
+                                            txtRua.Text, txtCidade.Text, listaEstado.Text, txtUsuario.Text,
+                                            txtSenha.Text, boxCargo.Text, radioButton2.Text);
                 MessageBox.Show(cad.mensagem);
                 this.Close();
             }

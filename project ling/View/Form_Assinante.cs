@@ -137,5 +137,12 @@ namespace project_ling.View
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Assinante assinante = Assinantes[dataGridView1.CurrentCell.RowIndex];
+            Form_Pacotes pac = new Form_Pacotes();
+            pac.Show();
+        }
     }
 }

@@ -16,6 +16,45 @@ namespace project_ling.Model
         SqlDataReader dr;
         public String mensagem = "";
         Assinante cliente = new Assinante();
+        Pacotes aux = new Pacotes();
+
+        public IEnumerable<Pacotes> ListarPacotes()
+        {
+            List<Pacotes> pacotes = new List<Pacotes>();
+
+            cmd.CommandText = "SELECT * FROM Pacotes";
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+
+
+                    while (dr.Read())
+                    {
+                        aux = new Pacotes();
+                        aux.Cod_pacote = int.Parse(dr["Cod_Pacote"].ToString());
+                        aux.Nome_pacote = dr["Nome"].ToString();
+                        aux.Valor_pacote = dr["Valor"].ToString();
+    
+                        pacotes.Add(aux);
+
+
+                    }
+                    dr.Close();
+                }
+            }catch (SqlException e) { 
+            
+                this.mensagem = "Erro com Banco de Dados!";
+
+            }
+
+            return pacotes;
+        }
+
+
 
         public void DeletarAssinante(string ID)
         {

@@ -65,6 +65,7 @@
             this.boxCidade = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.boxEstado = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -123,9 +124,9 @@
             // 
             // btOrdens
             // 
-            this.btOrdens.Location = new System.Drawing.Point(267, 227);
+            this.btOrdens.Location = new System.Drawing.Point(262, 227);
             this.btOrdens.Name = "btOrdens";
-            this.btOrdens.Size = new System.Drawing.Size(56, 26);
+            this.btOrdens.Size = new System.Drawing.Size(64, 26);
             this.btOrdens.TabIndex = 7;
             this.btOrdens.Text = "O.S";
             this.btOrdens.UseVisualStyleBackColor = true;
@@ -413,12 +414,23 @@
             this.boxEstado.Size = new System.Drawing.Size(285, 20);
             this.boxEstado.TabIndex = 38;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(332, 227);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(64, 26);
+            this.button2.TabIndex = 39;
+            this.button2.Text = "Pacotes";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form_Assinante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1187, 508);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.boxEstado);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.boxCidade);
@@ -506,5 +518,6 @@
         private System.Windows.Forms.TextBox boxCidade;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox boxEstado;
+        private System.Windows.Forms.Button button2;
     }
 }

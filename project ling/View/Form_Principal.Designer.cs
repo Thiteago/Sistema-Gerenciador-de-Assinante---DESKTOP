@@ -36,15 +36,20 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.btUsuarios = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.assinantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adicionarNovoAssinanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(758, 12);
+            this.button1.Location = new System.Drawing.Point(769, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -118,15 +123,48 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btUsuarios
+            // menuStrip1
             // 
-            this.btUsuarios.Location = new System.Drawing.Point(12, 12);
-            this.btUsuarios.Name = "btUsuarios";
-            this.btUsuarios.Size = new System.Drawing.Size(75, 23);
-            this.btUsuarios.TabIndex = 10;
-            this.btUsuarios.Text = "Usuarios";
-            this.btUsuarios.UseVisualStyleBackColor = true;
-            this.btUsuarios.Click += new System.EventHandler(this.btUsuarios_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.assinantesToolStripMenuItem,
+            this.usuariosToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(856, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // assinantesToolStripMenuItem
+            // 
+            this.assinantesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adicionarNovoAssinanteToolStripMenuItem});
+            this.assinantesToolStripMenuItem.Name = "assinantesToolStripMenuItem";
+            this.assinantesToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.assinantesToolStripMenuItem.Text = "Assinantes";
+            // 
+            // adicionarNovoAssinanteToolStripMenuItem
+            // 
+            this.adicionarNovoAssinanteToolStripMenuItem.Name = "adicionarNovoAssinanteToolStripMenuItem";
+            this.adicionarNovoAssinanteToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.adicionarNovoAssinanteToolStripMenuItem.Text = "Adicionar Novo Assinante";
+            this.adicionarNovoAssinanteToolStripMenuItem.Click += new System.EventHandler(this.adicionarNovoAssinanteToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaDeUsuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
+            // listaDeUsuariosToolStripMenuItem
+            // 
+            this.listaDeUsuariosToolStripMenuItem.Name = "listaDeUsuariosToolStripMenuItem";
+            this.listaDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaDeUsuariosToolStripMenuItem.Text = "Lista de Usuarios";
+            this.listaDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.listaDeUsuariosToolStripMenuItem_Click);
             // 
             // Form_Principal
             // 
@@ -135,7 +173,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(856, 493);
-            this.Controls.Add(this.btUsuarios);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox2);
@@ -143,6 +180,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btAssinante);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Principal";
@@ -150,7 +189,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -163,6 +205,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btUsuarios;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem assinantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adicionarNovoAssinanteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDeUsuariosToolStripMenuItem;
     }
 }
