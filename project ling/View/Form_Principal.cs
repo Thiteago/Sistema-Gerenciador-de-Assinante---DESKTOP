@@ -44,9 +44,7 @@ namespace project_ling.View
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form_Assinante ass = new Form_Assinante();
-            ass.Show();
-            this.Hide();
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -91,6 +89,20 @@ namespace project_ling.View
         {
             Form_Usuarios open = new Form_Usuarios();
             open.Show();
+        }
+
+        private void gerenciarAssinantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Assinante ass = new Form_Assinante();
+            ass.Show();
+            this.Hide();
+        }
+
+        private void ordensEmPendenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Relatorio opn = new Form_Relatorio();
+
+            opn.Show();
         }
     }
 }

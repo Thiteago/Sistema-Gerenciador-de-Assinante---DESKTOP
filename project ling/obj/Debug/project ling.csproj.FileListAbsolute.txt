@@ -34,3 +34,4 @@ C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_Al
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_Usuarios.resources
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_Pacotes.resources
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_Splash.resources
+C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_Relatorio.resources

@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
+
 namespace project_ling.Model
 {
     class OrdemDAO
     {
+        
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
@@ -16,8 +18,54 @@ namespace project_ling.Model
         OrdemdeServico ordem = new OrdemdeServico();
         OrdemdeServico aux = new OrdemdeServico();
 
+        public IEnumerable<OrdemdeServico> MostrarPendentes()
+        {
+            List<OrdemdeServico> ordens = new List<OrdemdeServico>();
+            cmd.CommandText = "SELECT * FROM Ordem_de_Servico INNER JOIN Assinante ON Ordem_de_Servico.ID_Cliente = Assinante.ID";
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+
+
+                    while (dr.Read())
+                    {
+                        aux = new OrdemdeServico();
+                        aux.NumeroOS = int.Parse(dr["numeroOS"].ToString());
+                        aux.DataAbertura = DateTime.Parse(dr["data_abertura"].ToString());
+                        aux.IdCliente = int.Parse(dr["ID_Cliente"].ToString());
+                        aux.Servico = dr["servico"].ToString();
+                        aux.Observacao = dr["Observacao"].ToString();
+                        aux.Valor = dr["Valor"].ToString();
+                        aux.Situacao = dr["Situacao"].ToString();
+                        aux.Nome = dr["Nome"].ToString();
+                        
+
+                        ordens.Add(aux);
+
+
+                    }
+                    dr.Close();
+                }
+            }
+            catch (SqlException e)
+            {
+                this.mensagem = "Erro com Banco de Dados!";
+            }
+
+            return ordens;
+        }
+
+
+
+
         public void DeletarOS(int NumOS)
         {
+ 
             cmd.CommandText = @"DELETE FROM Ordem_de_Servico WHERE numeroOS = @os";
             cmd.Parameters.AddWithValue("@os", NumOS);
 
@@ -47,17 +95,23 @@ namespace project_ling.Model
 
         public void AdicionarOS(int ID, string servico, string observacao, DateTime data_abertura, float valor)
         {
-            cmd.CommandText = "INSERT INTO Ordem_de_Servico (data_abertura,ID_Cliente, servico, Observacao, Valor)" +
-                              "VALUES(@DataAbertura, @ID, @Servico, @Observacao, @Valor)";
+            string pendente = "Pendente";
+            cmd.CommandText = "INSERT INTO Ordem_de_Servico (data_abertura,ID_Cliente, servico, Observacao, Valor, Situacao)" +
+                              "VALUES(@DataAbertura, @ID, @Servico, @Observacao, @Valor, @situation)";
 
             cmd.Parameters.AddWithValue("@DataAbertura", data_abertura);
             cmd.Parameters.AddWithValue("@ID", ID);
             cmd.Parameters.AddWithValue("@Servico", servico);
             cmd.Parameters.AddWithValue("@Observacao", observacao);
             cmd.Parameters.AddWithValue("@Valor", valor);
+            cmd.Parameters.AddWithValue("@situation", pendente);
 
             cmd.Connection = conexao.conectar();
             dr = cmd.ExecuteReader();
+
+
+
+
         }
 
         public IEnumerable<OrdemdeServico> MostrarOS(int id)
@@ -85,6 +139,7 @@ namespace project_ling.Model
                         aux.Servico = dr["servico"].ToString();
                         aux.Observacao = dr["Observacao"].ToString();
                         aux.Valor = dr["Valor"].ToString();
+                        aux.Situacao = dr["Situacao"].ToString();
 
                         ordem.Add(aux);
 

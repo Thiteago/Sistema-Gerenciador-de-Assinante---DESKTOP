@@ -58,9 +58,7 @@ namespace project_ling.View
             dataGridView2.Columns["Servico"].Visible = false;
             dataGridView2.Columns["Observacao"].Visible = false;
             dataGridView2.Columns["Valor"].Visible = false;
-
-
-
+            dataGridView2.Columns["Nome"].Visible = false;
 
         }
 

@@ -165,14 +165,14 @@
             this.txtUsuario.Location = new System.Drawing.Point(442, 138);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(200, 20);
-            this.txtUsuario.TabIndex = 16;
+            this.txtUsuario.TabIndex = 11;
             // 
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(442, 190);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(200, 20);
-            this.txtSenha.TabIndex = 17;
+            this.txtSenha.TabIndex = 12;
             this.txtSenha.UseSystemPasswordChar = true;
             this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
@@ -199,7 +199,7 @@
             this.botao_Voltar.Location = new System.Drawing.Point(12, 12);
             this.botao_Voltar.Name = "botao_Voltar";
             this.botao_Voltar.Size = new System.Drawing.Size(75, 23);
-            this.botao_Voltar.TabIndex = 20;
+            this.botao_Voltar.TabIndex = 14;
             this.botao_Voltar.Text = "Voltar";
             this.botao_Voltar.UseVisualStyleBackColor = true;
             this.botao_Voltar.Click += new System.EventHandler(this.btVoltar_Click);
@@ -209,7 +209,7 @@
             this.btCadastrar.Location = new System.Drawing.Point(505, 232);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btCadastrar.TabIndex = 21;
+            this.btCadastrar.TabIndex = 13;
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
             this.btCadastrar.Click += new System.EventHandler(this.bot_Cadastrar);
@@ -234,7 +234,7 @@
             this.listaEstado.Location = new System.Drawing.Point(139, 249);
             this.listaEstado.Name = "listaEstado";
             this.listaEstado.Size = new System.Drawing.Size(199, 21);
-            this.listaEstado.TabIndex = 26;
+            this.listaEstado.TabIndex = 7;
             // 
             // txtTel
             // 
@@ -242,7 +242,7 @@
             this.txtTel.Mask = "(##)#########";
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(199, 20);
-            this.txtTel.TabIndex = 27;
+            this.txtTel.TabIndex = 4;
             // 
             // label11
             // 
@@ -258,7 +258,7 @@
             this.boxCargo.Location = new System.Drawing.Point(139, 276);
             this.boxCargo.Name = "boxCargo";
             this.boxCargo.Size = new System.Drawing.Size(200, 20);
-            this.boxCargo.TabIndex = 29;
+            this.boxCargo.TabIndex = 8;
             // 
             // radioButton1
             // 
@@ -266,7 +266,7 @@
             this.radioButton1.Location = new System.Drawing.Point(12, 15);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(73, 17);
-            this.radioButton1.TabIndex = 30;
+            this.radioButton1.TabIndex = 9;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Masculino";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -277,7 +277,7 @@
             this.radioButton2.Location = new System.Drawing.Point(90, 15);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(67, 17);
-            this.radioButton2.TabIndex = 31;
+            this.radioButton2.TabIndex = 10;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Feminino";
             this.radioButton2.UseVisualStyleBackColor = true;

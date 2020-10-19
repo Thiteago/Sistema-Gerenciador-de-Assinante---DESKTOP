@@ -129,6 +129,18 @@
     <Compile Include="View\Form_Principal.Designer.cs">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Form_Relatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_Relatorio.Designer.cs">
+      <DependentUpon>Form_Relatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_RelatorioPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_RelatorioPeriodo.Designer.cs">
+      <DependentUpon>Form_RelatorioPeriodo.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form_Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_Relatorio.resx">
+      <DependentUpon>Form_Relatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_RelatorioPeriodo.resx">
+      <DependentUpon>Form_RelatorioPeriodo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_Splash.resx">
       <DependentUpon>Form_Splash.cs</DependentUpon>
