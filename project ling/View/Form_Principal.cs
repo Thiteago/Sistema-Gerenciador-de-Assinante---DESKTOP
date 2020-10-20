@@ -104,5 +104,12 @@ namespace project_ling.View
 
             opn.Show();
         }
+
+        private void ordensPorPeríodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_RelatorioPeriodo form = new Form_RelatorioPeriodo();
+
+            form.Show();
+        }
     }
 }

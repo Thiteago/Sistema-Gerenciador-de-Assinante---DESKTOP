@@ -79,7 +79,7 @@ namespace project_ling.View
            boxServico.Text = ordem.Servico;
            boxValor.Text = ordem.Valor.ToString();
            boxObservacoes.Text = ordem.Observacao;
-           boxValor.Text = ordem.Valor;
+           boxValor.Text = ordem.Valor.ToString();
 
         }
 
@@ -89,7 +89,7 @@ namespace project_ling.View
 
             Form_AltOS alt = new Form_AltOS();
             alt.Show();
-            alt.MostrarDados(ordem.IdCliente,boxNome.Text, ordem.Servico,ordem.Observacao,ordem.Valor, ordem.DataAbertura, ordem.NumeroOS);
+            alt.MostrarDados(ordem.IdCliente,boxNome.Text, ordem.Servico,ordem.Observacao,ordem.Valor.ToString(), ordem.DataAbertura, ordem.NumeroOS);
         }
 
         private void btDeletarOS_Click(object sender, EventArgs e)

@@ -125,6 +125,7 @@
             this.ordensPorPeríodoToolStripMenuItem.Name = "ordensPorPeríodoToolStripMenuItem";
             this.ordensPorPeríodoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.ordensPorPeríodoToolStripMenuItem.Text = "Ordens por período";
+            this.ordensPorPeríodoToolStripMenuItem.Click += new System.EventHandler(this.ordensPorPeríodoToolStripMenuItem_Click);
             // 
             // Form_Principal
             // 
