@@ -14,7 +14,6 @@ namespace project_ling.Model
         private int idCliente;
         private string servico;
         private string observacao;
-        private float valor;
         private string situacao;
         private string nome;
 
@@ -25,7 +24,6 @@ namespace project_ling.Model
         public int IdCliente { get => idCliente; set => idCliente = value; }
         public string Servico { get => servico; set => servico = value; }
         public string Observacao { get => observacao; set => observacao = value; }
-        public float Valor { get => valor; set => valor = value; }
         public string Situacao { get => situacao; set => situacao = value; }
         public string Nome { get => nome; set => nome = value; }
     }

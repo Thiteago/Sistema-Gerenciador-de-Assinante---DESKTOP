@@ -18,13 +18,12 @@ namespace project_ling.View
             InitializeComponent();
         }
 
-        public void MostrarDados(int Id, string nome, string servico, string observacao, string valor, DateTime dataabertura, int numOS)
+        public void MostrarDados(int Id, string nome, string servico, string observacao, DateTime dataabertura, int numOS)
         {
             boxCod_Cliente.Text = Id.ToString();
             boxNome.Text = nome;
             comboServico.Text = servico;
             boxObservacao.Text = observacao;
-            boxValor.Text = valor;
             boxData.Text = dataabertura.ToString("d");
             boxNumOS.Text = numOS.ToString();
         }

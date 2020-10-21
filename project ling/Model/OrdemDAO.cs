@@ -24,63 +24,47 @@ namespace project_ling.Model
         {
             List<OrdemdeServico> ordens = new List<OrdemdeServico>();
 
-                cmd.CommandText = "SELECT numeroOS, data_abertura, data_execucao, ID_Cliente, servico,situacao, Nome " +
-                                  "FROM Ordem_de_Servico " +
-                                  "INNER JOIN Assinante ON Ordem_de_Servico.ID_Cliente = Assinante.ID " +
-                                  "WHERE Situacao = @sit AND  data_abertura >= @dtaAB AND data_abertura <= @dtaFEC";
+            cmd.CommandText = "SELECT numeroOS, data_abertura, data_execucao, ID_Cliente, servico,situacao, Nome " +
+                              "FROM Ordem_de_Servico " +
+                              "INNER JOIN Assinante ON Ordem_de_Servico.ID_Cliente = Assinante.ID " +
+                              "WHERE Situacao = @sit AND  data_abertura >= @dtaAB AND data_abertura <= @dtaFEC";
 
-                cmd.Parameters.AddWithValue("@sit", situacao);
-                cmd.Parameters.AddWithValue("@dtaAB", desde.ToString("dd/MM/yyyy"));
-                cmd.Parameters.AddWithValue("@dtaFEC", Ate.ToString("dd/MM/yyyy"));
- 
+            cmd.Parameters.AddWithValue("@sit", situacao);
+            cmd.Parameters.AddWithValue("@dtaAB", desde.ToString("dd/MM/yyyy"));
+            cmd.Parameters.AddWithValue("@dtaFEC", Ate.ToString("dd/MM/yyyy"));
 
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
 
-            try
+            if (dr.HasRows)
             {
-                cmd.Connection = conexao.conectar();
-                dr = cmd.ExecuteReader();
-
-                if (dr.HasRows)
+                while (dr.Read())
                 {
-                    while (dr.Read())
+                    string teste;
+                    aux = new OrdemdeServico();
+                    aux.NumeroOS = int.Parse(dr["numeroOS"].ToString());
+                    aux.DataAbertura = DateTime.Parse(dr["data_abertura"].ToString());
+                    aux.IdCliente = int.Parse(dr["ID_Cliente"].ToString());
+                    aux.Situacao = dr["Situacao"].ToString();
+                    aux.Nome = dr["Nome"].ToString();
+                    teste = dr["servico"].ToString();
+                    foreach (var item in TipoOrdem)
                     {
-                        aux = new OrdemdeServico();
-                        aux.NumeroOS = int.Parse(dr["numeroOS"].ToString());
-                        aux.DataAbertura = DateTime.Parse(dr["data_abertura"].ToString());
-                        aux.IdCliente = int.Parse(dr["ID_Cliente"].ToString());
-                        aux.Valor = float.Parse(dr["Valor"].ToString());
-                        aux.Situacao = dr["Situacao"].ToString();
-                        aux.Nome = dr["Nome"].ToString();
-                        aux.Observacao = dr["Observacao"].ToString();
-                        foreach (var item in TipoOrdem)
+                        if (item == teste)
                         {
-                            if (item == dr["servico"].ToString())
-                            {
-                                aux.Servico = dr["servico"].ToString();
-                            }
+                            aux.Servico = dr["servico"].ToString();
+                            ordens.Add(aux);
                         }
-                        ordens.Add(aux);
 
                     }
-                    dr.Close();
+                    
+
                 }
+                dr.Close();
             }
-            catch (SqlException ex)
-            {
-                StringBuilder errorMessages = new StringBuilder();
-                for (int i = 0; i < ex.Errors.Count; i++)
-                {
-                    errorMessages.Append("Index #" + i + "\n" +
-                        "Message: " + ex.Errors[i].Message + "\n" +
-                        "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
-                        "Source: " + ex.Errors[i].Source + "\n" +
-                        "Procedure: " + ex.Errors[i].Procedure + "\n");
-                }
-                Console.WriteLine(errorMessages.ToString());
-            }
-            Console.WriteLine(aux.NumeroOS);
-        return ordens;
-    }
+            return ordens;
+        }
+         
 
         
 
@@ -106,7 +90,6 @@ namespace project_ling.Model
                         aux.IdCliente = int.Parse(dr["ID_Cliente"].ToString());
                         aux.Servico = dr["servico"].ToString();
                         aux.Observacao = dr["Observacao"].ToString();
-                        aux.Valor = float.Parse(dr["Valor"].ToString());
                         aux.Situacao = dr["Situacao"].ToString();
                         aux.Nome = dr["Nome"].ToString();
                         
@@ -159,17 +142,17 @@ namespace project_ling.Model
 
         }
 
-        public void AdicionarOS(int ID, string servico, string observacao, DateTime data_abertura, float valor)
+        public void AdicionarOS(int ID, string servico, string observacao, DateTime data_abertura)
         {
             string pendente = "Pendente";
-            cmd.CommandText = "INSERT INTO Ordem_de_Servico (data_abertura,ID_Cliente, servico, Observacao, Valor, Situacao)" +
-                              "VALUES(@DataAbertura, @ID, @Servico, @Observacao, @Valor, @situation)";
+            cmd.CommandText = "INSERT INTO Ordem_de_Servico (data_abertura,ID_Cliente, servico, Observacao, Situacao)" +
+                              "VALUES(@DataAbertura, @ID, @Servico, @Observacao, @situation)";
 
             cmd.Parameters.AddWithValue("@DataAbertura", data_abertura);
             cmd.Parameters.AddWithValue("@ID", ID);
             cmd.Parameters.AddWithValue("@Servico", servico);
             cmd.Parameters.AddWithValue("@Observacao", observacao);
-            cmd.Parameters.AddWithValue("@Valor", valor);
+
             cmd.Parameters.AddWithValue("@situation", pendente);
 
             cmd.Connection = conexao.conectar();
@@ -204,7 +187,6 @@ namespace project_ling.Model
                         aux.IdCliente = int.Parse(dr["ID_Cliente"].ToString());
                         aux.Servico = dr["servico"].ToString();
                         aux.Observacao = dr["Observacao"].ToString();
-                        aux.Valor = float.Parse(dr["Valor"].ToString());
                         aux.Situacao = dr["Situacao"].ToString();
 
                         ordem.Add(aux);

@@ -58,7 +58,7 @@ namespace project_ling.View
             }
             
 
-            gravar.AdicionarOS(cod, comboServico.Text, boxObservacao.Text, data, valor);
+            gravar.AdicionarOS(cod, comboServico.Text, boxObservacao.Text, data);
             Close();
         }
     }

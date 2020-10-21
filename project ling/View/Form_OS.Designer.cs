@@ -245,6 +245,7 @@
             this.boxValor.Name = "boxValor";
             this.boxValor.Size = new System.Drawing.Size(100, 20);
             this.boxValor.TabIndex = 20;
+            this.boxValor.Text = "0";
             // 
             // lbRecorrencia
             // 

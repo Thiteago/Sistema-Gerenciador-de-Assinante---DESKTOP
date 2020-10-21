@@ -57,7 +57,6 @@ namespace project_ling.View
             dataGridView2.Columns["IdCliente"].Visible = false;
             dataGridView2.Columns["Servico"].Visible = false;
             dataGridView2.Columns["Observacao"].Visible = false;
-            dataGridView2.Columns["Valor"].Visible = false;
             dataGridView2.Columns["Nome"].Visible = false;
 
         }
@@ -77,9 +76,7 @@ namespace project_ling.View
             OrdemdeServico ordem = Ordem[dataGridView2.CurrentCell.RowIndex];
 
            boxServico.Text = ordem.Servico;
-           boxValor.Text = ordem.Valor.ToString();
            boxObservacoes.Text = ordem.Observacao;
-           boxValor.Text = ordem.Valor.ToString();
 
         }
 
@@ -89,7 +86,7 @@ namespace project_ling.View
 
             Form_AltOS alt = new Form_AltOS();
             alt.Show();
-            alt.MostrarDados(ordem.IdCliente,boxNome.Text, ordem.Servico,ordem.Observacao,ordem.Valor.ToString(), ordem.DataAbertura, ordem.NumeroOS);
+            alt.MostrarDados(ordem.IdCliente,boxNome.Text, ordem.Servico,ordem.Observacao, ordem.DataAbertura, ordem.NumeroOS);
         }
 
         private void btDeletarOS_Click(object sender, EventArgs e)
