@@ -106,5 +106,14 @@ namespace project_ling.View
 
 
         }
+
+        private void picBaixar_Click(object sender, EventArgs e)
+        {
+            OrdemdeServico ordem = Ordem[dataGridView2.CurrentCell.RowIndex];
+            OrdemDAO baix = new OrdemDAO();
+
+            baix.BaixarOS(ordem.NumeroOS);
+
+        }
     }
 }

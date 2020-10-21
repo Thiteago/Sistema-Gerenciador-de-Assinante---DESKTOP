@@ -48,8 +48,6 @@
             this.boxServico = new System.Windows.Forms.TextBox();
             this.lbEquipe = new System.Windows.Forms.Label();
             this.boxEquipe = new System.Windows.Forms.TextBox();
-            this.lbValor = new System.Windows.Forms.Label();
-            this.boxValor = new System.Windows.Forms.TextBox();
             this.lbRecorrencia = new System.Windows.Forms.Label();
             this.boxRecorrencia = new System.Windows.Forms.TextBox();
             this.lbObservacao = new System.Windows.Forms.Label();
@@ -59,11 +57,13 @@
             this.btAdicionarOS = new System.Windows.Forms.PictureBox();
             this.btAlterarOS = new System.Windows.Forms.PictureBox();
             this.btDeletarOS = new System.Windows.Forms.PictureBox();
+            this.picBaixar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btAdicionarOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btAlterarOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btDeletarOS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBaixar)).BeginInit();
             this.SuspendLayout();
             // 
             // btSair
@@ -226,26 +226,8 @@
             // 
             this.boxEquipe.Location = new System.Drawing.Point(162, 395);
             this.boxEquipe.Name = "boxEquipe";
-            this.boxEquipe.Size = new System.Drawing.Size(328, 20);
+            this.boxEquipe.Size = new System.Drawing.Size(471, 20);
             this.boxEquipe.TabIndex = 18;
-            // 
-            // lbValor
-            // 
-            this.lbValor.AutoSize = true;
-            this.lbValor.ForeColor = System.Drawing.Color.White;
-            this.lbValor.Location = new System.Drawing.Point(496, 398);
-            this.lbValor.Name = "lbValor";
-            this.lbValor.Size = new System.Drawing.Size(31, 13);
-            this.lbValor.TabIndex = 19;
-            this.lbValor.Text = "Valor";
-            // 
-            // boxValor
-            // 
-            this.boxValor.Location = new System.Drawing.Point(533, 395);
-            this.boxValor.Name = "boxValor";
-            this.boxValor.Size = new System.Drawing.Size(100, 20);
-            this.boxValor.TabIndex = 20;
-            this.boxValor.Text = "0";
             // 
             // lbRecorrencia
             // 
@@ -332,12 +314,24 @@
             this.btDeletarOS.TabStop = false;
             this.btDeletarOS.Click += new System.EventHandler(this.btDeletarOS_Click);
             // 
+            // picBaixar
+            // 
+            this.picBaixar.Image = ((System.Drawing.Image)(resources.GetObject("picBaixar.Image")));
+            this.picBaixar.Location = new System.Drawing.Point(124, 126);
+            this.picBaixar.Name = "picBaixar";
+            this.picBaixar.Size = new System.Drawing.Size(28, 26);
+            this.picBaixar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBaixar.TabIndex = 30;
+            this.picBaixar.TabStop = false;
+            this.picBaixar.Click += new System.EventHandler(this.picBaixar_Click);
+            // 
             // Form_OS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(966, 561);
+            this.Controls.Add(this.picBaixar);
             this.Controls.Add(this.btDeletarOS);
             this.Controls.Add(this.btAlterarOS);
             this.Controls.Add(this.btAdicionarOS);
@@ -347,8 +341,6 @@
             this.Controls.Add(this.lbObservacao);
             this.Controls.Add(this.boxRecorrencia);
             this.Controls.Add(this.lbRecorrencia);
-            this.Controls.Add(this.boxValor);
-            this.Controls.Add(this.lbValor);
             this.Controls.Add(this.boxEquipe);
             this.Controls.Add(this.lbEquipe);
             this.Controls.Add(this.boxServico);
@@ -376,6 +368,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btAdicionarOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btAlterarOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btDeletarOS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBaixar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,8 +395,6 @@
         private System.Windows.Forms.TextBox boxServico;
         private System.Windows.Forms.Label lbEquipe;
         private System.Windows.Forms.TextBox boxEquipe;
-        private System.Windows.Forms.Label lbValor;
-        private System.Windows.Forms.TextBox boxValor;
         private System.Windows.Forms.Label lbRecorrencia;
         private System.Windows.Forms.TextBox boxRecorrencia;
         private System.Windows.Forms.Label lbObservacao;
@@ -413,5 +404,6 @@
         private System.Windows.Forms.PictureBox btAdicionarOS;
         private System.Windows.Forms.PictureBox btAlterarOS;
         private System.Windows.Forms.PictureBox btDeletarOS;
+        private System.Windows.Forms.PictureBox picBaixar;
     }
 }

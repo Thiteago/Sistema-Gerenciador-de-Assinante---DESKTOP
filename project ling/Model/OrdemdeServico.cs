@@ -10,7 +10,7 @@ namespace project_ling.Model
     {
         private int numeroOS;
         private DateTime dataAbertura;
-        private DateTime dataExecucao;
+        private DateTime? dataExecucao;
         private int idCliente;
         private string servico;
         private string observacao;
@@ -20,7 +20,7 @@ namespace project_ling.Model
 
         public int NumeroOS { get => numeroOS; set => numeroOS = value; }
         public DateTime DataAbertura { get => dataAbertura; set => dataAbertura = value; }
-        public DateTime DataExecucao { get => dataExecucao; set => dataExecucao = value; }
+        public DateTime? DataExecucao { get => dataExecucao; set => dataExecucao = value; }
         public int IdCliente { get => idCliente; set => idCliente = value; }
         public string Servico { get => servico; set => servico = value; }
         public string Observacao { get => observacao; set => observacao = value; }

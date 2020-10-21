@@ -20,6 +20,17 @@ namespace project_ling.Model
         OrdemdeServico aux = new OrdemdeServico();
 
 
+        public void BaixarOS(int numOS)
+        {
+            cmd.CommandText = "UPDATE Ordem_de_Servico "+
+                              "SET Situacao = 'Executado', "+
+                              "data_execucao = GETDATE() "+
+                              "WHERE numeroOS = @numOS";
+            cmd.Parameters.AddWithValue("@numOS", numOS);
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+        }
+
         public IEnumerable<OrdemdeServico> MostrarPorPeriodo(string situacao, DateTime desde, DateTime Ate, List<string> TipoOrdem)
         {
             List<OrdemdeServico> ordens = new List<OrdemdeServico>();
@@ -184,6 +195,7 @@ namespace project_ling.Model
                         aux = new OrdemdeServico();
                         aux.NumeroOS = int.Parse(dr["numeroOS"].ToString());
                         aux.DataAbertura = DateTime.Parse(dr["data_abertura"].ToString());
+                        aux.DataExecucao = DateTime.Parse(dr["data_execucao"].ToString());
                         aux.IdCliente = int.Parse(dr["ID_Cliente"].ToString());
                         aux.Servico = dr["servico"].ToString();
                         aux.Observacao = dr["Observacao"].ToString();
