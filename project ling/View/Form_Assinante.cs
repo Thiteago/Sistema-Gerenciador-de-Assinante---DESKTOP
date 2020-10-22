@@ -55,6 +55,8 @@ namespace project_ling.View
             BindingSource bs = new BindingSource();
             bs.DataSource = Assinantes;
             dataGridView1.DataSource = bs;
+
+            //Desabilitar colunas desnecessárias no DataGridView
             dataGridView1.Columns["Bairro"].Visible = false;
             dataGridView1.Columns["Cidade"].Visible = false;
             dataGridView1.Columns["Estado"].Visible = false;
@@ -68,6 +70,7 @@ namespace project_ling.View
             dataGridView1.Columns["TipoRua"].Visible = false;
             dataGridView1.Columns["NumeroRua"].Visible = false;
             dataGridView1.Columns["Complemento"].Visible = false;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -142,7 +145,14 @@ namespace project_ling.View
         {
             Assinante assinante = Assinantes[dataGridView1.CurrentCell.RowIndex];
             Form_Pacotes pac = new Form_Pacotes();
+            pac.MostrarDados(assinante.Id);
             pac.Show();
+            pac.MostrarDados(assinante.Id);
+        }
+
+        private void Form_Assinante_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

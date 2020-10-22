@@ -49,10 +49,24 @@ namespace project_ling.View
 
         private void Form_OS_Load(object sender, EventArgs e)
         {
-            
+
             int id = int.Parse(boxCod_Cliente.Text);
             OrdemDAO source = new OrdemDAO();
             Ordem = source.MostrarOS(id).ToList();
+            CarregarDataGrid();
+            dataGridView2.Refresh();
+
+
+
+        }
+
+        public void CarregarDataGrid()
+        {
+            for (int i = 0; i < dataGridView2.RowCount; i++)
+            {
+                dataGridView2.Rows[i].DataGridView.Columns.Clear();
+            }
+            
             dataGridView2.DataSource = Ordem;
             dataGridView2.Columns["IdCliente"].Visible = false;
             dataGridView2.Columns["Servico"].Visible = false;
@@ -60,7 +74,6 @@ namespace project_ling.View
             dataGridView2.Columns["Nome"].Visible = false;
 
         }
-
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -113,7 +126,14 @@ namespace project_ling.View
             OrdemDAO baix = new OrdemDAO();
 
             baix.BaixarOS(ordem.NumeroOS);
+            this.Refresh();
+            Application.DoEvents();
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            CarregarDataGrid();
         }
     }
 }

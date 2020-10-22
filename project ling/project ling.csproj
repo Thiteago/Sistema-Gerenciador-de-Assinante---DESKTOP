@@ -65,6 +65,7 @@
     <Compile Include="Model\AssinanteDAO.cs" />
     <Compile Include="Model\OrdemDAO.cs" />
     <Compile Include="Model\OrdemdeServico.cs" />
+    <Compile Include="Model\PacoteDAO.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Model\UsuarioDAO.cs" />
     <Compile Include="View\Form_AdicionarOS.cs">
