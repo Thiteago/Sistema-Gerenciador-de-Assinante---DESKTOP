@@ -39,8 +39,6 @@
             this.boxObservacao = new System.Windows.Forms.TextBox();
             this.btGravar = new System.Windows.Forms.Button();
             this.boxData = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.boxValor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btSair
@@ -69,6 +67,7 @@
             this.boxCod_Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxCod_Cliente.Location = new System.Drawing.Point(40, 53);
             this.boxCod_Cliente.Name = "boxCod_Cliente";
+            this.boxCod_Cliente.ReadOnly = true;
             this.boxCod_Cliente.Size = new System.Drawing.Size(151, 31);
             this.boxCod_Cliente.TabIndex = 2;
             // 
@@ -88,6 +87,7 @@
             this.boxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxNome.Location = new System.Drawing.Point(197, 53);
             this.boxNome.Name = "boxNome";
+            this.boxNome.ReadOnly = true;
             this.boxNome.Size = new System.Drawing.Size(568, 31);
             this.boxNome.TabIndex = 4;
             // 
@@ -163,33 +163,12 @@
             this.boxData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.boxData.TextChanged += new System.EventHandler(this.boxData_TextChanged);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(35, 374);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 25);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Valor";
-            // 
-            // boxValor
-            // 
-            this.boxValor.Location = new System.Drawing.Point(103, 377);
-            this.boxValor.Name = "boxValor";
-            this.boxValor.Size = new System.Drawing.Size(100, 20);
-            this.boxValor.TabIndex = 12;
-            this.boxValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Form_AdicionarOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(796, 440);
-            this.Controls.Add(this.boxValor);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.boxData);
             this.Controls.Add(this.btGravar);
             this.Controls.Add(this.boxObservacao);
@@ -222,7 +201,5 @@
         private System.Windows.Forms.TextBox boxObservacao;
         private System.Windows.Forms.Button btGravar;
         private System.Windows.Forms.TextBox boxData;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox boxValor;
     }
 }

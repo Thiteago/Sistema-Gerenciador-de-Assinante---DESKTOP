@@ -66,7 +66,63 @@ namespace project_ling.View
             Form_Assinante obj = (Form_Assinante)Application.OpenForms["Form_Assinante"];
 
             AssinanteDAO assinante = new AssinanteDAO();
-            assinante.AlterarDados(nomeCompleto.Text, Boxdtanasc.Value, cpfBox.Text, txtProfissao.Text, boxEstadoCivil.Text, boxSexo.Text, BoxEmail.Text, ruaBox.Text, boxTipo.Text, numeroBox.Text, BoxBairro.Text, boxComplemento.Text, BoxCidade.Text, BoxEstado.Text, BoxTelefone.Text,boxID.Text);
+            if (nomeCompleto.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Nome Completo");
+            }
+            else if (cpfBox.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo CPF");
+            }
+            else if (ruaBox.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Rua");
+            }
+            else if (numeroBox.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Numero");
+            }
+            else if (boxTipo.Text == "")
+            {
+                MessageBox.Show("Necessário escolher alguma das opções do campo Tipo");
+            }
+            else if (BoxBairro.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Bairro");
+            }
+            else if (BoxCidade.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Cidade");
+            }
+            else if (BoxEstado.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Estado");
+            }
+            else if (BoxTelefone.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Telefone");
+            }
+            else if (boxSexo.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Sexo");
+            }
+            else if (boxComplemento.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Complemento");
+            }
+            else if (BoxEmail.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Email");
+            }
+            else if (txtProfissao.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Profissao");
+            }
+            else if (boxEstadoCivil.Text == "")
+            {
+                MessageBox.Show("Necessário Preenchimento do campo Estado Civil");
+            }
+            assinante.AlterarDados(nomeCompleto.Text, Boxdtanasc.Value, cpfBox.Text, txtProfissao.Text, boxEstadoCivil.Text, boxSexo.Text, BoxEmail.Text, ruaBox.Text, boxTipo.Text, numeroBox.Text, BoxBairro.Text, boxComplemento.Text, BoxCidade.Text, BoxEstado.Text, BoxTelefone.Text, boxID.Text);
             
             this.Close();
         }

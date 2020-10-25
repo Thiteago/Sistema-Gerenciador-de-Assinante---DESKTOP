@@ -43,5 +43,10 @@ namespace project_ling.View
                 }
             }
         }
+
+        private void listViewPendentes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

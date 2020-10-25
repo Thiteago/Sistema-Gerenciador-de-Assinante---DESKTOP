@@ -16,6 +16,16 @@ namespace project_ling.Model
         public String mensagem = "";
         Pacotes aux = new Pacotes();
 
+        public void DeletarPacote(int ID)
+        {
+            cmd.CommandText = "UPDATE Assinante SET Plano = NULL WHERE ID = @id";
+            cmd.Parameters.AddWithValue("@id", ID);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+        }
+
+
         public IEnumerable<Pacotes> MostrarPacotes(int ID)
         {
             List<Pacotes> pac = new List<Pacotes>();

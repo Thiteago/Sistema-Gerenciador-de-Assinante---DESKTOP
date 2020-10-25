@@ -42,7 +42,7 @@ namespace project_ling.View
             }
             foreach(var item in pacotes)
             {
-                checkedListBox2.Items.Add(item.Nome_pacote);
+                checkedListBox1.Items.Add(item.Nome_pacote);
             }
 
             string ID = boxID.Text;
@@ -71,15 +71,7 @@ namespace project_ling.View
                 }
         }
 
-        private void checkedListBox2_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            if (e.NewValue == CheckState.Checked && checkedListBox1.CheckedItems.Count > 0)
-            {
-                checkedListBox2.ItemCheck -= checkedListBox2_ItemCheck;
-                checkedListBox2.SetItemChecked(checkedListBox1.CheckedIndices[0], false);
-                checkedListBox2.ItemCheck += checkedListBox2_ItemCheck;
-            }
-        }
+    
 
         private void btAdicionarPAC_Click(object sender, EventArgs e)
         {
@@ -103,6 +95,12 @@ namespace project_ling.View
                 
             }
             pac.AdicionarPacote(Convert.ToInt32(ID), selec);
+        }
+
+        private void btRemoverPacote_Click(object sender, EventArgs e)
+        {
+            PacoteDAO pac = new PacoteDAO();
+            pac.DeletarPacote(int.Parse(boxID.Text));
         }
     }
 }

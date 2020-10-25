@@ -62,6 +62,7 @@
             this.listViewPendentes.TabIndex = 1;
             this.listViewPendentes.UseCompatibleStateImageBehavior = false;
             this.listViewPendentes.View = System.Windows.Forms.View.Details;
+            this.listViewPendentes.SelectedIndexChanged += new System.EventHandler(this.listViewPendentes_SelectedIndexChanged);
             // 
             // IDCliente
             // 

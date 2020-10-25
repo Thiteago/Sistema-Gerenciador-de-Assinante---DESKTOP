@@ -44,20 +44,9 @@ namespace project_ling.View
 
         private void btGravar_Click(object sender, EventArgs e)
         {
-            float valor = 0;
             OrdemDAO gravar = new OrdemDAO();
             int cod = int.Parse(boxCod_Cliente.Text);
             DateTime data = DateTime.Parse(boxData.Text);
-            if(boxValor.Text == "")
-            {
-                
-            }
-            else
-            {
-                valor = float.Parse(boxValor.Text);
-            }
-            
-
             gravar.AdicionarOS(cod, comboServico.Text, boxObservacao.Text, data);
             Close();
         }

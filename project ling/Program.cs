@@ -18,7 +18,7 @@ namespace project_ling
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Assinante());
+            Application.Run(new Form_Splash());
         }
     }
 }
