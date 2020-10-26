@@ -16,7 +16,7 @@ namespace project_ling
         Usuario aux = new Usuario();
         public String mensagem = "";
 
-
+        //Método para cadastro do cliente
 
         public Cadastro(string nome, string dataNascimento, string email, string telefone, 
                         string rua, string cidade, string estado, string nomeAcesso, string senha, string cargo, string sexo)
