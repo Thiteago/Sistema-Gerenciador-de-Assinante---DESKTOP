@@ -111,14 +111,39 @@ namespace project_ling.View
         {
             Assinante assinante = Assinantes[dataGridView1.CurrentCell.RowIndex];
             AssinanteDAO assinantedel = new AssinanteDAO();
+            OrdemDAO ordem = new OrdemDAO();
             DialogResult resposta = MessageBox.Show("Voce realmente deseja deletar o assinante?", "Confirme", MessageBoxButtons.YesNoCancel);
             if(resposta == DialogResult.Yes)
             {
-                assinantedel.DeletarAssinante(assinante.Id.ToString());
+                if(ordem.CheckOS(assinante.Id.ToString()) == true)
+                {
+                    MessageBox.Show("O Assinante possui ordens de serviço em pendencia");
+                }
+                else
+                {
+                    assinantedel.DeletarAssinante(assinante.Id.ToString());
+                    MessageBox.Show("Assinante deletado com sucesso");
+                }
+                
             }
+        
 
-            
-
+            dataGridView1.DataSource = "";
+            Assinantes = assinantedel.pesquisa(categoria.Text, boxBusca.Text).ToList();
+            dataGridView1.DataSource = Assinantes;
+            dataGridView1.Columns["Bairro"].Visible = false;
+            dataGridView1.Columns["Cidade"].Visible = false;
+            dataGridView1.Columns["Estado"].Visible = false;
+            dataGridView1.Columns["Telefone"].Visible = false;
+            dataGridView1.Columns["Email"].Visible = false;
+            dataGridView1.Columns["Rua"].Visible = false;
+            dataGridView1.Columns["datanascimento"].Visible = false;
+            dataGridView1.Columns["Profissao"].Visible = false;
+            dataGridView1.Columns["EstadoCivil"].Visible = false;
+            dataGridView1.Columns["Sexo"].Visible = false;
+            dataGridView1.Columns["TipoRua"].Visible = false;
+            dataGridView1.Columns["NumeroRua"].Visible = false;
+            dataGridView1.Columns["Complemento"].Visible = false;
             dataGridView1.Refresh();
         }
 

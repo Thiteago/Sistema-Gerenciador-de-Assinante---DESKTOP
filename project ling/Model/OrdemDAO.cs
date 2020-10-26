@@ -16,8 +16,26 @@ namespace project_ling.Model
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
         public String mensagem = "";
+        public bool tem;
         OrdemdeServico ordem = new OrdemdeServico();
         OrdemdeServico aux = new OrdemdeServico();
+
+        public bool CheckOS(string ID)
+        {
+            
+            cmd.CommandText = "SELECT * FROM Ordem_de_Servico WHERE ID_Cliente = @id AND Situacao = 'Pendente'";
+            cmd.Parameters.AddWithValue("@id", ID);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                tem = true;
+            }
+            dr.Close();
+            return tem;
+        }
 
 
         public void BaixarOS(int numOS)
@@ -29,6 +47,8 @@ namespace project_ling.Model
             cmd.Parameters.AddWithValue("@numOS", numOS);
             cmd.Connection = conexao.conectar();
             dr = cmd.ExecuteReader();
+            dr.Close();
+            conexao.desconectar();
         }
 
         public IEnumerable<OrdemdeServico> MostrarPorPeriodo(string situacao, DateTime desde, DateTime Ate, List<string> TipoOrdem)

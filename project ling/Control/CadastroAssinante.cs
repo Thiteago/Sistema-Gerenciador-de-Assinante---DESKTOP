@@ -15,10 +15,12 @@ namespace project_ling
         public CadastroAssinante(string nome, string cpf, string rua, string bairro, string cidade, string estado, string telefone,
             string email, DateTime datanascimento,string profissao,string EstadoCivil, string sexo,string numero, string tipoRua, string complemento)
         {
+
+            string situacao = "Ativo";
             //Comando SQL - Insert, update, delete
-            cmd.CommandText = "insert into Assinante (Nome, CPF, Bairro, Cidade, Estado, Telefone, Email, Rua, datanascimento, Profissao, EstadoCivil, Sexo, NumeroRua, TipoRua, Complemento)" +
+            cmd.CommandText = "insert into Assinante (Nome, CPF, Bairro, Cidade, Estado, Telefone, Email, Rua, datanascimento, Profissao, EstadoCivil, Sexo, NumeroRua, TipoRua, Complemento, Situacao)" +
                               "values(@nome, @cpf, @bairro, " +
-                              "@cidade, @estado, @telefone, @email, @rua, @datanascimento, @profissao, @EstadoCivil, @sexo, @numero, @tipoRua, @complemento)";
+                              "@cidade, @estado, @telefone, @email, @rua, @datanascimento, @profissao, @EstadoCivil, @sexo, @numero, @tipoRua, @complemento, @situacao)";
             //Parametros
             cmd.Parameters.AddWithValue("@nome", nome);
             cmd.Parameters.AddWithValue("@cpf", cpf);
@@ -35,6 +37,7 @@ namespace project_ling
             cmd.Parameters.AddWithValue("@numero", numero);
             cmd.Parameters.AddWithValue("@tipoRua", tipoRua);
             cmd.Parameters.AddWithValue("@complemento", complemento);
+            cmd.Parameters.AddWithValue("@Situacao", situacao);
             
 
             //Conectar Banco

@@ -58,8 +58,9 @@ namespace project_ling.Model
 
         public void DeletarAssinante(string ID)
         {
-            cmd.CommandText = @"DELETE FROM Assinante WHERE Id = @id";
+            cmd.CommandText = "UPDATE Assinante SET Situacao = 'Inativo' WHERE Id = @id ";
             cmd.Parameters.AddWithValue("@id", ID);
+
 
             cmd.Connection = conexao.conectar();
             dr = cmd.ExecuteReader();
@@ -143,10 +144,9 @@ namespace project_ling.Model
 
                   if (dr.HasRows)
                     {
-                     
-
                     while (dr.Read())
                         {
+                        if (dr["Situacao"].ToString() == "Ativo") { 
                             cliente = new Assinante();
                             cliente.Id = int.Parse(dr["ID"].ToString());
                             cliente.Nome = dr["Nome"].ToString();
@@ -165,10 +165,10 @@ namespace project_ling.Model
                             cliente.TipoRua = dr["TipoRua"].ToString();
                             cliente.Complemento = dr["Complemento"].ToString();
                             assinantes.Add(cliente);
-                            
-
+                        }
+                        
                     }
-                        dr.Close();
+                   
                 }
                 
             }
@@ -176,6 +176,8 @@ namespace project_ling.Model
             {
                 this.mensagem = "Erro com Banco de Dados!";
             }
+            dr.Close();
+            conexao.desconectar();
             return assinantes ;
         }
     }

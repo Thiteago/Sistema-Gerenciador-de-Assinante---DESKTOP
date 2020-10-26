@@ -68,35 +68,35 @@
             this.nomeCompleto.Location = new System.Drawing.Point(181, 95);
             this.nomeCompleto.Name = "nomeCompleto";
             this.nomeCompleto.Size = new System.Drawing.Size(299, 20);
-            this.nomeCompleto.TabIndex = 0;
+            this.nomeCompleto.TabIndex = 1;
             // 
             // rua
             // 
             this.rua.Location = new System.Drawing.Point(181, 120);
             this.rua.Name = "rua";
             this.rua.Size = new System.Drawing.Size(257, 20);
-            this.rua.TabIndex = 2;
+            this.rua.TabIndex = 3;
             // 
             // bairro
             // 
             this.bairro.Location = new System.Drawing.Point(181, 147);
             this.bairro.Name = "bairro";
             this.bairro.Size = new System.Drawing.Size(100, 20);
-            this.bairro.TabIndex = 3;
+            this.bairro.TabIndex = 6;
             // 
             // cidade
             // 
             this.cidade.Location = new System.Drawing.Point(353, 146);
             this.cidade.Name = "cidade";
             this.cidade.Size = new System.Drawing.Size(167, 20);
-            this.cidade.TabIndex = 4;
+            this.cidade.TabIndex = 7;
             // 
             // estado
             // 
             this.estado.Location = new System.Drawing.Point(181, 173);
             this.estado.Name = "estado";
             this.estado.Size = new System.Drawing.Size(223, 20);
-            this.estado.TabIndex = 5;
+            this.estado.TabIndex = 8;
             // 
             // label1
             // 
@@ -126,7 +126,7 @@
             this.cpf.Mask = "###.###.###-##";
             this.cpf.Name = "cpf";
             this.cpf.Size = new System.Drawing.Size(82, 20);
-            this.cpf.TabIndex = 9;
+            this.cpf.TabIndex = 2;
             // 
             // label3
             // 
@@ -189,7 +189,7 @@
             this.telefone.Mask = "(##)#########";
             this.telefone.Name = "telefone";
             this.telefone.Size = new System.Drawing.Size(78, 20);
-            this.telefone.TabIndex = 15;
+            this.telefone.TabIndex = 9;
             // 
             // label8
             // 
@@ -238,7 +238,7 @@
             this.email.Location = new System.Drawing.Point(512, 200);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(225, 20);
-            this.email.TabIndex = 20;
+            this.email.TabIndex = 12;
             // 
             // label10
             // 
@@ -258,14 +258,14 @@
             this.dtanasc.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dtanasc.Name = "dtanasc";
             this.dtanasc.Size = new System.Drawing.Size(556, 20);
-            this.dtanasc.TabIndex = 22;
+            this.dtanasc.TabIndex = 13;
             // 
             // txtProfissao
             // 
             this.txtProfissao.Location = new System.Drawing.Point(181, 248);
             this.txtProfissao.Name = "txtProfissao";
             this.txtProfissao.Size = new System.Drawing.Size(296, 20);
-            this.txtProfissao.TabIndex = 23;
+            this.txtProfissao.TabIndex = 14;
             // 
             // label11
             // 
@@ -298,7 +298,7 @@
             this.boxSexo.Location = new System.Drawing.Point(616, 173);
             this.boxSexo.Name = "boxSexo";
             this.boxSexo.Size = new System.Drawing.Size(121, 21);
-            this.boxSexo.TabIndex = 28;
+            this.boxSexo.TabIndex = 10;
             // 
             // label14
             // 
@@ -316,7 +316,7 @@
             this.txtNumero.Location = new System.Drawing.Point(512, 122);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(100, 20);
-            this.txtNumero.TabIndex = 30;
+            this.txtNumero.TabIndex = 4;
             // 
             // label15
             // 
@@ -339,7 +339,7 @@
             this.boxTipo.Location = new System.Drawing.Point(664, 123);
             this.boxTipo.Name = "boxTipo";
             this.boxTipo.Size = new System.Drawing.Size(73, 21);
-            this.boxTipo.TabIndex = 32;
+            this.boxTipo.TabIndex = 5;
             // 
             // label16
             // 
@@ -357,7 +357,7 @@
             this.txtComplemento.Location = new System.Drawing.Point(181, 199);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(257, 20);
-            this.txtComplemento.TabIndex = 34;
+            this.txtComplemento.TabIndex = 11;
             // 
             // label12
             // 
@@ -375,7 +375,7 @@
             this.boxEstadoCivil.Location = new System.Drawing.Point(580, 252);
             this.boxEstadoCivil.Name = "boxEstadoCivil";
             this.boxEstadoCivil.Size = new System.Drawing.Size(157, 20);
-            this.boxEstadoCivil.TabIndex = 26;
+            this.boxEstadoCivil.TabIndex = 15;
             // 
             // Form_CadAssinante
             // 
