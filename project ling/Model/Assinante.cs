@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace project_ling.Control
 {
+    // Classe Assinante e seus atributos
+
     public class Assinante
     {
         private int id;
@@ -25,6 +27,8 @@ namespace project_ling.Control
         private int numeroRua;
         private string complemento;
 
+        //encapsulamento
+        
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Cpf { get => cpf; set => cpf = value; }
