@@ -20,6 +20,9 @@ namespace project_ling.Model
         OrdemdeServico ordem = new OrdemdeServico();
         OrdemdeServico aux = new OrdemdeServico();
 
+        
+        //Método para a verificação se Assinante possui Ordens com o status "Pendente"
+        
         public bool CheckOS(string ID)
         {
             
@@ -37,6 +40,8 @@ namespace project_ling.Model
             return tem;
         }
 
+        
+        //Método que efetua a execução da ordem de serviço em pendente.
 
         public void BaixarOS(int numOS)
         {
@@ -50,6 +55,8 @@ namespace project_ling.Model
             dr.Close();
             conexao.desconectar();
         }
+        
+        //Método para a geração do relatório por período , com dados por parâmetro para o auxilio na consulta
 
         public IEnumerable<OrdemdeServico> MostrarPorPeriodo(string situacao, DateTime desde, DateTime Ate, List<string> TipoOrdem)
         {
