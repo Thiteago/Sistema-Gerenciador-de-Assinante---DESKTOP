@@ -11,6 +11,9 @@ namespace project_ling.Control
     {
         public bool tem;
         public String mensagem = "";
+        
+        //Método de verificação do Login
+        
         public bool acessar(String usuario, String senha)
         {
             UsuarioDAO loginDao = new UsuarioDAO();
