@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace project_ling.Model
 {
+
+    //Classe referente a consultas com o Banco de Dados, expecificamente referentes aos Assinantes do sistema.
+
     class AssinanteDAO
     {
         Conexao conexao = new Conexao();
@@ -17,6 +20,8 @@ namespace project_ling.Model
         public String mensagem = "";
         Assinante cliente = new Assinante();
         Pacotes aux = new Pacotes();
+        
+        //Método que retorna uma lista dos pacotes disponíveis
 
         public IEnumerable<Pacotes> ListarPacotes()
         {
@@ -54,7 +59,7 @@ namespace project_ling.Model
             return pacotes;
         }
 
-
+        //Método que recebe ID por parâmetro e efetua o desligamento do Assinante.
 
         public void DeletarAssinante(string ID)
         {
@@ -65,11 +70,14 @@ namespace project_ling.Model
             cmd.Connection = conexao.conectar();
             dr = cmd.ExecuteReader();
         }
+        
+        //Método que efetua a Alteração dos dados do Assinante, recebendo as informações por parâmetro.
+        
         public void AlterarDados(string nome, DateTime Datanascimento, string cpf, string Profissao, string EstadoCivil, string Sexo, string Email, string Rua, string Tipo, string numero, string Bairro, string Complemento, string Cidade, string Estado, string Telefone, string ID)
         {
 
 
-            
+            //Criação da String da consulta
 
             cmd.CommandText = @"UPDATE Assinante 
                                 SET Nome = @Nome,
@@ -89,6 +97,8 @@ namespace project_ling.Model
                                 Complemento = @complemento
 
                                 WHERE ID = @id ";
+            
+            //Parâmetros
 
             cmd.Parameters.AddWithValue("@Nome", nome);
             cmd.Parameters.AddWithValue("@id", ID);
@@ -107,6 +117,8 @@ namespace project_ling.Model
             cmd.Parameters.AddWithValue("@numeroRua", numero);
             cmd.Parameters.AddWithValue("@complemento", Complemento);
 
+            
+            //Conexao com o banco e a execução da string, o resultado será repassado ao DataReader.
             cmd.Connection = conexao.conectar();
             dr = cmd.ExecuteReader();
 
@@ -114,9 +126,14 @@ namespace project_ling.Model
         } 
 
 
+        //Método de pesquisa, recebendo a categoria (Nome,CPF,Rua) por parâmetro e a busca feita pelo Usuário
+        
         public IEnumerable<Assinante> pesquisa(string categoria, string busca)
         {
             List<Assinante> assinantes = new List<Assinante>();
+            
+            //Validação da categoria, para cada, será feito uma consulta especifica.
+            
             if (categoria == "Nome")
             {
                 cmd.CommandText = @"SELECT * FROM Assinante As C WHERE C.Nome LIKE @Nome";
@@ -141,6 +158,9 @@ namespace project_ling.Model
                 cmd.CommandText = "SELECT @ FROM Assinante";
                 
             }
+            
+            //Try / Catch para a segurança de funcionamento da busca
+            
             try
             {
                 cmd.Connection = conexao.conectar();
@@ -168,6 +188,9 @@ namespace project_ling.Model
                             cliente.NumeroRua = int.Parse(dr["NumeroRua"].ToString());
                             cliente.TipoRua = dr["TipoRua"].ToString();
                             cliente.Complemento = dr["Complemento"].ToString();
+                            
+                            //Adicionar o objeto dentro da lista para usar como retorno do método.
+                            
                             assinantes.Add(cliente);
                         }
                         

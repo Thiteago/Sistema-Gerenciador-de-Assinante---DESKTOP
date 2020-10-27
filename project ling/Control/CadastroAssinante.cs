@@ -12,6 +12,9 @@ namespace project_ling
         Conexao conexao = new Conexao();
         SqlCommand cmd = new SqlCommand();
         public String msg = "";
+        
+        //Método para o cadastro do Assinante
+        
         public CadastroAssinante(string nome, string cpf, string rua, string bairro, string cidade, string estado, string telefone,
             string email, DateTime datanascimento,string profissao,string EstadoCivil, string sexo,string numero, string tipoRua, string complemento)
         {
