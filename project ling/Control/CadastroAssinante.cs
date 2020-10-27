@@ -18,7 +18,7 @@ namespace project_ling
 
             string situacao = "Ativo";
             //Comando SQL - Insert, update, delete
-            cmd.CommandText = "insert into Assinante (Nome, CPF, Bairro, Cidade, Estado, Telefone, Email, Rua, datanascimento, Profissao, EstadoCivil, Sexo, NumeroRua, TipoRua, Complemento, Situacao)" +
+            cmd.CommandText = "insert into Assinante (Nome, CPF, Bairro, Cidade, Estado, Telefone, Email, Rua, datanascimento, Profissao, EstadoCivil, Sexo, NumeroRua, TipoRua, Complemento, situation)" +
                               "values(@nome, @cpf, @bairro, " +
                               "@cidade, @estado, @telefone, @email, @rua, @datanascimento, @profissao, @EstadoCivil, @sexo, @numero, @tipoRua, @complemento, @situacao)";
             //Parametros

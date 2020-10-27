@@ -85,6 +85,7 @@
             this.categoria.Name = "categoria";
             this.categoria.Size = new System.Drawing.Size(121, 21);
             this.categoria.TabIndex = 0;
+            this.categoria.Text = "Nome";
             // 
             // boxBusca
             // 

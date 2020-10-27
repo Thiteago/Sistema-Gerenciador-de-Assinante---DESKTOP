@@ -34,6 +34,7 @@
             this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NumeroOS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btGerarPDF = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btSair
@@ -83,12 +84,23 @@
             this.Status.Text = "Status";
             this.Status.Width = 100;
             // 
+            // btGerarPDF
+            // 
+            this.btGerarPDF.Location = new System.Drawing.Point(773, 41);
+            this.btGerarPDF.Name = "btGerarPDF";
+            this.btGerarPDF.Size = new System.Drawing.Size(75, 23);
+            this.btGerarPDF.TabIndex = 2;
+            this.btGerarPDF.Text = "Gerar PDF";
+            this.btGerarPDF.UseVisualStyleBackColor = true;
+            this.btGerarPDF.Click += new System.EventHandler(this.btGerarPDF_Click);
+            // 
             // Form_Relatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(860, 538);
+            this.Controls.Add(this.btGerarPDF);
             this.Controls.Add(this.listViewPendentes);
             this.Controls.Add(this.btSair);
             this.Name = "Form_Relatorio";
@@ -106,5 +118,6 @@
         private System.Windows.Forms.ColumnHeader Nome;
         private System.Windows.Forms.ColumnHeader NumeroOS;
         private System.Windows.Forms.ColumnHeader Status;
+        private System.Windows.Forms.Button btGerarPDF;
     }
 }

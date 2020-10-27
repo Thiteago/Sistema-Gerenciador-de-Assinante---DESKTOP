@@ -88,7 +88,6 @@ namespace project_ling.Model
                         }
 
                     }
-                    
 
                 }
                 dr.Close();
@@ -115,19 +114,18 @@ namespace project_ling.Model
 
                     while (dr.Read())
                     {
-                        aux = new OrdemdeServico();
-                        aux.NumeroOS = int.Parse(dr["numeroOS"].ToString());
-                        aux.DataAbertura = DateTime.Parse(dr["data_abertura"].ToString());
-                        aux.IdCliente = int.Parse(dr["ID_Cliente"].ToString());
-                        aux.Servico = dr["servico"].ToString();
-                        aux.Observacao = dr["Observacao"].ToString();
-                        aux.Situacao = dr["Situacao"].ToString();
-                        aux.Nome = dr["Nome"].ToString();
-                        
-
-                        ordens.Add(aux);
-
-
+                        if (dr["situacao"].ToString() == "Pendente")
+                        {
+                            aux = new OrdemdeServico();
+                            aux.NumeroOS = int.Parse(dr["numeroOS"].ToString());
+                            aux.DataAbertura = DateTime.Parse(dr["data_abertura"].ToString());
+                            aux.IdCliente = int.Parse(dr["ID_Cliente"].ToString());
+                            aux.Servico = dr["servico"].ToString();
+                            aux.Observacao = dr["Observacao"].ToString();
+                            aux.Situacao = dr["Situacao"].ToString();
+                            aux.Nome = dr["Nome"].ToString();
+                            ordens.Add(aux);
+                        }
                     }
                     dr.Close();
                 }

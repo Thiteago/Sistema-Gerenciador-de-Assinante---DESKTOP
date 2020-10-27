@@ -30,9 +30,9 @@
         {
             this.listViewRelatorio = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NumOS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Servico = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DataAbertura = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DataExecucao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,6 +45,7 @@
             this.dpDe = new System.Windows.Forms.DateTimePicker();
             this.dpAte = new System.Windows.Forms.DateTimePicker();
             this.btSair = new System.Windows.Forms.Button();
+            this.btGerarPDF = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewRelatorio
@@ -70,11 +71,6 @@
             // 
             this.ID.Text = "ID Cliente";
             // 
-            // Nome
-            // 
-            this.Nome.Text = "Nome";
-            this.Nome.Width = 125;
-            // 
             // NumOS
             // 
             this.NumOS.Text = "Numero O.S";
@@ -84,6 +80,11 @@
             // 
             this.Servico.Text = "Servico";
             this.Servico.Width = 100;
+            // 
+            // Nome
+            // 
+            this.Nome.Text = "Nome";
+            this.Nome.Width = 125;
             // 
             // Status
             // 
@@ -156,7 +157,7 @@
             this.checkedListBox1.Items.AddRange(new object[] {
             "ADEQUACAO DE FIBRA",
             "INSPEÇÃO E VISTORIA",
-            "INSTALACAO DE ROTEADOR",
+            "INSTALAÇÃO DE ROTEADOR",
             "IP FIXO",
             "MANUTENCAO DE FIBRA",
             "MANUTENCAO DE WIRELESS",
@@ -201,12 +202,23 @@
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
+            // btGerarPDF
+            // 
+            this.btGerarPDF.Location = new System.Drawing.Point(666, 406);
+            this.btGerarPDF.Name = "btGerarPDF";
+            this.btGerarPDF.Size = new System.Drawing.Size(243, 23);
+            this.btGerarPDF.TabIndex = 12;
+            this.btGerarPDF.Text = "Gerar PDF";
+            this.btGerarPDF.UseVisualStyleBackColor = true;
+            this.btGerarPDF.Click += new System.EventHandler(this.btGerarPDF_Click);
+            // 
             // Form_RelatorioPeriodo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(921, 497);
+            this.Controls.Add(this.btGerarPDF);
             this.Controls.Add(this.btSair);
             this.Controls.Add(this.dpAte);
             this.Controls.Add(this.dpDe);
@@ -244,5 +256,6 @@
         private System.Windows.Forms.ColumnHeader DataAbertura;
         private System.Windows.Forms.ColumnHeader DataExecucao;
         private System.Windows.Forms.Button btSair;
+        private System.Windows.Forms.Button btGerarPDF;
     }
 }

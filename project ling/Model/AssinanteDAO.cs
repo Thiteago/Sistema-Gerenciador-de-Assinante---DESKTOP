@@ -58,7 +58,7 @@ namespace project_ling.Model
 
         public void DeletarAssinante(string ID)
         {
-            cmd.CommandText = "UPDATE Assinante SET Situacao = 'Inativo' WHERE Id = @id ";
+            cmd.CommandText = "UPDATE Assinante SET situation = 'Inativo' WHERE Id = @id ";
             cmd.Parameters.AddWithValue("@id", ID);
 
 
@@ -136,6 +136,10 @@ namespace project_ling.Model
             {
                 cmd.CommandText = @"SELECT * FROM Assinante As C WHERE C.Telefone LIKE @Tel";
                 cmd.Parameters.AddWithValue("@Tel", busca + "%");
+            }else if(categoria == "")
+            {
+                cmd.CommandText = "SELECT @ FROM Assinante";
+                
             }
             try
             {
@@ -146,7 +150,7 @@ namespace project_ling.Model
                     {
                     while (dr.Read())
                         {
-                        if (dr["Situacao"].ToString() == "Ativo") { 
+                        if (dr["situation"].ToString() == "Ativo") { 
                             cliente = new Assinante();
                             cliente.Id = int.Parse(dr["ID"].ToString());
                             cliente.Nome = dr["Nome"].ToString();
