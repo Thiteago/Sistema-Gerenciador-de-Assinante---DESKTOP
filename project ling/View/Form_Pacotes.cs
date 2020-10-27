@@ -34,12 +34,10 @@ namespace project_ling.View
             AssinanteDAO assinante = new AssinanteDAO();
             PacoteDAO pac = new PacoteDAO();
 
+            listView1.Items.Clear();
+
             pacotes = assinante.ListarPacotes().ToList();
 
-            foreach(var item in pacotes)
-            {
-                checkedListBox1.Items.Add(item.Nome_pacote);
-            }
             foreach(var item in pacotes)
             {
                 checkedListBox1.Items.Add(item.Nome_pacote);
@@ -80,8 +78,21 @@ namespace project_ling.View
 
         private void btAdicionarPAC_Click_1(object sender, EventArgs e)
         {
+            List<Pacotes> dd = new List<Pacotes>();
+            PacoteDAO pac = new PacoteDAO();
             checkedListBox1.Visible = true;
             btAdicionar.Visible = true;
+            listView1.Items.Clear();
+            string ID = boxID.Text;
+            dd = pac.MostrarPacotes(Convert.ToInt32(ID)).ToList();
+
+            foreach(var item in dd)
+            {
+                ListViewItem lv1 = new ListViewItem(item.Nome_pacote);
+                listView1.Items.Add(lv1);
+            }
+            
+
         }
 
         private void btAdicionar_Click(object sender, EventArgs e)

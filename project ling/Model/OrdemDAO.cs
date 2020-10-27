@@ -160,17 +160,15 @@ namespace project_ling.Model
 
 
 
-        public void AlterarOS(string numOS, string servico, string observacao, string valor)
+        public void AlterarOS(string numOS, string servico, string observacao)
         {
             cmd.CommandText = @"UPDATE Ordem_de_Servico
                               SET servico = @Servico,
-                              Observacao = @obs,
-                              Valor = @valor
+                              Observacao = @obs 
                               WHERE numeroOS = @numOS";
 
             cmd.Parameters.AddWithValue("@Servico", servico);
             cmd.Parameters.AddWithValue("@obs", observacao);
-            cmd.Parameters.AddWithValue("@valor", valor);
             cmd.Parameters.AddWithValue("@numOS", numOS);
 
             cmd.Connection = conexao.conectar();

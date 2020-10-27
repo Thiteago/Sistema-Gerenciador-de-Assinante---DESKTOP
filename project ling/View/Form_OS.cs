@@ -49,7 +49,8 @@ namespace project_ling.View
 
         private void Form_OS_Load(object sender, EventArgs e)
         {
-
+            Usuario user = new Usuario();
+            boxUsuario.Text = user.Nome;
             int id = int.Parse(boxCod_Cliente.Text);
             OrdemDAO source = new OrdemDAO();
             Ordem = source.MostrarOS(id).ToList();

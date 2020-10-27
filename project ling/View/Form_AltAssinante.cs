@@ -106,10 +106,6 @@ namespace project_ling.View
             {
                 MessageBox.Show("Necessário Preenchimento do campo Sexo");
             }
-            else if (boxComplemento.Text == "")
-            {
-                MessageBox.Show("Necessário Preenchimento do campo Complemento");
-            }
             else if (BoxEmail.Text == "")
             {
                 MessageBox.Show("Necessário Preenchimento do campo Email");
@@ -122,9 +118,11 @@ namespace project_ling.View
             {
                 MessageBox.Show("Necessário Preenchimento do campo Estado Civil");
             }
-            assinante.AlterarDados(nomeCompleto.Text, Boxdtanasc.Value, cpfBox.Text, txtProfissao.Text, boxEstadoCivil.Text, boxSexo.Text, BoxEmail.Text, ruaBox.Text, boxTipo.Text, numeroBox.Text, BoxBairro.Text, boxComplemento.Text, BoxCidade.Text, BoxEstado.Text, BoxTelefone.Text, boxID.Text);
-            
-            this.Close();
+            else
+            {
+                assinante.AlterarDados(nomeCompleto.Text, Boxdtanasc.Value, cpfBox.Text, txtProfissao.Text, boxEstadoCivil.Text, boxSexo.Text, BoxEmail.Text, ruaBox.Text, boxTipo.Text, numeroBox.Text, BoxBairro.Text, boxComplemento.Text, BoxCidade.Text, BoxEstado.Text, BoxTelefone.Text, boxID.Text);
+                this.Close();
+            }
         }
     }
 }

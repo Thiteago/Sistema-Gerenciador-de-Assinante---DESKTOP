@@ -241,8 +241,9 @@
             this.txtTel.Location = new System.Drawing.Point(139, 166);
             this.txtTel.Mask = "(##)#########";
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(199, 20);
+            this.txtTel.Size = new System.Drawing.Size(85, 20);
             this.txtTel.TabIndex = 4;
+            this.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 

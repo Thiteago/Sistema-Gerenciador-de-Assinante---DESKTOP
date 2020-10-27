@@ -37,7 +37,7 @@ namespace project_ling.View
         {
             OrdemDAO alt = new OrdemDAO();
 
-            alt.AlterarOS(boxNumOS.Text, comboServico.Text, boxObservacao.Text, boxValor.Text);
+            alt.AlterarOS(boxNumOS.Text, comboServico.Text, boxObservacao.Text);
 
             Close();
         }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using project_ling.Control;
-
+using project_ling.Model;
 
 namespace project_ling.View
 {
@@ -27,6 +27,8 @@ namespace project_ling.View
 
         private void btLogin_Click(object sender, EventArgs e)
         {
+            Usuario user = new Usuario();
+
             if (email.Text == "")
             {
                 MessageBox.Show("O Campo Usuario deve ser preenchido!");
@@ -41,7 +43,7 @@ namespace project_ling.View
                 controle.acessar(email.Text, senha.Text);
                 if (controle.tem)
                 {
-                    
+                    user.Nome = email.Text;
                     Form_Principal fp = new Form_Principal();
                     fp.Show();
                     this.Hide();

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btSair = new System.Windows.Forms.Button();
-            this.boxValor = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.boxData = new System.Windows.Forms.TextBox();
             this.btGravar = new System.Windows.Forms.Button();
             this.boxObservacao = new System.Windows.Forms.TextBox();
@@ -55,25 +53,6 @@
             this.btSair.Text = "Sair";
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
-            // 
-            // boxValor
-            // 
-            this.boxValor.Location = new System.Drawing.Point(129, 374);
-            this.boxValor.Name = "boxValor";
-            this.boxValor.Size = new System.Drawing.Size(100, 20);
-            this.boxValor.TabIndex = 24;
-            this.boxValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(61, 371);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 25);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Valor";
             // 
             // boxData
             // 
@@ -199,6 +178,7 @@
             // 
             this.boxNumOS.Location = new System.Drawing.Point(129, 407);
             this.boxNumOS.Name = "boxNumOS";
+            this.boxNumOS.ReadOnly = true;
             this.boxNumOS.Size = new System.Drawing.Size(100, 20);
             this.boxNumOS.TabIndex = 26;
             this.boxNumOS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -211,8 +191,6 @@
             this.ClientSize = new System.Drawing.Size(852, 447);
             this.Controls.Add(this.boxNumOS);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.boxValor);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.boxData);
             this.Controls.Add(this.btGravar);
             this.Controls.Add(this.boxObservacao);
@@ -235,8 +213,6 @@
         #endregion
 
         private System.Windows.Forms.Button btSair;
-        private System.Windows.Forms.TextBox boxValor;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox boxData;
         private System.Windows.Forms.Button btGravar;
         private System.Windows.Forms.TextBox boxObservacao;

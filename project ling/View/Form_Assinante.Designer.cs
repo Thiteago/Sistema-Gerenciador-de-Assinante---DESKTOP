@@ -33,7 +33,6 @@
             this.boxBusca = new System.Windows.Forms.TextBox();
             this.btBuscar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btContratos = new System.Windows.Forms.Button();
             this.btOrdens = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -114,18 +113,9 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // btContratos
-            // 
-            this.btContratos.Location = new System.Drawing.Point(192, 227);
-            this.btContratos.Name = "btContratos";
-            this.btContratos.Size = new System.Drawing.Size(64, 26);
-            this.btContratos.TabIndex = 6;
-            this.btContratos.Text = "Contratos";
-            this.btContratos.UseVisualStyleBackColor = true;
-            // 
             // btOrdens
             // 
-            this.btOrdens.Location = new System.Drawing.Point(262, 227);
+            this.btOrdens.Location = new System.Drawing.Point(174, 227);
             this.btOrdens.Name = "btOrdens";
             this.btOrdens.Size = new System.Drawing.Size(64, 26);
             this.btOrdens.TabIndex = 7;
@@ -418,7 +408,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(332, 227);
+            this.button2.Location = new System.Drawing.Point(244, 227);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(64, 26);
             this.button2.TabIndex = 39;
@@ -464,7 +454,6 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.btOrdens);
-            this.Controls.Add(this.btContratos);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.boxBusca);
@@ -489,7 +478,6 @@
         private System.Windows.Forms.TextBox boxBusca;
         private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btContratos;
         private System.Windows.Forms.Button btOrdens;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
