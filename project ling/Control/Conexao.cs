@@ -14,7 +14,7 @@ namespace project_ling
 
         public Conexao()
         {
-            con.ConnectionString = @"Data Source=DESKTOP-O99010H\SQLEXPRESS;Initial Catalog=BDLP2;Integrated Security=True";
+            con.ConnectionString = @"Data Source=DESKTOP-00L7V4A\SQLEXPRESS;Initial Catalog=BDLP2;Integrated Security=True";
         }
         //Metodo Conectar
         public SqlConnection conectar()
@@ -32,6 +32,7 @@ namespace project_ling
             {
                 con.Close();
             }
+
         }
 
         public SqlConnection RetornarConexao()

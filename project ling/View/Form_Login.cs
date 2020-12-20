@@ -70,5 +70,30 @@ namespace project_ling.View
         {
             Application.Exit();
         }
+
+        private void senha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

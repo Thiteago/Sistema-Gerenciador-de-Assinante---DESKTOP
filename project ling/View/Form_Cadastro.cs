@@ -24,7 +24,26 @@ namespace project_ling
 
         private void bot_Cadastrar(object sender, EventArgs e)
         {
-            if(txtNome.Text == "")
+
+            bool pode = false;
+            Cadastro cap = new Cadastro();
+            int veri = cap.CheckCadastro(txtEmail.Text, txtUsuario.Text);
+
+            if (veri == 1)
+            {
+                MessageBox.Show("O Email Informado já foi cadastrado");
+            }else if(veri == 3)
+            {
+                MessageBox.Show("O Usuario e Email informado ja foi cadastrado");
+            }else if(veri == 0)
+            {
+                pode = true;
+            }else if(veri == 2)
+            {
+                MessageBox.Show("O Usuario informado ja foi cadastrado");
+            }
+
+            if (txtNome.Text == "")
             {
                 MessageBox.Show("O Campo nome deve ser preenchdio!");
             }else if (txtEmail.Text == ""){
@@ -54,26 +73,31 @@ namespace project_ling
             {
                 MessageBox.Show("O Campo Senha deve ser preenchido!");
             }
-            else if(radioButton1.Checked == true)
+
+
+
+            if ((radioButton1.Checked == true) && (pode == true))
             {
                 string datanasc = dtaEscolha.Value.ToString();
-                Cadastro cad = new Cadastro(txtNome.Text, datanasc, txtEmail.Text, txtTel.Text,
+                cap.Cadastrar(txtNome.Text, datanasc, txtEmail.Text, txtTel.Text,
                                             txtRua.Text, txtCidade.Text, listaEstado.Text, txtUsuario.Text,
                                             txtSenha.Text, boxCargo.Text, radioButton1.Text);
-                MessageBox.Show(cad.mensagem);
+                MessageBox.Show(cap.mensagem);
                 this.Close();
-            }else if(radioButton2.Checked == true)
+
+            }
+            else if ((radioButton2.Checked == true) && (pode == true))
             {
                 string datanasc = dtaEscolha.Value.ToString();
-                Cadastro cad = new Cadastro(txtNome.Text, datanasc, txtEmail.Text, txtTel.Text,
+                cap.Cadastrar(txtNome.Text, datanasc, txtEmail.Text, txtTel.Text,
                                             txtRua.Text, txtCidade.Text, listaEstado.Text, txtUsuario.Text,
                                             txtSenha.Text, boxCargo.Text, radioButton2.Text);
-                MessageBox.Show(cad.mensagem);
+                MessageBox.Show(cap.mensagem);
                 this.Close();
             }
 
-
             
+
         }
 
         private void txtSenha_TextChanged(object sender, EventArgs e)

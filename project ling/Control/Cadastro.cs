@@ -15,18 +15,62 @@ namespace project_ling
         Usuario usuario = new Usuario();
         Usuario aux = new Usuario();
         public String mensagem = "";
+        SqlDataReader dr;
 
         //Método para cadastro do cliente
 
-        public Cadastro(string nome, string dataNascimento, string email, string telefone, 
+
+        public int CheckCadastro(string email, string nomeAcesso)
+        {
+            int msg = 0;
+            int num;
+
+            cmd.CommandText = "SELECT COUNT(*) email FROM Usuario WHERE email = @email";
+            cmd.Parameters.AddWithValue("@email", email);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            num = dr.GetInt32(0);
+            dr.Close();
+            conexao.desconectar();
+
+            if (num > 0)
+            {
+                msg = 1;
+            }
+
+            cmd.CommandText = "SELECT COUNT(*) usuarioAcesso FROM Usuario WHERE usuarioAcesso = @nomeAcesso";
+            cmd.Parameters.AddWithValue("@nomeAcesso", nomeAcesso);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            num = 0;
+            num = dr.GetInt32(0);
+            dr.Close();
+            conexao.desconectar();
+
+            if(num > 0)
+            {
+                msg += 2;
+            }
+
+
+            return msg;
+        }
+
+
+        public void Cadastrar(string nome, string dataNascimento, string email, string telefone,
                         string rua, string cidade, string estado, string nomeAcesso, string senha, string cargo, string sexo)
         {
             //Comando SQL - Insert, update, delete
             cmd.CommandText = "insert into Usuario (nomeCompleto, dataNascimento, email, " +
-                              "telefone, rua, cidade, estado, usuarioAcesso, senhaAcesso, Cargo,Sexo) " +
+                              "telefone, rua, cidade, estado, usuarioAcesso, senhaAcesso, Cargo, Sexo) " +
                               "values( @nomeCompleto, @dataNascimento, @email, " +
                               "@telefone, @rua, @cidade, @estado, @usuarioAcesso, @senhaAcesso, @cargo, @sexo)";
             //Parametros
+            cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@nomeCompleto", nome);
             cmd.Parameters.AddWithValue("@dataNascimento", dataNascimento);
             cmd.Parameters.AddWithValue("@email", email);
@@ -38,26 +82,21 @@ namespace project_ling
             cmd.Parameters.AddWithValue("@senhaAcesso", senha);
             cmd.Parameters.AddWithValue("@cargo", cargo);
             cmd.Parameters.AddWithValue("@sexo", sexo);
-            //Conectar Banco
-            try
-            {
-                //Conectar Banco
-                cmd.Connection = conexao.conectar();
-                // executar o banco
-                cmd.ExecuteNonQuery();
-                //desconectar
-                conexao.desconectar();
-                //mostrar mensagem
-                this.mensagem = "Cadastrado com Sucesso!";
-            }
 
-            catch (SqlException ex)
-            {
-                this.mensagem = ex.ToString();
-            }
+            //Conectar Banco
+            cmd.Connection = conexao.conectar();
+            // executar o banco
+            dr = cmd.ExecuteReader();
+            //desconectar
+            conexao.desconectar();
+
+            dr.Close();
+            //mostrar mensagem
+            this.mensagem = "Cadastrado com Sucesso!";
+        }
 
 
 
         }
     }
-}
+
