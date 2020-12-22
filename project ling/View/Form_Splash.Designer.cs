@@ -56,6 +56,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Location = new System.Drawing.Point(12, 4);
@@ -73,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(570, 241);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

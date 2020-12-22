@@ -27,6 +27,7 @@ namespace project_ling.View
 
         private void btLogin_Click(object sender, EventArgs e)
         {
+            
             Usuario user = new Usuario();
 
             if (email.Text == "")
@@ -46,6 +47,7 @@ namespace project_ling.View
                     user.Nome = email.Text;
                     Form_Principal fp = new Form_Principal();
                     fp.Show();
+                    fp.TrazDado(email.Text);
                     this.Hide();
                 }
                 else

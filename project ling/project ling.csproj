@@ -154,6 +154,12 @@
     <Compile Include="View\Form_Splash.Designer.cs">
       <DependentUpon>Form_Splash.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Form_UsuarioPendente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_UsuarioPendente.Designer.cs">
+      <DependentUpon>Form_UsuarioPendente.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form_Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_Splash.resx">
       <DependentUpon>Form_Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_UsuarioPendente.resx">
+      <DependentUpon>Form_UsuarioPendente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_Usuarios.resx">
       <DependentUpon>Form_Usuarios.cs</DependentUpon>

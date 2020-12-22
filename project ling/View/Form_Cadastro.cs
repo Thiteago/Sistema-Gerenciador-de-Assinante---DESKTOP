@@ -27,6 +27,7 @@ namespace project_ling
 
             bool pode = false;
             Cadastro cap = new Cadastro();
+
             int veri = cap.CheckCadastro(txtEmail.Text, txtUsuario.Text);
 
             if (veri == 1)
@@ -79,7 +80,7 @@ namespace project_ling
             if ((radioButton1.Checked == true) && (pode == true))
             {
                 string datanasc = dtaEscolha.Value.ToString();
-                cap.Cadastrar(txtNome.Text, datanasc, txtEmail.Text, txtTel.Text,
+                cap.SolicitarCadastro(txtNome.Text, datanasc, txtEmail.Text, txtTel.Text,
                                             txtRua.Text, txtCidade.Text, listaEstado.Text, txtUsuario.Text,
                                             txtSenha.Text, boxCargo.Text, radioButton1.Text);
                 MessageBox.Show(cap.mensagem);
@@ -89,7 +90,7 @@ namespace project_ling
             else if ((radioButton2.Checked == true) && (pode == true))
             {
                 string datanasc = dtaEscolha.Value.ToString();
-                cap.Cadastrar(txtNome.Text, datanasc, txtEmail.Text, txtTel.Text,
+                cap.SolicitarCadastro(txtNome.Text, datanasc, txtEmail.Text, txtTel.Text,
                                             txtRua.Text, txtCidade.Text, listaEstado.Text, txtUsuario.Text,
                                             txtSenha.Text, boxCargo.Text, radioButton2.Text);
                 MessageBox.Show(cap.mensagem);

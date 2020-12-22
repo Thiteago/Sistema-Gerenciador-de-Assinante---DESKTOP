@@ -1,4 +1,5 @@
-﻿using System;
+﻿using project_ling.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,9 +28,16 @@ namespace project_ling.View
 
         }
 
-        private void Form_Principal_Load(object sender, EventArgs e)
+        public void TrazDado(string Nome)
         {
 
+        }
+
+        private void Form_Principal_Load(object sender, EventArgs e)
+        {
+            Usuario user = new Usuario();
+
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -110,6 +118,19 @@ namespace project_ling.View
             Form_RelatorioPeriodo form = new Form_RelatorioPeriodo();
 
             form.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuariosPendentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_UsuarioPendente abre = new Form_UsuarioPendente();
+
+            abre.Show();
+            this.Hide();
         }
     }
 }

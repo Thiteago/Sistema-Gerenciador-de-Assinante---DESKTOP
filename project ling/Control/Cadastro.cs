@@ -60,16 +60,14 @@ namespace project_ling
             return msg;
         }
 
-
-        public void Cadastrar(string nome, string dataNascimento, string email, string telefone,
+        public void SolicitarCadastro(string nome, string dataNascimento, string email, string telefone,
                         string rua, string cidade, string estado, string nomeAcesso, string senha, string cargo, string sexo)
         {
-            //Comando SQL - Insert, update, delete
-            cmd.CommandText = "insert into Usuario (nomeCompleto, dataNascimento, email, " +
+            cmd.CommandText = "insert into USUARIO_PENDENTE (nomeCompleto, dataNascimento, email, " +
                               "telefone, rua, cidade, estado, usuarioAcesso, senhaAcesso, Cargo, Sexo) " +
                               "values( @nomeCompleto, @dataNascimento, @email, " +
                               "@telefone, @rua, @cidade, @estado, @usuarioAcesso, @senhaAcesso, @cargo, @sexo)";
-            //Parametros
+
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@nomeCompleto", nome);
             cmd.Parameters.AddWithValue("@dataNascimento", dataNascimento);
@@ -83,16 +81,75 @@ namespace project_ling
             cmd.Parameters.AddWithValue("@cargo", cargo);
             cmd.Parameters.AddWithValue("@sexo", sexo);
 
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+            conexao.desconectar();
+            dr.Close();
+
+            this.mensagem = "Sua solicitação foi enviada ao Administrador!";
+        }
+
+        public void RecusarCadastro(string email)
+        {
+            cmd.CommandText = "Delete From USUARIO_PENDENTE WHERE email = @email";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@email", email);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+            conexao.desconectar();
+            dr.Close();
+
+            this.mensagem = "Cadastro Recusado com sucesso!";
+        }
+
+        public void Cadastrar(string nome, DateTime dataNascimento, string email, string telefone,
+                        string rua, string cidade, string estado, string nomeAcesso, string senha, string cargo, string sexo, string NiveldeAcesso)
+        {
+            //Comando SQL - Insert, update, delete
+            cmd.CommandText = "insert into Usuario (nomeCompleto, dataNascimento, email, " +
+                              "telefone, rua, cidade, estado, usuarioAcesso, senhaAcesso, Cargo, Sexo, NIVELACESSO) " +
+                              "values( @nomeCompleto, @dataNascimento, @email, " +
+                              "@telefone, @rua, @cidade, @estado, @usuarioAcesso, @senhaAcesso, @cargo, @sexo, @nivel)";
+            //Parametros
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@nomeCompleto", nome);
+            cmd.Parameters.AddWithValue("@dataNascimento", dataNascimento);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@telefone", telefone);
+            cmd.Parameters.AddWithValue("@rua", rua);
+            cmd.Parameters.AddWithValue("@cidade", cidade);
+            cmd.Parameters.AddWithValue("@estado", estado);
+            cmd.Parameters.AddWithValue("@usuarioAcesso", nomeAcesso);
+            cmd.Parameters.AddWithValue("@senhaAcesso", senha);
+            cmd.Parameters.AddWithValue("@cargo", cargo);
+            cmd.Parameters.AddWithValue("@sexo", sexo);
+            cmd.Parameters.AddWithValue("@nivel", NiveldeAcesso);
+
             //Conectar Banco
             cmd.Connection = conexao.conectar();
             // executar o banco
             dr = cmd.ExecuteReader();
             //desconectar
             conexao.desconectar();
-
             dr.Close();
             //mostrar mensagem
             this.mensagem = "Cadastrado com Sucesso!";
+
+
+            cmd.CommandText = "Delete From Usuario_Pendente WHERE email = @email";
+
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@email", email);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+            conexao.desconectar();
+            dr.Close();
+
+
+            
+          
         }
 
 

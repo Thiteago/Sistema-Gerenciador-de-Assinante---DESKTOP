@@ -16,15 +16,10 @@ namespace project_ling.View
     public partial class Form_Assinante : Form
     {
         public List<Assinante> Assinantes { get; set; } = new List<Assinante>();
+
         public Form_Assinante()
         {
             InitializeComponent();
-            //dataGridView1.AutoGenerateColumns = false;
-            //dataGridView1.ColumnCount = 2;
-            //dataGridView1.Columns[0].Name = "Id";
-            //dataGridView1.Columns[1].Name = "Nome";
-
-
 
         }
 
@@ -70,7 +65,6 @@ namespace project_ling.View
             dataGridView1.Columns["TipoRua"].Visible = false;
             dataGridView1.Columns["NumeroRua"].Visible = false;
             dataGridView1.Columns["Complemento"].Visible = false;
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -40,3 +40,4 @@ C:\Users\ThIaG\source\repos\LP2\project ling\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\ThIaG\source\repos\LP2\project ling\bin\Debug\itextsharp.dll
 C:\Users\ThIaG\source\repos\LP2\project ling\bin\Debug\itextsharp.xml
 C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project ling.csproj.CopyComplete
+C:\Users\ThIaG\source\repos\LP2\project ling\obj\Debug\project_ling.View.Form_UsuarioPendente.resources

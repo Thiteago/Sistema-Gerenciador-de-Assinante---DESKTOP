@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Principal));
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.assinantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,12 +38,14 @@
             this.relatoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordensEmPendenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordensPorPeríodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrativoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosPendentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(769, 1);
+            this.button1.Location = new System.Drawing.Point(1189, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -57,10 +58,11 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.assinantesToolStripMenuItem,
             this.usuariosToolStripMenuItem,
-            this.relatoriosToolStripMenuItem});
+            this.relatoriosToolStripMenuItem,
+            this.administrativoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(856, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1280, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -127,16 +129,33 @@
             this.ordensPorPeríodoToolStripMenuItem.Text = "Ordens por período";
             this.ordensPorPeríodoToolStripMenuItem.Click += new System.EventHandler(this.ordensPorPeríodoToolStripMenuItem_Click);
             // 
+            // administrativoToolStripMenuItem
+            // 
+            this.administrativoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuariosPendentesToolStripMenuItem});
+            this.administrativoToolStripMenuItem.Name = "administrativoToolStripMenuItem";
+            this.administrativoToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.administrativoToolStripMenuItem.Text = "Administrativo";
+            // 
+            // usuariosPendentesToolStripMenuItem
+            // 
+            this.usuariosPendentesToolStripMenuItem.Name = "usuariosPendentesToolStripMenuItem";
+            this.usuariosPendentesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.usuariosPendentesToolStripMenuItem.Text = "Usuarios Pendentes";
+            this.usuariosPendentesToolStripMenuItem.Click += new System.EventHandler(this.usuariosPendentesToolStripMenuItem_Click);
+            // 
             // Form_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(856, 493);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "Form_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Principal";
@@ -160,5 +179,7 @@
         private System.Windows.Forms.ToolStripMenuItem relatoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordensEmPendenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordensPorPeríodoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrativoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosPendentesToolStripMenuItem;
     }
 }
