@@ -13,7 +13,7 @@ namespace project_ling.View
 {
     public partial class Form_UsuarioPendente : Form
     {
-
+        //Criação de Lista genérica para armazenar os dados trazidos da classe UsuarioDAO
         public List<Usuario> Users { get; set; } = new List<Usuario>();
         UsuarioDAO pap = new UsuarioDAO();
         
@@ -25,6 +25,7 @@ namespace project_ling.View
 
         private void Form_UsuarioPendente_Load(object sender, EventArgs e)
         {
+            //Definindo a fonte de dados do DataGrid.
             Users = pap.MostrarUsuarioPendente().ToList();
             DGVUsuarios.DataSource = Users;
             DGVUsuarios.Columns["SenhaAcesso"].Visible = false;
@@ -33,42 +34,63 @@ namespace project_ling.View
 
         private void btSair_Click(object sender, EventArgs e)
         {
+            //Fecha o form
             Form_Principal fp = new Form_Principal();
-
             Close();
             fp.Show();
         }
 
         private void btAprovar_Click(object sender, EventArgs e)
         {
+            
             Cadastro cad = new Cadastro();
-            string id = "";
-            Usuario user = Users[DGVUsuarios.CurrentCell.RowIndex];
+            //Armazena os dados no objeto User passados pelo indice do datagrid
 
-            cad.Cadastrar(user.Nome, user.Nascimento, user.Email, user.Telefone, user.Rua, user.Cidade, user.Estado, user.UsuarioAcesso, user.SenhaAcesso, user.Cargo, user.Sexo1, comboNivel.Text);
-            MessageBox.Show(cad.mensagem);
+            if(comboNivel.Text == "")
+            {
+                MessageBox.Show("Não há nenhum usuário pendente selecionado");
+            }
+            else
+            {
+                Usuario user = Users[DGVUsuarios.CurrentCell.RowIndex];
 
-            Users = pap.MostrarUsuarioPendente().ToList();
-            DGVUsuarios.DataSource = "";
-            DGVUsuarios.DataSource = Users;
-            DGVUsuarios.Columns["SenhaAcesso"].Visible = false;
-            DGVUsuarios.Columns["NivelDeAcesso1"].Visible = false;
+                //Faz o cadastro do Usuário selecionado
+                cad.Cadastrar(user.Nome, user.Nascimento, user.Email, user.Telefone, user.Rua, user.Cidade, user.Estado, user.UsuarioAcesso, user.SenhaAcesso, user.Cargo, user.Sexo1, comboNivel.Text);
+                MessageBox.Show(cad.mensagem);
+
+                Users = pap.MostrarUsuarioPendente().ToList();
+                DGVUsuarios.DataSource = "";
+                DGVUsuarios.DataSource = Users;
+                DGVUsuarios.Columns["SenhaAcesso"].Visible = false;
+                DGVUsuarios.Columns["NivelDeAcesso1"].Visible = false;
+            }
+            
 
         }
 
         private void btRecusar_Click(object sender, EventArgs e)
         {
             Cadastro cad = new Cadastro();
-            Usuario user = Users[DGVUsuarios.CurrentCell.RowIndex];
+            if(comboNivel.Text == "")
+            {
+                MessageBox.Show("Nao há nenhum usuário pendente selecionado.");
+            }
+            else
+            {
+                Usuario user = Users[DGVUsuarios.CurrentCell.RowIndex];
+                cad.RecusarCadastro(user.Email);
+                MessageBox.Show(cad.mensagem);
 
-            cad.RecusarCadastro(user.Email);
-            MessageBox.Show(cad.mensagem);
+                Users = pap.MostrarUsuarioPendente().ToList();
+                DGVUsuarios.DataSource = "";
+                DGVUsuarios.DataSource = Users;
+                DGVUsuarios.Columns["SenhaAcesso"].Visible = false;
+                DGVUsuarios.Columns["NivelDeAcesso1"].Visible = false;
+            }
+            
 
-            Users = pap.MostrarUsuarioPendente().ToList();
-            DGVUsuarios.DataSource = "";
-            DGVUsuarios.DataSource = Users;
-            DGVUsuarios.Columns["SenhaAcesso"].Visible = false;
-            DGVUsuarios.Columns["NivelDeAcesso1"].Visible = false;
+            
+            
 
         }
 
@@ -82,6 +104,18 @@ namespace project_ling.View
             txtNome.Text = user.Nome;
 
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form_CadastroUsuario cad = new Form_CadastroUsuario();
+
+            cad.Show();
+        }
+
+        private void comboNivel_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

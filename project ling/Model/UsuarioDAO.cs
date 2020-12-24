@@ -103,6 +103,23 @@ namespace project_ling.Model
             return usuarios;
         }
 
+        public bool CheckPendente(string usuario)
+        {
+            bool tem1 = false;
+            cmd.CommandText = "select * from USUARIO_PENDENTE where usuarioAcesso = @usuario";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                tem1 = true;
+            }
+
+            return tem1;
+        }
+
 
         public bool verificarLogin(string usuario, string senha)
         {

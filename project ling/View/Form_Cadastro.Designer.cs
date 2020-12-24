@@ -170,14 +170,14 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(442, 138);
+            this.txtUsuario.Location = new System.Drawing.Point(447, 166);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(200, 20);
             this.txtUsuario.TabIndex = 11;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(442, 190);
+            this.txtSenha.Location = new System.Drawing.Point(447, 218);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(200, 20);
             this.txtSenha.TabIndex = 12;
@@ -188,7 +188,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(523, 122);
+            this.label9.Location = new System.Drawing.Point(528, 150);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 18;
@@ -198,7 +198,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(523, 174);
+            this.label10.Location = new System.Drawing.Point(528, 202);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 13);
             this.label10.TabIndex = 19;
@@ -216,7 +216,7 @@
             // 
             // btCadastrar
             // 
-            this.btCadastrar.Location = new System.Drawing.Point(505, 232);
+            this.btCadastrar.Location = new System.Drawing.Point(505, 312);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btCadastrar.TabIndex = 13;

@@ -39,6 +39,8 @@ namespace project_ling.View
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbID = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +85,7 @@ namespace project_ling.View
             this.comboNivel.Name = "comboNivel";
             this.comboNivel.Size = new System.Drawing.Size(256, 21);
             this.comboNivel.TabIndex = 3;
+            this.comboNivel.SelectedIndexChanged += new System.EventHandler(this.comboNivel_SelectedIndexChanged);
             // 
             // lbNivel
             // 
@@ -138,12 +141,34 @@ namespace project_ling.View
             this.lblNome.TabIndex = 9;
             this.lblNome.Text = "Nome";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(754, 512);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Efetuar novo cadastro";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(872, 507);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Abrir ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form_UsuarioPendente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1025, 537);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.txtNome);
@@ -177,5 +202,7 @@ namespace project_ling.View
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

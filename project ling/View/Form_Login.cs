@@ -27,7 +27,7 @@ namespace project_ling.View
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            
+            UsuarioDAO check = new UsuarioDAO();
             Usuario user = new Usuario();
 
             if (email.Text == "")
@@ -42,12 +42,14 @@ namespace project_ling.View
             {
                 UsuarioController controle = new UsuarioController();
                 controle.acessar(email.Text, senha.Text);
-                if (controle.tem)
+                if(check.CheckPendente(email.Text) == true)
+                {
+                    MessageBox.Show("Seu cadastro esta pendente da aprovação do administrador, aguarde e tente novamente mais tarde");
+                }else if(controle.tem)
                 {
                     user.Nome = email.Text;
                     Form_Principal fp = new Form_Principal();
                     fp.Show();
-                    fp.TrazDado(email.Text);
                     this.Hide();
                 }
                 else

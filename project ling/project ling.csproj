@@ -104,6 +104,12 @@
     <Compile Include="View\Form_CadAssinante.Designer.cs">
       <DependentUpon>Form_CadAssinante.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Form_CadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_CadastroUsuario.Designer.cs">
+      <DependentUpon>Form_CadastroUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_Cadastro.resx">
       <DependentUpon>Form_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_CadastroUsuario.resx">
+      <DependentUpon>Form_CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>

@@ -127,10 +127,38 @@ namespace project_ling.View
 
         private void usuariosPendentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void pendentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             Form_UsuarioPendente abre = new Form_UsuarioPendente();
 
             abre.Show();
             this.Hide();
+        }
+
+        private void relatoriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void todosOsUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Usuarios open = new Form_Usuarios();
+            open.Show();
+        }
+
+        private void administrativoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_CadastroUsuario cad = new Form_CadastroUsuario();
+
+            cad.Show();
         }
     }
 }

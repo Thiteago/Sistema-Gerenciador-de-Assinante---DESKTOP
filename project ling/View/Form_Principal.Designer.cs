@@ -33,13 +33,14 @@
             this.assinantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adicionarNovoAssinanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarAssinantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordensEmPendenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordensPorPeríodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrativoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosPendentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pendentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.todosOsUsuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,6 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.assinantesToolStripMenuItem,
-            this.usuariosToolStripMenuItem,
             this.relatoriosToolStripMenuItem,
             this.administrativoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -90,22 +90,6 @@
             this.gerenciarAssinantesToolStripMenuItem.Text = "Gerenciar Assinantes";
             this.gerenciarAssinantesToolStripMenuItem.Click += new System.EventHandler(this.gerenciarAssinantesToolStripMenuItem_Click);
             // 
-            // usuariosToolStripMenuItem
-            // 
-            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaDeUsuariosToolStripMenuItem});
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
-            // 
-            // listaDeUsuariosToolStripMenuItem
-            // 
-            this.listaDeUsuariosToolStripMenuItem.Name = "listaDeUsuariosToolStripMenuItem";
-            this.listaDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.listaDeUsuariosToolStripMenuItem.Text = "Lista de Usuarios";
-            this.listaDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.listaDeUsuariosToolStripMenuItem_Click);
-            // 
             // relatoriosToolStripMenuItem
             // 
             this.relatoriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -114,6 +98,7 @@
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
             this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.relatoriosToolStripMenuItem.Text = "Relatorios";
+            this.relatoriosToolStripMenuItem.Click += new System.EventHandler(this.relatoriosToolStripMenuItem_Click);
             // 
             // ordensEmPendenteToolStripMenuItem
             // 
@@ -132,17 +117,42 @@
             // administrativoToolStripMenuItem
             // 
             this.administrativoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosPendentesToolStripMenuItem});
+            this.usuárioToolStripMenuItem});
             this.administrativoToolStripMenuItem.Name = "administrativoToolStripMenuItem";
             this.administrativoToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.administrativoToolStripMenuItem.Text = "Administrativo";
+            this.administrativoToolStripMenuItem.Click += new System.EventHandler(this.administrativoToolStripMenuItem_Click);
             // 
-            // usuariosPendentesToolStripMenuItem
+            // usuárioToolStripMenuItem
             // 
-            this.usuariosPendentesToolStripMenuItem.Name = "usuariosPendentesToolStripMenuItem";
-            this.usuariosPendentesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.usuariosPendentesToolStripMenuItem.Text = "Usuarios Pendentes";
-            this.usuariosPendentesToolStripMenuItem.Click += new System.EventHandler(this.usuariosPendentesToolStripMenuItem_Click);
+            this.usuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pendentesToolStripMenuItem,
+            this.cadastrarToolStripMenuItem,
+            this.todosOsUsuáriosToolStripMenuItem});
+            this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuárioToolStripMenuItem.Text = "Usuário";
+            // 
+            // pendentesToolStripMenuItem
+            // 
+            this.pendentesToolStripMenuItem.Name = "pendentesToolStripMenuItem";
+            this.pendentesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.pendentesToolStripMenuItem.Text = "Pendentes";
+            this.pendentesToolStripMenuItem.Click += new System.EventHandler(this.pendentesToolStripMenuItem_Click);
+            // 
+            // cadastrarToolStripMenuItem
+            // 
+            this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
+            // 
+            // todosOsUsuáriosToolStripMenuItem
+            // 
+            this.todosOsUsuáriosToolStripMenuItem.Name = "todosOsUsuáriosToolStripMenuItem";
+            this.todosOsUsuáriosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.todosOsUsuáriosToolStripMenuItem.Text = "Todos os Usuários";
+            this.todosOsUsuáriosToolStripMenuItem.Click += new System.EventHandler(this.todosOsUsuáriosToolStripMenuItem_Click);
             // 
             // Form_Principal
             // 
@@ -173,13 +183,14 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem assinantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adicionarNovoAssinanteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gerenciarAssinantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordensEmPendenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordensPorPeríodoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrativoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosPendentesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pendentesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem todosOsUsuáriosToolStripMenuItem;
     }
 }
