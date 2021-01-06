@@ -49,6 +49,7 @@ namespace project_ling.View
             this.DGVUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVUsuarios.Location = new System.Drawing.Point(12, 12);
             this.DGVUsuarios.Name = "DGVUsuarios";
+            this.DGVUsuarios.RowHeadersVisible = false;
             this.DGVUsuarios.Size = new System.Drawing.Size(728, 513);
             this.DGVUsuarios.TabIndex = 0;
             this.DGVUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVUsuarios_CellClick);

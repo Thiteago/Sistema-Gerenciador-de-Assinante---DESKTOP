@@ -36,6 +36,7 @@ namespace project_ling.View
             {
                 ListViewItem lv1 = new ListViewItem(item.Nome);
                 lv1.SubItems.Add(item.Cargo);
+                lv1.SubItems.Add(item.ID1.ToString());
 
                 listViewUsuarios.Items.Add(lv1);
                     
@@ -47,6 +48,42 @@ namespace project_ling.View
         private void listViewUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            List<string> usuario = new List<string>();
+            Form_AlterarUsuario altUser = new Form_AlterarUsuario();
+
+
+            if(listViewUsuarios.SelectedItems.Count <= 0)
+            {
+                MessageBox.Show("Não há nenhum usuário selecionado");
+            }
+            else
+            {
+                usuario.Add(listViewUsuarios.SelectedItems[0].SubItems[0].Text);
+                usuario.Add(listViewUsuarios.SelectedItems[0].SubItems[1].Text);
+                usuario.Add(listViewUsuarios.SelectedItems[0].SubItems[2].Text);
+                altUser.CarregarDados(usuario[0], usuario[1], int.Parse(usuario[2]));
+                this.Hide();
+                altUser.ShowDialog();
+                
+            }
+            
+
+
+            
+            
+
+          
+        }
+
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+            string pessoa = listViewUsuarios.SelectedItems[0].SubItems[2].Text;
+
+            Console.WriteLine(pessoa);
         }
     }
 }

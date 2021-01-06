@@ -86,6 +86,12 @@
     <Compile Include="View\Form_AltAssinante.Designer.cs">
       <DependentUpon>Form_AltAssinante.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Form_AlterarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_AlterarUsuario.Designer.cs">
+      <DependentUpon>Form_AlterarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form_AltOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_AltAssinante.resx">
       <DependentUpon>Form_AltAssinante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_AlterarUsuario.resx">
+      <DependentUpon>Form_AlterarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_AltOS.resx">
       <DependentUpon>Form_AltOS.cs</DependentUpon>

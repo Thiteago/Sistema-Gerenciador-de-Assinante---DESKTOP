@@ -50,7 +50,7 @@ namespace project_ling.Model
                     }
                     dr.Close();
                 }
-            }catch (SqlException e) { 
+            }catch (SqlException ) { 
             
                 this.mensagem = "Erro com Banco de Dados!";
 
@@ -199,7 +199,7 @@ namespace project_ling.Model
                 }
                 
             }
-            catch (SqlException e)
+            catch (SqlException )
             {
                 this.mensagem = "Erro com Banco de Dados!";
             }

@@ -30,6 +30,18 @@ namespace project_ling.View
             DGVUsuarios.DataSource = Users;
             DGVUsuarios.Columns["SenhaAcesso"].Visible = false;
             DGVUsuarios.Columns["NivelDeAcesso1"].Visible = false;
+            DGVUsuarios.Columns[0].HeaderText = "Nome";
+            DGVUsuarios.Columns[1].HeaderText = "Nascimento";
+            DGVUsuarios.Columns[2].HeaderText = "Email";
+            DGVUsuarios.Columns[3].HeaderText = "Telefone";
+            DGVUsuarios.Columns[4].HeaderText = "Rua";
+            DGVUsuarios.Columns[5].HeaderText = "Cidade";
+            DGVUsuarios.Columns[6].HeaderText = "Estado";
+            DGVUsuarios.Columns[7].HeaderText = "Usuário";
+            DGVUsuarios.Columns[8].HeaderText = "Cargo";
+            DGVUsuarios.Columns[11].HeaderText = "ID";
+            DGVUsuarios.Columns[12].HeaderText = "Sexo";
+            
         }
 
         private void btSair_Click(object sender, EventArgs e)
@@ -48,10 +60,15 @@ namespace project_ling.View
 
             if(comboNivel.Text == "")
             {
-                MessageBox.Show("Não há nenhum usuário pendente selecionado");
+                MessageBox.Show("Não foi selecionado nenhum Nível de Acesso para o Usuário selecionado");
             }
-            else
+            else if(DGVUsuarios.Rows.Count == 0)
             {
+                MessageBox.Show("Não há usuário pendente selecionado à ser aprovado");
+            }else
+            {
+                
+
                 Usuario user = Users[DGVUsuarios.CurrentCell.RowIndex];
 
                 //Faz o cadastro do Usuário selecionado
@@ -71,12 +88,18 @@ namespace project_ling.View
         private void btRecusar_Click(object sender, EventArgs e)
         {
             Cadastro cad = new Cadastro();
-            if(comboNivel.Text == "")
+            if (comboNivel.Text == "")
             {
-                MessageBox.Show("Nao há nenhum usuário pendente selecionado.");
+                MessageBox.Show("Não foi selecionado nenhum Nível de Acesso para o Usuário selecionado");
+            }
+            else if (DGVUsuarios.Rows.Count == 0)
+            {
+                MessageBox.Show("Não há usuário pendente selecionado à ser rejeitado");
             }
             else
             {
+
+            
                 Usuario user = Users[DGVUsuarios.CurrentCell.RowIndex];
                 cad.RecusarCadastro(user.Email);
                 MessageBox.Show(cad.mensagem);
@@ -86,11 +109,7 @@ namespace project_ling.View
                 DGVUsuarios.DataSource = Users;
                 DGVUsuarios.Columns["SenhaAcesso"].Visible = false;
                 DGVUsuarios.Columns["NivelDeAcesso1"].Visible = false;
-            }
-            
-
-            
-            
+            }  
 
         }
 

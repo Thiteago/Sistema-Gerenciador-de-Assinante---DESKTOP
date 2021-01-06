@@ -137,7 +137,7 @@ namespace project_ling.Model
                     dr.Close();
                 }
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
                 this.mensagem = "Erro com Banco de Dados!";
             }
@@ -162,10 +162,7 @@ namespace project_ling.Model
 
         public void AlterarOS(string numOS, string servico, string observacao)
         {
-            cmd.CommandText = @"UPDATE Ordem_de_Servico
-                              SET servico = @Servico,
-                              Observacao = @obs 
-                              WHERE numeroOS = @numOS";
+            cmd.CommandText = "UPDATE Ordem_de_Servico SET servico = @Servico, Observacao = @obs WHERE numeroOS = @numOS";
 
             cmd.Parameters.AddWithValue("@Servico", servico);
             cmd.Parameters.AddWithValue("@obs", observacao);
@@ -236,9 +233,10 @@ namespace project_ling.Model
                     dr.Close();
                 }
             }
+
             catch (SqlException e)
             {
-                this.mensagem = "Erro com Banco de Dados!";
+                Console.WriteLine(e); ;
             }
 
             return ordem;

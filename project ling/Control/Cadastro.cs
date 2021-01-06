@@ -20,6 +20,106 @@ namespace project_ling
         //Método para cadastro do cliente
 
 
+        public int CheckAlteracao(string email, string nomeAcesso, int ID)
+        {
+            int mesmo = 0;
+            int num;
+
+            //////////////////////////////////////////////////////////////////////////////
+            //Verifica se Email atual é igual ao ja cadastrado
+            //////////////////////////////////////////////////////////////////////////////
+            
+            cmd.CommandText = "select * from Usuario Where email = @email AND id = @ID";
+            cmd.Parameters.Clear();
+            cmd.Parameters.Add("@email", email);
+            cmd.Parameters.Add("@ID", ID);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+            
+            if (dr.HasRows)
+            {
+                mesmo = 1;
+            }
+
+            dr.Close();
+            conexao.desconectar();
+            //////////////////////////////////////////////////////////////////////////////
+            //Verifica se Usuario atual é igual ao ja cadastrado
+            //////////////////////////////////////////////////////////////////////////////
+            
+            cmd.CommandText = "select * from Usuario Where usuarioAcesso = @nome AND id = @ID";
+            cmd.Parameters.Clear();
+            cmd.Parameters.Add("@nome", nomeAcesso);
+            cmd.Parameters.Add("@ID", ID);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                mesmo += 2;
+            }
+            dr.Close();
+            conexao.desconectar();
+
+            //////////////////////////////////////////////////////////////////////////////
+            //Verifica se o Usuário alterado já existe
+            //////////////////////////////////////////////////////////////////////////////
+            if (mesmo == 1)
+            {
+                cmd.CommandText = "SELECT COUNT(*) usuarioAcesso FROM Usuario WHERE usuarioAcesso = @nomeAcesso";
+                cmd.Parameters.Clear();
+                cmd.Parameters.Add("@nomeAcesso", nomeAcesso);
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+                dr.Read();
+                num = 0;
+                num = dr.GetInt32(0);
+                dr.Close();
+                conexao.desconectar();
+                if (num > 0)
+                {
+                    mesmo += 1;
+                    return mesmo;
+                }
+                return mesmo;
+             //////////////////////////////////////////////////////////////////////////////
+             //Verifica se o Email alterado já existe
+             //////////////////////////////////////////////////////////////////////////////
+            }
+            else if(mesmo == 2)
+            {
+                cmd.CommandText = "SELECT COUNT(*) email FROM Usuario WHERE email = @email";
+                cmd.Parameters.Clear();
+                cmd.Parameters.Add("@email", email);
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+                dr.Read();
+                num = 0;
+                num = dr.GetInt32(0);
+                dr.Close();
+                conexao.desconectar();
+                if (num > 0)
+                {
+                    mesmo += 1;
+                    return mesmo;
+                }
+                return mesmo-1;
+                //////////////////////////////////////////////////////////////////////////////
+                //Neste caso todos os dados podem ser inseridos
+                //////////////////////////////////////////////////////////////////////////////
+            }
+            else if(mesmo == 3)
+            {
+                mensagem = "Cadastro Alterado com Sucesso";
+                return mesmo - 2;
+            }
+
+            return mesmo;
+        }
+
+
         public int CheckCadastro(string email, string nomeAcesso)
         {
             int msg = 0;
