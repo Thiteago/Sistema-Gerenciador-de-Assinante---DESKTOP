@@ -125,6 +125,10 @@ namespace project_ling
             int msg = 0;
             int num;
 
+            //////////////////////////////////////////////////////////////////////////////
+            //Verifica se o email inserido já foi utilizado por outro usuário
+            //////////////////////////////////////////////////////////////////////////////
+            
             cmd.CommandText = "SELECT COUNT(*) email FROM Usuario WHERE email = @email";
             cmd.Parameters.AddWithValue("@email", email);
 
@@ -140,6 +144,11 @@ namespace project_ling
                 msg = 1;
             }
 
+            //////////////////////////////////////////////////////////////////////////////
+            //Verifica se o Usuário inserido já foi utilizado por outro usuário
+            //////////////////////////////////////////////////////////////////////////////
+            
+            
             cmd.CommandText = "SELECT COUNT(*) usuarioAcesso FROM Usuario WHERE usuarioAcesso = @nomeAcesso";
             cmd.Parameters.AddWithValue("@nomeAcesso", nomeAcesso);
 
@@ -160,6 +169,11 @@ namespace project_ling
             return msg;
         }
 
+        
+        
+        //////////////////////////////////////////////////////////////////////////////
+        //Insere os dados do cadastro nos usuários pendentes
+        //////////////////////////////////////////////////////////////////////////////
         public void SolicitarCadastro(string nome, string dataNascimento, string email, string telefone,
                         string rua, string cidade, string estado, string nomeAcesso, string senha, string cargo, string sexo)
         {
@@ -189,6 +203,11 @@ namespace project_ling
             this.mensagem = "Sua solicitação foi enviada ao Administrador!";
         }
 
+        
+        //////////////////////////////////////////////////////////////////////////////
+        //Remove o cadastro pendente do banco de dados
+        //////////////////////////////////////////////////////////////////////////////        
+        
         public void RecusarCadastro(string email)
         {
             cmd.CommandText = "Delete From USUARIO_PENDENTE WHERE email = @email";
@@ -203,6 +222,12 @@ namespace project_ling
             this.mensagem = "Cadastro Recusado com sucesso!";
         }
 
+        
+        
+        //////////////////////////////////////////////////////////////////////////////
+        //Remove cadastro do usuário pendente e o efetiva comno usuário no sistema.
+        //////////////////////////////////////////////////////////////////////////////        
+        
         public void Cadastrar(string nome, DateTime dataNascimento, string email, string telefone,
                         string rua, string cidade, string estado, string nomeAcesso, string senha, string cargo, string sexo, string NiveldeAcesso)
         {
