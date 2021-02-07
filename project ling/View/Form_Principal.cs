@@ -83,7 +83,7 @@ namespace project_ling.View
 
         private void adicionarNovoAssinanteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_CadAssinante open = new Form_CadAssinante();
+            Cadastrar open = new Cadastrar();
 
             open.Show();
         }
@@ -159,6 +159,22 @@ namespace project_ling.View
             Form_CadastroUsuario cad = new Form_CadastroUsuario();
 
             cad.Show();
+        }
+
+        private void consultarCalendarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Agendamento agd = new Form_Agendamento();
+            agd.Show();
+            this.Hide();
+        }
+
+        private void ordensSemAgendamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_SemAgendamento os = new Form_SemAgendamento();
+
+            os.Show();
+            os.CarregarDGV();
+            this.Hide();
         }
     }
 }

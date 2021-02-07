@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using project_ling.Model;
+using project_ling.Control;
 
 namespace project_ling.View
 {
@@ -19,6 +20,8 @@ namespace project_ling.View
         {
             InitializeComponent();
         }
+
+        
 
         public void MostrarDados(string id, string nome)
         {
@@ -45,10 +48,24 @@ namespace project_ling.View
         private void btGravar_Click(object sender, EventArgs e)
         {
             OrdemDAO gravar = new OrdemDAO();
+            Form_OSS os = new Form_OSS();
+            AssinanteDAO pp = new AssinanteDAO();
+            List<Assinante> criente = new List<Assinante>();
+
             int cod = int.Parse(boxCod_Cliente.Text);
             DateTime data = DateTime.Parse(boxData.Text);
             gravar.AdicionarOS(cod, comboServico.Text, boxObservacao.Text, data);
-            Close();
+
+            os.LimparDGV();
+            os.CarregarDGV(cod);
+            criente = pp.MostrarDadosAssinante(cod).ToList();
+            os.CarregaDados(criente);
+
+            this.Close();
+            os.Show();
+
+
+
         }
     }
 }

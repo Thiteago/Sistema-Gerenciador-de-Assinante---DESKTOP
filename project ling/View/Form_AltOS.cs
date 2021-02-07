@@ -1,4 +1,5 @@
-﻿using project_ling.Model;
+﻿using project_ling.Control;
+using project_ling.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,10 +37,24 @@ namespace project_ling.View
         private void btGravar_Click(object sender, EventArgs e)
         {
             OrdemDAO alt = new OrdemDAO();
+            Form_OSS os = new Form_OSS();
+            AssinanteDAO pp = new AssinanteDAO();
+            List<Assinante> criente = new List<Assinante>();
+            int cod = int.Parse(boxCod_Cliente.Text);
 
             alt.AlterarOS(boxNumOS.Text, comboServico.Text, boxObservacao.Text);
+            os.LimparDGV();
+            os.CarregarDGV(cod);
+            criente = pp.MostrarDadosAssinante(cod).ToList();
+            os.CarregaDados(criente);
 
-            Close();
+            this.Close();
+            os.Show();
+        }
+
+        private void Form_AltOS_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -45,7 +45,7 @@ namespace project_ling.View
                 radioButton2.Checked = true;
             }
             txtUsuario.Text = listUsuario[0].UsuarioAcesso;
-            Console.WriteLine(listUsuario[0].SenhaAcesso);
+
             txtSenha.Text = listUsuario[0].SenhaAcesso;
             comboNivel.Text = listUsuario[0].NivelDeAcesso1;
             txtID.Text = listUsuario[0].ID1.ToString();

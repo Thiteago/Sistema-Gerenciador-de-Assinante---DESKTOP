@@ -41,6 +41,9 @@
             this.pendentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.todosOsUsuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agendamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarCalendarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordensSemAgendamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +62,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.assinantesToolStripMenuItem,
             this.relatoriosToolStripMenuItem,
-            this.administrativoToolStripMenuItem});
+            this.administrativoToolStripMenuItem,
+            this.agendamentoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1280, 24);
@@ -130,7 +134,7 @@
             this.cadastrarToolStripMenuItem,
             this.todosOsUsuáriosToolStripMenuItem});
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             // 
             // pendentesToolStripMenuItem
@@ -143,7 +147,7 @@
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
             // 
@@ -154,11 +158,34 @@
             this.todosOsUsuáriosToolStripMenuItem.Text = "Todos os Usuários";
             this.todosOsUsuáriosToolStripMenuItem.Click += new System.EventHandler(this.todosOsUsuáriosToolStripMenuItem_Click);
             // 
+            // agendamentoToolStripMenuItem
+            // 
+            this.agendamentoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultarCalendarioToolStripMenuItem,
+            this.ordensSemAgendamentoToolStripMenuItem});
+            this.agendamentoToolStripMenuItem.Name = "agendamentoToolStripMenuItem";
+            this.agendamentoToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.agendamentoToolStripMenuItem.Text = "Agendamento";
+            // 
+            // consultarCalendarioToolStripMenuItem
+            // 
+            this.consultarCalendarioToolStripMenuItem.Name = "consultarCalendarioToolStripMenuItem";
+            this.consultarCalendarioToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.consultarCalendarioToolStripMenuItem.Text = "Consultar Calendario";
+            this.consultarCalendarioToolStripMenuItem.Click += new System.EventHandler(this.consultarCalendarioToolStripMenuItem_Click);
+            // 
+            // ordensSemAgendamentoToolStripMenuItem
+            // 
+            this.ordensSemAgendamentoToolStripMenuItem.Name = "ordensSemAgendamentoToolStripMenuItem";
+            this.ordensSemAgendamentoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.ordensSemAgendamentoToolStripMenuItem.Text = "Ordens sem Agendamento";
+            this.ordensSemAgendamentoToolStripMenuItem.Click += new System.EventHandler(this.ordensSemAgendamentoToolStripMenuItem_Click);
+            // 
             // Form_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.button1);
@@ -192,5 +219,8 @@
         private System.Windows.Forms.ToolStripMenuItem pendentesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem todosOsUsuáriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agendamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarCalendarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordensSemAgendamentoToolStripMenuItem;
     }
 }

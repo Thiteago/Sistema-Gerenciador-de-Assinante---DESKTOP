@@ -45,7 +45,6 @@ namespace project_ling.View
             {
                 if (item.Situacao == "Pendente") {
                     ListViewItem lv1 = new ListViewItem(item.IdCliente.ToString());
-                    lv1.SubItems.Add(item.Nome);
                     lv1.SubItems.Add(item.NumeroOS.ToString());
                     lv1.SubItems.Add(item.Situacao);
 
@@ -89,7 +88,6 @@ namespace project_ling.View
             foreach (var item in ordens)
             {
                 tabela.AddCell(item.IdCliente.ToString());
-                tabela.AddCell(item.Nome);
                 tabela.AddCell(item.NumeroOS.ToString());
                 tabela.AddCell(item.Situacao);
                 

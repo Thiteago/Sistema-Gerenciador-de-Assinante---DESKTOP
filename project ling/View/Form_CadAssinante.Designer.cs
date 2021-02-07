@@ -1,6 +1,6 @@
 ﻿namespace project_ling.View
 {
-    partial class Form_CadAssinante
+    partial class Cadastrar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastrar));
             this.nomeCompleto = new System.Windows.Forms.TextBox();
             this.rua = new System.Windows.Forms.TextBox();
             this.bairro = new System.Windows.Forms.TextBox();
@@ -259,6 +260,7 @@
             this.dtanasc.Name = "dtanasc";
             this.dtanasc.Size = new System.Drawing.Size(556, 20);
             this.dtanasc.TabIndex = 13;
+            this.dtanasc.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             // 
             // txtProfissao
             // 
@@ -377,7 +379,7 @@
             this.boxEstadoCivil.Size = new System.Drawing.Size(157, 20);
             this.boxEstadoCivil.TabIndex = 15;
             // 
-            // Form_CadAssinante
+            // Cadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -416,9 +418,10 @@
             this.Controls.Add(this.bairro);
             this.Controls.Add(this.rua);
             this.Controls.Add(this.nomeCompleto);
-            this.Name = "Form_CadAssinante";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Cadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_CadAssinante";
+            this.Text = "Cadastrar Assinante";
             this.Load += new System.EventHandler(this.Form_CadAssinante_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

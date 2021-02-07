@@ -30,7 +30,7 @@ namespace project_ling.View
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Form_CadAssinante fca = new Form_CadAssinante();
+            Cadastrar fca = new Cadastrar();
             fca.Show();
         }
 
@@ -130,11 +130,12 @@ namespace project_ling.View
 
         private void btOrdens_Click(object sender, EventArgs e)
         {
-            Form_OS open = new Form_OS();
+            Form_OSS open = new Form_OSS();
             Assinante assinante = Assinantes[dataGridView1.CurrentCell.RowIndex];
-            open.MostrarDados(assinante.Id, assinante.Nome, assinante.TipoRua, assinante.Rua, assinante.NumeroRua, assinante.Complemento);
+            open.MostrarDados(assinante.Id, assinante.Nome, assinante.TipoRua, assinante.Rua, assinante.NumeroRua.ToString(), assinante.Complemento);
 
             open.Show();
+            open.CarregarDGV(assinante.Id);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

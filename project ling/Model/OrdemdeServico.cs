@@ -15,7 +15,8 @@ namespace project_ling.Model
         private string servico;
         private string observacao;
         private string situacao;
-        private string nome;
+        private DateTime? dataAgendamento;
+        private string cor;
 
 
         public int NumeroOS { get => numeroOS; set => numeroOS = value; }
@@ -25,6 +26,7 @@ namespace project_ling.Model
         public string Servico { get => servico; set => servico = value; }
         public string Observacao { get => observacao; set => observacao = value; }
         public string Situacao { get => situacao; set => situacao = value; }
-        public string Nome { get => nome; set => nome = value; }
+        public DateTime? DataAgendamento { get => dataAgendamento; set => dataAgendamento = value; }
+        public string Cor { get => cor; set => cor = value; }
     }
 }

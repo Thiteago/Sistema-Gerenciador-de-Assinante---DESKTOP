@@ -47,7 +47,6 @@ namespace project_ling.View
                 ListViewItem lv1 = new ListViewItem(item.IdCliente.ToString());
                 lv1.SubItems.Add(item.NumeroOS.ToString());
                 lv1.SubItems.Add(item.Servico);
-                lv1.SubItems.Add(item.Nome);
                 lv1.SubItems.Add(item.Situacao);
                 lv1.SubItems.Add(item.DataAbertura.ToString("dd/MM/yyyy"));
                 if(item.DataExecucao == Tempo)
@@ -115,7 +114,6 @@ namespace project_ling.View
             foreach (var item in ordens)
             {
                 tabela.AddCell(item.IdCliente.ToString());
-                tabela.AddCell(item.Nome);
                 tabela.AddCell(item.NumeroOS.ToString());
                 tabela.AddCell(item.Situacao);
                 tabela.AddCell(item.Servico);

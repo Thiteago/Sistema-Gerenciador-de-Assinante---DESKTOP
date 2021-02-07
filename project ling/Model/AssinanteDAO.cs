@@ -20,8 +20,86 @@ namespace project_ling.Model
         public String mensagem = "";
         Assinante cliente = new Assinante();
         Pacotes aux = new Pacotes();
-        
+
         //Método que retorna uma lista dos pacotes disponíveis
+
+        public int CheckIgual(string CPF, string email)
+        {
+            int i = 0;
+
+            cmd.CommandText = "SELECT * FROM Assinante WHERE CPF = @cpf AND Email = @email";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@cpf", CPF);
+            cmd.Parameters.AddWithValue("@email", email);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    if(dr["CPF"].ToString() == CPF)
+                    {
+                        i = 1;
+                        Console.WriteLine(i);
+                    }else if(dr["Email"].ToString() == email)
+                    {
+                        i = 3;
+                        Console.WriteLine(i);
+                    }
+
+                }
+            }
+
+            return i;
+        }
+
+
+
+        public IEnumerable<Assinante> MostrarDadosAssinante(int ID)
+        {
+            List<Assinante> cli = new List<Assinante>();
+
+            cmd.CommandText = "SELECT * FROM Assinante WHERE Id = @id";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@id", ID);
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        cliente = new Assinante();
+                        cliente.Id = int.Parse(dr["Id"].ToString());
+                        cliente.Nome = dr["Nome"].ToString();
+                        cliente.TipoRua = dr["TipoRua"].ToString();
+                        cliente.Rua = dr["Rua"].ToString();
+                        cliente.NumeroRua = int.Parse(dr["NumeroRua"].ToString());
+                        cliente.Complemento = dr["Complemento"].ToString();
+
+                        cli.Add(cliente);
+
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+
+                this.mensagem = "Erro com Banco de Dados!";
+
+            }
+
+            conexao.desconectar();
+            dr.Close();
+
+
+            return cli;
+        }
+
 
         public IEnumerable<Pacotes> ListarPacotes()
         {

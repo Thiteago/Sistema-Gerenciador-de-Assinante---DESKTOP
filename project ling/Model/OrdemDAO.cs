@@ -23,6 +23,48 @@ namespace project_ling.Model
         
         //Método para a verificação se Assinante possui Ordens com o status "Pendente"
         
+        public string PegaCor(int NumOS)
+        {
+            string cor = "";
+
+            cmd.CommandText = "SELECT Cor FROM Ordem_de_Servico WHERE numeroOS = @numOS";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@numOS", NumOS);
+
+            try
+            {
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        cor = dr["Cor"].ToString();
+                    }
+                }
+            }catch(SqlException e)
+            {
+
+            }
+
+            return cor;
+        }
+
+
+
+        public void InsereCor(int NumOS, string Cor)
+        {
+            cmd.CommandText = "UPDATE Ordem_de_Servico SET Cor = @cor WHERE numeroOS = @numOS";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@cor", Cor);
+            cmd.Parameters.AddWithValue("@numOS", NumOS);
+
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+
+            conexao.desconectar();
+            dr.Close();
+
+        }
+
         public bool CheckOS(string ID)
         {
             
@@ -84,7 +126,6 @@ namespace project_ling.Model
                     aux.DataAbertura = DateTime.Parse(dr["data_abertura"].ToString());
                     aux.IdCliente = int.Parse(dr["ID_Cliente"].ToString());
                     aux.Situacao = dr["Situacao"].ToString();
-                    aux.Nome = dr["Nome"].ToString();
                     teste = dr["servico"].ToString();
                     foreach (var item in TipoOrdem)
                     {
@@ -130,7 +171,6 @@ namespace project_ling.Model
                             aux.Servico = dr["servico"].ToString();
                             aux.Observacao = dr["Observacao"].ToString();
                             aux.Situacao = dr["Situacao"].ToString();
-                            aux.Nome = dr["Nome"].ToString();
                             ordens.Add(aux);
                         }
                     }
@@ -183,22 +223,119 @@ namespace project_ling.Model
             cmd.Parameters.AddWithValue("@ID", ID);
             cmd.Parameters.AddWithValue("@Servico", servico);
             cmd.Parameters.AddWithValue("@Observacao", observacao);
-
             cmd.Parameters.AddWithValue("@situation", pendente);
+            cmd.Connection = conexao.conectar();
+            dr = cmd.ExecuteReader();
+
+        }
+
+        public void AgendarOS(DateTime Data, int numOS)
+        {
+            cmd.CommandText = "UPDATE Ordem_de_Servico SET Data_Agendamento = @data, Situacao = 'Agendado' WHERE numeroOS = @numOS";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@data", Data);
+            cmd.Parameters.AddWithValue("@numOS", numOS);
 
             cmd.Connection = conexao.conectar();
             dr = cmd.ExecuteReader();
 
-
-
+            conexao.desconectar();
+            dr.Close();
 
         }
 
+        public IEnumerable<OrdemdeServico> MostrarOrdemNaoAgendada()
+        {
+            List<OrdemdeServico> ordem = new List<OrdemdeServico>();
+
+            cmd.CommandText = "SELECT * FROM Ordem_de_Servico WHERE Data_Agendamento IS NULL AND Situacao = 'Pendente'";
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        aux = new OrdemdeServico();
+                        aux.NumeroOS = int.Parse(dr["numeroOS"].ToString());
+                        aux.DataAbertura = DateTime.Parse(dr["data_abertura"].ToString());
+                        aux.Situacao = dr["Situacao"].ToString();
+                        aux.IdCliente = int.Parse(dr["ID_Cliente"].ToString());
+                        aux.Servico = dr["servico"].ToString();
+                        aux.Observacao = dr["Observacao"].ToString();
+
+                        ordem.Add(aux);
+                    }
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            conexao.desconectar();
+            dr.Close();
+
+
+
+            return ordem;
+        }
+
+        public IEnumerable<OrdemdeServico> MostarOrdemAgendada(string Data)
+        {
+            List<OrdemdeServico> ordem = new List<OrdemdeServico>();
+
+
+            
+            cmd.CommandText = "SELECT * FROM Ordem_de_Servico WHERE Data_Agendamento IS NOT NULL AND Situacao = 'Agendado' AND Data_Agendamento between @data1 and @data2";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@data1", Data + " 00:00:00");
+            cmd.Parameters.AddWithValue("@data2", Data + " 23:59:59");
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        aux = new OrdemdeServico();
+
+                        aux.NumeroOS = int.Parse(dr["numeroOS"].ToString());
+                        aux.DataAbertura = DateTime.Parse(dr["data_abertura"].ToString());
+                        aux.Situacao = dr["Situacao"].ToString();
+                        aux.IdCliente = int.Parse(dr["ID_Cliente"].ToString());
+                        aux.Servico = dr["servico"].ToString();
+                        aux.Observacao = dr["Observacao"].ToString();
+                        DateTime.Now.ToString("dd/MM/yyyy"); 
+                        DateTime dat = DateTime.Parse(dr["Data_Agendamento"].ToString());
+                        Console.WriteLine(dat);
+                        aux.DataAgendamento = dat;
+
+                        ordem.Add(aux);
+                    }
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e);
+            }
+            conexao.desconectar();
+            dr.Close();
+
+
+            return ordem;
+        }
         public IEnumerable<OrdemdeServico> MostrarOS(int id)
         {
             List<OrdemdeServico> ordem = new List<OrdemdeServico>();
 
             cmd.CommandText = "SELECT * FROM Ordem_de_Servico WHERE ID_Cliente = @Id";
+            cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@Id", id);
 
             try
@@ -217,6 +354,11 @@ namespace project_ling.Model
                         aux.NumeroOS = int.Parse(dr["numeroOS"].ToString());
                         aux.DataAbertura = DateTime.Parse(dr["data_abertura"].ToString());
                         aux.Situacao = dr["Situacao"].ToString();
+                        if(aux.Situacao == "Agendado")
+                        {
+                            aux.DataAgendamento = DateTime.Parse(dr["Data_Agendamento"].ToString());
+                        }
+                        
                         if (aux.Situacao == "Executado")
                         {
                             aux.DataExecucao = DateTime.Parse(dr["data_execucao"].ToString());
@@ -236,7 +378,7 @@ namespace project_ling.Model
 
             catch (SqlException e)
             {
-                Console.WriteLine(e); ;
+                Console.WriteLine(e);
             }
 
             return ordem;

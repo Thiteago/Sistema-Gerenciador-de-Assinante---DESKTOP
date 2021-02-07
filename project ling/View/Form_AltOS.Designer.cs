@@ -205,6 +205,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.Name = "Form_AltOS";
             this.Text = "Form_AltOS";
+            this.Load += new System.EventHandler(this.Form_AltOS_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
